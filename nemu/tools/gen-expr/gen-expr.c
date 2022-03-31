@@ -5,6 +5,8 @@
 #include <assert.h>
 #include <string.h>
 
+#define EXP_LONG  32;
+
 // this should be enough
 static char buf[65536] = {};
 static char code_buf[65536 + 128] = {}; // a little larger than `buf`
@@ -16,8 +18,41 @@ static char *code_format =
 "  return 0; "
 "}";
 
-static void gen_rand_expr() {
-  buf[0] = '\0';
+
+int n = 1;
+
+static uint32_t choose(uint32_t n){
+	srand(time(0));
+	return rand() % n;
+}
+
+static void gen(char f){
+	buf[n++] = f;
+}
+
+static void gen_rand_op(){
+	switch (choose(5)){
+	  case 0: buf[n++] = '+'; break;
+          case 1: buf[n++] = '-'; break;
+ 	  case 2: buf[n++] = '*'; break;
+	  case 3: buf[n++] = '/'; break;
+	  default: buf[n++] = ' '; break;
+	}
+}
+
+static void gen_num(){
+	unsigned int num = rand() % (1 << 8);
+	char *now_buff = buf + strlen(buf);
+	sprintf(now_buff, "%d", num);
+	//strcpy(now_buff,(char)num);
+}
+
+static void gen_rand_expr( ) {
+  buf[0] = '\0'; 
+	 
+       
+     
+   
 }
 
 int main(int argc, char *argv[]) {

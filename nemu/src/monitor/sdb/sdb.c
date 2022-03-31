@@ -2,9 +2,11 @@
 #include <cpu/cpu.h>
 #include <readline/readline.h>
 #include <readline/history.h>
+#include <memory/vaddr.h>
 #include "sdb.h"
 
 static int is_batch_mode = false;
+
 
 void init_regex();
 void init_wp_pool();
@@ -39,6 +41,60 @@ static int cmd_q(char *args) {
 
 static int cmd_help(char *args);
 
+
+static int cmd_si(char *args){
+   uint64_t n;
+   //printf("%s",args);
+    if(args == NULL) 
+       n = 1;
+    else
+       sscanf(args,"%ld",&n);
+       //printf("%ld\n",n);
+    cpu_exec(n);
+    return 0;
+}
+
+static int cmd_info(char *args){
+    if(strcmp(args, "r") == 0) 
+        isa_reg_display();
+    else if(strcmp(args, "w") == 0)    ;
+    else 
+        printf("Unknown parameter '%s'\n", args);
+           //return -1;
+   
+    return 0;
+}
+
+static int cmd_x(char *args){
+   //for (char *str; args != NULL; )
+    char *str_end_x = args + strlen(args);
+    uint64_t addr;
+    char *agum = strtok(args, " ");
+    char *add = agum + strlen(agum) + 1;  
+    
+    int n;
+    sscanf(agum,"%d",&n);         
+    if (add >= str_end_x) {
+      add = NULL;
+      printf("You need to put Address(0x) to set the start of the search\n");
+      return -1;
+    }
+    else {
+      if(strncmp(add, "0x",2) == 0){
+          sscanf(add+2,"%lx",&addr);
+          while(n--){
+              printf("0x%lx: %08lx\n",addr,vaddr_read(addr, 4));
+              addr+=4;
+          }
+      }
+      else{ 
+          printf("Address must be 0x....\n");
+          return -1;
+      }
+    }
+    return 0;
+}
+
 static struct {
   const char *name;
   const char *description;
@@ -47,6 +103,9 @@ static struct {
   { "help", "Display informations about all supported commands", cmd_help },
   { "c", "Continue the execution of the program", cmd_c },
   { "q", "Exit NEMU", cmd_q },
+  { "si", "Single Step Execution", cmd_si },
+  { "info", "info r: Print register status\n       info w: Print monitors information", cmd_info },
+  { "x", "x N EXPR: To scan memory", cmd_x },
 
   /* TODO: Add more commands */
 
@@ -97,7 +156,7 @@ void sdb_mainloop() {
     /* treat the remaining string as the arguments,
      * which may need further parsing
      */
-    char *args = cmd + strlen(cmd) + 1;
+    char *args = cmd + strlen(cmd) + 1;           
     if (args >= str_end) {
       args = NULL;
     }
@@ -110,7 +169,7 @@ void sdb_mainloop() {
     int i;
     for (i = 0; i < NR_CMD; i ++) {
       if (strcmp(cmd, cmd_table[i].name) == 0) {
-        if (cmd_table[i].handler(args) < 0) { return; }
+        if (cmd_table[i].handler(args) < 0) { return; }              //Command Call
         break;
       }
     }
