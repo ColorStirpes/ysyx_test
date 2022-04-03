@@ -29,7 +29,7 @@ static struct rule {
   {"/", '/'},
   {"\\(", '('},
   {"\\)", ')'},
-  {"\\d", TK_NUMBER},
+  {"[0-9]+", TK_NUMBER},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -88,39 +88,39 @@ static bool make_token(char *e) {
         switch (rules[i].token_type) {
 	  case 9:
 		  tokens[nr_token].type = TK_NUMBER; 
-		  strncpy(tokens[nr_token++].str, substr_start, substr_len);
+		  strncpy(tokens[nr_token].str, substr_start, substr_len);
+		  tokens[nr_token++].str[substr_len] = '\n';
 		  break;
 	  case '+':
-		  tokens[i].type = '+';
-	          nr_token ++;
+		  tokens[nr_token ++].type = '+';
 		  break;
 	  case '-':
-                  tokens[i].type = '-';
-	          nr_token ++;
+                  tokens[nr_token ++].type = '-';
+	          
 	          break;
 	  case '*':
-                  tokens[i].type = '*';
-	          nr_token ++;
+                  tokens[nr_token ++].type = '*';
+	          
 		  break;
 	  case '/':
-                  tokens[i].type = '/';
-	          nr_token ++;
+                  tokens[nr_token ++].type = '/';
+	          
 	          break;
 	  case '(':
-		  tokens[nr_token].type = '(';
-		  strcpy(tokens[nr_token++].str, substr_start);
+		  tokens[nr_token++].type = '(';
+		  //strcpy(tokens[nr_token++].str, substr_start);
 	          break;
 	  case ')':
-                  tokens[nr_token].type = ')';
-		  strcpy(tokens[nr_token++].str, substr_start);
+                  tokens[nr_token++].type = ')';
+		  //strcpy(tokens[nr_token++].str, substr_start);
                   break;
 	 
           default:
-		  tokens[i].type = 256;
+		  tokens[nr_token ++].type = 256;
 		  break;
 
         }
-
+        //printf("%d,%c\n",i,rules[i].token_type);
         break;
       }
     }
@@ -130,6 +130,7 @@ static bool make_token(char *e) {
       return false;
     }
   }
+  
 
   return true;
 }
@@ -145,36 +146,48 @@ bool check_parentheses(int p , int q){
 		NW_paren = 1;
 	}
 	for (int i = p; i <= q; i++) {
-		if (tokens[p].type == '{' || tokens[p].type == '[' || tokens[p].type == '(') {
-			tmp[cnt++] = tokens[p].type;
+		if (tokens[i].type == '{' || tokens[i].type == '[' || tokens[i].type == '(') {
+			tmp[cnt++] = tokens[i].type;
+			//printf("cnt :%c\n",tmp[cnt-1]);
 		}
-		else if (cnt != 0 && (tmp[cnt - 1] + 1 == tokens[p].type || tmp[cnt - 1] + 2 == tokens[p].type)) {
-			if(cnt  == 1 && p != q)
-				NW_paren = 1;
+		else if (cnt != 0 && ((tokens[i].type == ')' && tmp[cnt - 1] == '(') ||
+		                      (tokens[i].type == ']' && tmp[cnt - 1] == '[') || 
+		                      (tokens[i].type == '}' && tmp[cnt - 1] == '{')))   {
+		//printf("wc :%d\n",q);
+		if((cnt == 1)&&(i != q))  
+		        NW_paren = 1; 
+		//printf("wc :%d ,%d, %d\n",i,q,cnt);
+			
 			cnt--;
+			
 		}
 	}
 
 	if (cnt != 0)
 		assert("The expression is illegal.\n");
 
-	if(NW_paren)
+	if(NW_paren){
+                //printf("flase:%d %d\n",p,q);
 		return false;
-	else
+		}
+	else{
+	        //printf("true:%d %d\n",p,q);
 		return true;
+		}
 }
 
 
 
 int Primary_op(int p , int q){
         int op = -1;
-        for(int i = p+1; i <= q; i++){
+        for(int i = p; i <= q; i++){
                 if(tokens[i].type == '{' || tokens[i].type == '[' || tokens[i].type == '('){
                         for(int j = q ;j > p; j--){
-                                if(check_parentheses(i , j))
-                                        i = j + 1;
+                                if(check_parentheses(i , j)){
+                                        i = j;
+                                        break;
+                                }
                         }
-
                 }
                 else if(tokens[i].type == '+' || tokens[i].type == '-' || tokens[i].type == '*' || tokens[i].type == '/'){
                         if(tokens[i].type == '+' || tokens[i].type == '-')
@@ -199,7 +212,7 @@ int Primary_op(int p , int q){
 uint32_t eval(int p,int q) {
   if (p > q) {
     printf("p is %d > q is %d\n",p,q);
-    assert("This is a bad expression. Stop!\n");
+    //assert(0);
     return 0;    
   }
   else if (p == q) {
@@ -210,30 +223,51 @@ uint32_t eval(int p,int q) {
 
      if(tokens[p].type == TK_NUMBER) {
 	     uint32_t n;
-	     sscanf(tokens[p].str,"%d",&n);
+	     sscanf(tokens[p].str,"%u",&n);
 	     return n;
      }
      else{
-	     return eval(p+1,q-1);
+	     assert("(fuhao)\n");
+	     return 0;
      }
   }
   else if (check_parentheses(p, q) == true) {
     /* The expression is surrounded by a matched pair of parentheses.
      * If that is the case, just throw away the parentheses.
      */
+     //printf("true:%d %d\n",p,q);
     return eval(p + 1, q - 1);
   }
   else {
     /* We should do more things here. */
       int op = Primary_op(p,q);                  // the position of 主运算符 in the token expression;
-      uint32_t val1 = eval(p, op - 1);
-      uint32_t val2 = eval(op + 1, q);
+      //printf("%d,%c,%d,%d\n",op,tokens[op].type,p,q);
+      //assert(0);
+      int val1 = eval(p, op - 1);
+      int val2 = eval(op + 1, q);
+      //unsigned int cc = 13;
+      //unsigned int dd = -2;
+      //uint32_t b= cc / dd;
+      //printf("www:%u %u %u\n",cc,dd,b);
+      //uint32_t b= val1 / val2;
+      //printf("www:%u %u %u\n",val1,val2,b);
+      //printf("val1:%d, op:%c, val2:%d   ops:%d\n",val1,tokens[op].type,val2,op);
 
     switch (tokens[op].type) {
-      case '+': return val1 + val2;
-      case '-': return val1 - val2;
-      case '*': return val1 * val2;
-      case '/': return val1 / val2;
+      case '+': //printf("val1:%d, op:%c, val2:%d   ops:%d    res:%u   p:%d,  q:%d\n",val1,tokens[op].type,val2,op,val1+val2,p,q);
+      return val1 + val2;
+      case '-': //printf("val1:%d, op:%c, val2:%d   ops:%d    res:%u   p:%d,  q:%d\n",val1,tokens[op].type,val2,op,val1-val2,p,q);
+      return val1 - val2;
+      case '*': //printf("val1:%d, op:%c, val2:%d   ops:%d    res:%u   p:%d,  q:%d\n",val1,tokens[op].type,val2,op,val1*val2,p,q);
+      return val1 * val2;
+      case '/': if(val2 == 0){
+			printf("####This is division by 0 expression.#####\n");
+		        return 0;
+		}
+		else{
+		        //printf("val1:%d, op:%c, val2:%d   ops:%d    res:%u  p:%d,  q:%d\n",val1,tokens[op].type,val2,op,val1/val2,p,q);
+		        return val1 / val2;
+		        }
       default: assert(0);
 	       return 0;
     }
@@ -245,9 +279,20 @@ word_t expr(char *e, bool *success) {
     *success = false;
     return 0;
   }
-
+  //printf("9 is %s\n",tokens[9].str);
+  //for(int i = 0; i < 32;i++)
+  //printf("%d:%d\n",i,tokens[i].type);
+  //printf("%ld\n",sizeof(tokens)/sizeof(tokens[0]));
+  
   /* TODO: Insert codes to evaluate the expression. */
-  TODO();
+     //printf("long:%d\n",nr_token);
+     
+     
+     //for(int i = 0; i < 32;i++)
+     //printf("%d:%c\n",i,tokens[i].type);
+     uint32_t a = eval(0,nr_token-1);
+     //printf("a:%u\n",a);
+     return a;
 
   return 0;
 }

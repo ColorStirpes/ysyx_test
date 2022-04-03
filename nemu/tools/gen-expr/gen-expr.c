@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <string.h>
 
-#define EXP_LONG  32;
+#define EXP_LONG  30;
 
 // this should be enough
 static char buf[65536] = {};
@@ -19,40 +19,68 @@ static char *code_format =
 "}";
 
 
-int n = 1;
+int n = 0;
+int q = EXP_LONG;
 
 static uint32_t choose(uint32_t n){
-	srand(time(0));
-	return rand() % n;
-}
 
+	int i= rand() % n;
+	//printf("q%dq",i);
+	return i;
+}
 static void gen(char f){
+	if(f == '(')
+		q--;
 	buf[n++] = f;
 }
 
 static void gen_rand_op(){
-	switch (choose(5)){
+    if(q - n > 0){
+      
+	switch (choose(4)){
 	  case 0: buf[n++] = '+'; break;
           case 1: buf[n++] = '-'; break;
  	  case 2: buf[n++] = '*'; break;
 	  case 3: buf[n++] = '/'; break;
 	  default: buf[n++] = ' '; break;
 	}
+    }
 }
 
 static void gen_num(){
-	unsigned int num = rand() % (1 << 8);
-	char *now_buff = buf + strlen(buf);
+//printf("ssb:%s\n",buf);
+//printf("yn:%d\n",n);
+	uint32_t num = (rand() % (1 << 8)) % (10*(q-n+1));
+	//printf("*%d*\n",num);
+	//printf("st:%ld\n",strlen(buf));
+	char*now_buff = &buf[n]; 
 	sprintf(now_buff, "%d", num);
-	//strcpy(now_buff,(char)num);
+	//printf("num:%s\n",now_buff);
+	n += strlen(&buf[n]);
+	//printf("n:%d\n",n);
 }
 
 static void gen_rand_expr( ) {
-  buf[0] = '\0'; 
-	 
-       
-     
-   
+  //buf[0] = '\0'; 
+  //printf("gens:%c\n",buf[1]);
+  //printf("genb:%ld\n",strlen(buf));
+
+    if(q - n == 1||q - n == 0){
+    	    gen_num();
+    }
+    else if(q < n){
+    }
+    else{
+        switch (choose(3)) {
+        case 0: gen_num(); break;
+        case 1: gen('('); gen_rand_expr(); gen(')'); break;
+        default: gen_rand_expr(); gen_rand_op(); gen_rand_expr(); break;
+        }
+	
+    }
+    if(q > n){ gen_rand_op(); gen_rand_expr();}
+
+	    
 }
 
 int main(int argc, char *argv[]) {
@@ -64,8 +92,12 @@ int main(int argc, char *argv[]) {
   }
   int i;
   for (i = 0; i < loop; i ++) {
+    n = 0;
+    q = EXP_LONG;    
     gen_rand_expr();
-
+    buf[n] = '\0';
+   // printf("*%d %d*\n",n,q);
+   // printf("buff:%s\n",buf);
     sprintf(code_buf, code_format, buf);
 
     FILE *fp = fopen("/tmp/.code.c", "w");
@@ -80,7 +112,7 @@ int main(int argc, char *argv[]) {
     assert(fp != NULL);
 
     int result;
-    fscanf(fp, "%d", &result);
+    if( fscanf(fp, "%d", &result));
     pclose(fp);
 
     printf("%u %s\n", result, buf);
