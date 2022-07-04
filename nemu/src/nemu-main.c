@@ -1,4 +1,5 @@
 #include <common.h>
+#include <cpu/iringbuf.h>
 
 void init_monitor(int, char *[]);
 void am_init_monitor();
@@ -14,6 +15,7 @@ int main(int argc, char *argv[]) {
   init_monitor(argc, argv);
 #endif
 
+/*
 
   uint32_t result;
   char exp[33];
@@ -32,9 +34,17 @@ int main(int argc, char *argv[]) {
   }while(fgetc(fp) != EOF);
   fclose(fp);
 
+*/
+
 
   /* Start engine. */
   engine_start();
+  
+#ifdef CONFIG_ITRACE  
+  if(is_exit_status_bad()){
+  	printf_iring();
+  }
+#endif
 
   return is_exit_status_bad();
 }

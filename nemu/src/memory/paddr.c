@@ -1,7 +1,26 @@
 #include <memory/host.h>
 #include <memory/paddr.h>
 #include <device/mmio.h>
+#include <cpu/iringbuf.h>
 #include <isa.h>
+
+/*
+#if CONFIG_MTRAC
+#define MTRAC_NUM 28*1000
+    char buf[MTRAC_NUM];
+    char *b = buf;
+    uint32_t n = 1;
+    void mtrac(char *buf, uint64_t add, char *o){
+        if(n%1000 == 0){
+        	*b = buf;
+        }
+    	sprintf(buf, "%-7d %-6s: 0x%lx\n",n, o, add);
+    	n++;
+    	b += strlen(buf) + 1;
+    }
+#endif
+*/
+
 
 #if   defined(CONFIG_PMEM_MALLOC)
 static uint8_t *pmem = NULL;
@@ -14,11 +33,20 @@ paddr_t host_to_guest(uint8_t *haddr) { return haddr - pmem + CONFIG_MBASE; }
 
 static word_t pmem_read(paddr_t addr, int len) {
   word_t ret = host_read(guest_to_host(addr), len);
+#if CONFIG_MTRAC
+  printf("[NEMU] Read:  paddr 0x%x, len %d, data 0x%lx\n",addr, len, ret);
+#endif
   return ret;
 }
 
 static void pmem_write(paddr_t addr, int len, word_t data) {
+#if CONFIG_MTRAC
+  printf("[NEMU] Write: paddr 0x%x, len %d, data 0x%lx  ",addr, len, data);
+#endif
   host_write(guest_to_host(addr), len, data);
+#if CONFIG_MTRAC
+  printf("finish!\n");
+#endif
 }
 
 static void out_of_bound(paddr_t addr) {
@@ -43,6 +71,9 @@ void init_mem() {
 }
 
 word_t paddr_read(paddr_t addr, int len) {
+#if CONFIG_MTRAC
+  //mtrac(buf, addr, "Read");
+#endif
   if (likely(in_pmem(addr))) return pmem_read(addr, len);
   IFDEF(CONFIG_DEVICE, return mmio_read(addr, len));
   out_of_bound(addr);
@@ -50,6 +81,9 @@ word_t paddr_read(paddr_t addr, int len) {
 }
 
 void paddr_write(paddr_t addr, int len, word_t data) {
+#if CONFIG_MTRAC
+  //mtrac(buf, addr, "Write");
+#endif
   if (likely(in_pmem(addr))) { pmem_write(addr, len, data); return; }
   IFDEF(CONFIG_DEVICE, mmio_write(addr, len, data); return);
   out_of_bound(addr);

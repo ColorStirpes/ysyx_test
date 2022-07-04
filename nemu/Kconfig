@@ -146,7 +146,30 @@ config ITRACE_COND
   string "Only trace instructions when the condition is true"
   default "true"
 
+config MTRAC
+  depends on TRACE
+  bool "Enable memory trace for debug."
+  default n
+  help
+    Enable memory to debug your program.
+    Note that this will significantly reduce the performance of NEMU.
 
+config DTRAC
+  depends on TRACE
+  bool "Enable device trace for debug."
+  default n
+  help
+    Enable device to debug your program.
+    Note that this will significantly reduce the performance of NEMU.
+
+config WATCHPOINT
+  depends on TRACE
+  bool "Enable watchpoint for debug"
+  default n
+  help
+    Enable watchpoints to debug your program.
+    Note that this will significantly reduce the performance of NEMU.
+    
 config DIFFTEST
   depends on TARGET_NATIVE_ELF
   bool "Enable differential testing"
@@ -154,7 +177,7 @@ config DIFFTEST
   help
     Enable differential testing with a reference design.
     Note that this will significantly reduce the performance of NEMU.
-
+    
 choice
   prompt "Reference design"
   default DIFFTEST_REF_SPIKE if ISA_riscv64 || ISA_riscv32
