@@ -313,8 +313,6 @@ static int cmd_c(char *args)
             difftest_step(refpc, top->pc);
             refpc = top->pc;
           }
-      
-     
         }
       }
     }
