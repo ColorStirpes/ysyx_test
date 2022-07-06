@@ -128,7 +128,7 @@ void ptoa(void *p, char * buf){
 
 
 int printf(const char *fmt, ...) {
-  char pbuf[1024];
+  char pbuf[0xfff];
   memset(pbuf, '\0', sizeof(pbuf));
   
   int i = 0;
@@ -148,8 +148,8 @@ int vsprintf(char *out, const char *fmt, va_list ap) {
   char *pout = out;
   int count = 0;
     
-  char buff[128];
-  char buf[64];
+  char buff[0xfff];
+  char buf[0xfff];
   
  
   char * s;
@@ -278,10 +278,22 @@ int vsprintf(char *out, const char *fmt, va_list ap) {
   	                        s = va_arg(ap, char *);
   	        	        break;
   	        }
-                if(precision == -1)
-  	    	    memcpy(buff, s, strlen(s)+1);
-  	    	else
-  	    	    memcpy(buff, s, precision);
+                if(precision == -1){
+  	    	    //memcpy(buff, s, strlen(s)+1);
+  	    	    int i = 0;
+  	    	    for(i = 0; i < strlen(s); i++)
+  	    	    {
+			buff[i] = s[i];
+		    }
+		}
+  	    	else{
+  	    	    //memcpy(buff, s, precision);
+  	    	    int i = 0;
+  	    	    for(i = 0; i < strlen(s); i++)
+  	    	    {
+			buff[i] = s[i];
+		    }
+  	    	}
   	    	break;
   	    case 'c':
   	        switch(length){	
