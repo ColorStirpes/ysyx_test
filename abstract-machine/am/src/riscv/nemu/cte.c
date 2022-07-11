@@ -10,10 +10,16 @@ Context* __am_irq_handle(Context *c) {
     //printf("c->mcause:%lx\n",c->mcause);
     switch (c->mcause) {
       case -1: ev.event = EVENT_YIELD; break;
-      default: ev.event = EVENT_ERROR; break;
+      default: 
+              if(c->mcause >= 0 || c->mcause <= 19){
+                 ev.event = EVENT_SYSCALL; break;
+              }
+              else{
+                ev.event = EVENT_ERROR; break;
+              }
     }
 
-    c = user_handler(ev, c);
+    c = user_handler(ev, c);  //do_event
     assert(c != NULL);
   }
 

@@ -169,7 +169,8 @@ config ETRAC
   help
     Enable exception to debug your program.
     Note that this will significantly reduce the performance of NEMU.
-
+ 
+    
 config WATCHPOINT
   depends on TRACE
   bool "Enable watchpoint for debug"

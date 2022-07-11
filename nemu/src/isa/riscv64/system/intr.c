@@ -1,6 +1,5 @@
 #include <isa.h>
 
-
 word_t isa_raise_intr(word_t NO, vaddr_t epc) {
   /* TODO: Trigger an interrupt/exception with ``NO''.
    * Then return the address of the interrupt/exception vector.
@@ -12,7 +11,7 @@ word_t isa_raise_intr(word_t NO, vaddr_t epc) {
  // switch(NO){
     cpu.mepc = epc;
     cpu.mcause = NO;
-#ifdef CONFIG_ETRACE    
+#if CONFIG_ETRACE    
     log = "Environment call from M-mode\n";
 #endif
   //}
