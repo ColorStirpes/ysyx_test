@@ -30,8 +30,9 @@ int SDL_PollEvent(SDL_Event *event) {
     event->type = buf[1] == 'd' ? SDL_KEYDOWN : SDL_KEYUP;
     event->key.type = buf[1] == 'd' ? SDL_KEYDOWN : SDL_KEYUP;
     event->key.keysym.sym = SDLK_NONE;
-    char keyname_r[32] = {};
-    for(int i = 0; buf[i+3] != '\n'; i++){
+    char keyname_r[32] = {0};
+    int i = 0;
+    for(; buf[i+3] != '\n'; i++){
       keyname_r[i] = buf[i + 3];
     }
     

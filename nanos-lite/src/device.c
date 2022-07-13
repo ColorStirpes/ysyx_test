@@ -30,10 +30,10 @@ size_t events_read(void *buf, size_t offset, size_t len)
   if (keycode)
   {
     if(down){
-      sprintf(buff, "kd %s", keyname[keycode]);
+      sprintf(buff, "kd %s\n", keyname[keycode]);
     }
     else{
-      sprintf(buff, "ku %s", keyname[keycode]);
+      sprintf(buff, "ku %s\n", keyname[keycode]);
     }
   }
   else{
