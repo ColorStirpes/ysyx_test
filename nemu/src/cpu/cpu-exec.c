@@ -89,6 +89,10 @@ static void exec_once(Decode *s, vaddr_t pc) {
   ringbuf_write(&rb, s->logbuf, SIZEOF_INS);
 #endif
 
+#ifdef CONFIG_ITRACE_EVERY
+  printf("trace:%s  -> next_pc: %lx\n",s->logbuf,s->dnpc);
+#endif
+
 /*
   //TODO()
   //printf("**%s**\n",s->logbuf+18);

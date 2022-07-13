@@ -63,7 +63,7 @@ void SDL_BlitSurface(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst, SDL_
 }
 
 void SDL_FillRect(SDL_Surface *dst, SDL_Rect *dstrect, uint32_t color) {
-  assert(0);
+  printf("1111\n");
   int x,y,w,h;
   if(dstrect == NULL){
     NDL_DrawRect(&color, 0, 0, dst->w, dst->h);
@@ -81,6 +81,7 @@ void SDL_UpdateRect(SDL_Surface *s, int x, int y, int w, int h) {
     w = s->w;
     h = s->h;
   }
+
   
   uint32_t* color = (uint32_t*)s->pixels;
   uint32_t * pixels = (uint32_t *) malloc(w * h * sizeof(uint32_t));
@@ -106,7 +107,9 @@ void SDL_UpdateRect(SDL_Surface *s, int x, int y, int w, int h) {
         pixels[i * w + j] = a << 24 | r << 16 | g << 8 | b ;
       }
     }
+    printf("x:%d, y:%d, w:%d, h:%d\n",x,y,w,h);
     NDL_DrawRect(pixels, x, y, w, h);
+    //printf("out\n");
   }
   free(pixels);
 }

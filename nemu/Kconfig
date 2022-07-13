@@ -140,6 +140,11 @@ config ITRACE
   depends on TRACE && TARGET_NATIVE_ELF && ENGINE_INTERPRETER
   bool "Enable instruction tracer"
   default y
+  
+config ITRACE_EVERY
+  depends on TRACE && TARGET_NATIVE_ELF && ENGINE_INTERPRETER && ITRACE
+  bool "Enable printf every instruction tracer"
+  default y
 
 config ITRACE_COND
   depends on ITRACE

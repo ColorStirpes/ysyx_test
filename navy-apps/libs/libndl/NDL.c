@@ -86,13 +86,14 @@ void NDL_OpenCanvas(int *w, int *h)
 
 void NDL_DrawRect(uint32_t *pixels, int x, int y, int w, int h)
 {
+
   //居中
-  x += (screen_w - w) / 2;
-  y += (screen_h - h) / 2;
+  x += (screen_w - canvas_w) / 2;
+  y += (screen_h - canvas_h) / 2;
 
   int fb = open("/dev/fb", 0, 0);
 
-  //printf("x:%d, y:%d, w:%d, h:%d\n",x,y,w,h); 
+  printf("NDL x:%d, y:%d, w:%d, h:%d\n",x,y,w,h); 
 
 
   for(int i = 0; i < h; i++){
