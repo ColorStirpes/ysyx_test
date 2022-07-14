@@ -93,7 +93,7 @@ void NDL_DrawRect(uint32_t *pixels, int x, int y, int w, int h)
 
   int fb = open("/dev/fb", 0, 0);
 
-  printf("NDL x:%d, y:%d, w:%d, h:%d\n",x,y,w,h); 
+  //printf("NDL x:%d, y:%d, w:%d, h:%d\n",x,y,w,h); 
 
 
   for(int i = 0; i < h; i++){
