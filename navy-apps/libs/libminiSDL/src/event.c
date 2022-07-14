@@ -35,7 +35,7 @@ int SDL_PollEvent(SDL_Event *event) {
     for(; buf[i+3] != '\n'; i++){
       keyname_r[i] = buf[i + 3];
     }
-    
+
     for(int i = 0; i < NUM_KEYS; i++)
       if (strcmp(keyname[i], keyname_r) == 0) {
             event->key.keysym.sym = i;

@@ -7,7 +7,7 @@
 #endif
 
 #define NAME(key) \
-  [AM_KEY_##key] = #key,
+  [AM_KEY_##key] = #key,   
 
 static const char *keyname[256] __attribute__((used)) = {
     [AM_KEY_NONE] = "NONE",
@@ -26,7 +26,8 @@ size_t events_read(void *buf, size_t offset, size_t len)
   AM_INPUT_KEYBRD_T key = io_read(AM_INPUT_KEYBRD);
   int keycode = key.keycode;
   int down = key.keydown;
-
+  
+  
   if (keycode)
   {
     if(down){
@@ -35,22 +36,14 @@ size_t events_read(void *buf, size_t offset, size_t len)
     else{
       sprintf(buff, "ku %s\n", keyname[keycode]);
     }
+    strcpy(((char *)buf + offset), buff);
+    return len;
+
   }
   else{
     return 0;
   }
 
-  int size = 3 + sizeof(keyname[keycode]);
-  if (len < size)
-  {
-    strncpy(((char *)buf + offset), buff, len);
-    return len;
-  }
-  else
-  {
-    strncpy(((char *)buf + offset), buff, size);
-    return size;
-  }
 }
 
 
