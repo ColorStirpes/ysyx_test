@@ -51,8 +51,9 @@ size_t events_read(void *buf, size_t offset, size_t len)
     strncpy(((char *)buf + offset), buff, size);
     return size;
   }
-
 }
+
+
 AM_GPU_CONFIG_T gpu;
 size_t dispinfo_read(void *buf, size_t offset, size_t len)
 {
@@ -61,7 +62,6 @@ size_t dispinfo_read(void *buf, size_t offset, size_t len)
   strncpy(((char *)buf + offset), dispinfo, len);  
   return len;
 }
-
 
 
 size_t fb_write(const void *buf, size_t offset, size_t len)

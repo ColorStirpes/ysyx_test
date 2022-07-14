@@ -20,9 +20,10 @@ extern int fs_close(int fd);
 // }
 
 int syscall_gettimeofday(struct timeval *tv, struct timezone *tz){
+  long time_us = io_read(AM_TIMER_UPTIME).us;
   if(tv != NULL){
-    tv->tv_usec = io_read(AM_TIMER_UPTIME).us % 1000000;
-    tv->tv_sec  = io_read(AM_TIMER_UPTIME).us / 1000000;  
+    tv->tv_usec = time_us % 1000000;
+    tv->tv_sec  = time_us / 1000000;  
   }
   else{
     return -1;

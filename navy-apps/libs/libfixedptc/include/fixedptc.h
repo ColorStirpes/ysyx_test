@@ -170,9 +170,6 @@ static inline fixedpt fixedpt_floor(fixedpt A) {
 	else{
 		return A &(~FIXEDPT_FMASK);
 	}
-
-
-
 }
 
 static inline fixedpt fixedpt_ceil(fixedpt A) {
@@ -192,7 +189,7 @@ static inline fixedpt fixedpt_ceil(fixedpt A) {
 		return A;
 	}
 	else{
-			return fixedpt_add(fixedpt_floor(A),fixedpt_fromint(1));
+		return fixedpt_add(fixedpt_floor(A),fixedpt_fromint(1));
 	}
 }
 

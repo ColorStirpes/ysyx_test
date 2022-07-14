@@ -82,7 +82,6 @@ void SDL_UpdateRect(SDL_Surface *s, int x, int y, int w, int h) {
     h = s->h;
   }
 
-  
   uint32_t* color = (uint32_t*)s->pixels;
   uint32_t * pixels = (uint32_t *) malloc(w * h * 4);
   if(s->format->BitsPerPixel == 32){
