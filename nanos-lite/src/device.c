@@ -87,9 +87,42 @@ size_t fb_write(const void *buf, size_t offset, size_t len)
   }
 
   io_write(AM_GPU_FBDRAW, 0, y + i, buff, len, 1, true);
-  
   return ret;
 
+}
+
+
+
+
+
+Area sbuf;
+size_t fsb_write(const void *buf, size_t offset, size_t len){
+
+  printf("fsb_write\n");
+  sbuf.start = (uint8_t *)buf;
+
+  sbuf.end = sbuf.start + len;
+
+  io_write(AM_AUDIO_PLAY, sbuf);
+
+  sbuf.start += len;
+
+  return len;
+}
+
+size_t fsbctl_read(const void *buf, size_t offset, size_t len){
+  printf("fsbctl_read\n");
+  return io_read(AM_AUDIO_CONFIG).bufsize - io_read(AM_AUDIO_STATUS).count;
+}
+
+size_t fsbctl_write(const void *buf, size_t offset, size_t len){
+  printf("fsbctl_write\n");
+  int * buff = (int *)buf;
+  int freq = buff[0];
+  int channels = buff[1];
+  int samples = buff[2];
+  io_write(AM_AUDIO_CTRL, freq, channels, samples);
+  return len;
 }
 
 void init_device()

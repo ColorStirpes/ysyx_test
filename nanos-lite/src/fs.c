@@ -14,7 +14,7 @@ typedef struct {
   size_t open_offset;  //new
 } Finfo;
 
-enum {FD_STDIN, FD_STDOUT, FD_STDERR, FD_EVENT, FD_DISPINFO, FD_FB};
+enum {FD_STDIN, FD_STDOUT, FD_STDERR, FD_EVENT, FD_DISPINFO, FD_FB, FD_SB, FD_SBCTL};
 
 size_t invalid_read(void *buf, size_t offset, size_t len) {
   panic("should not reach here");
@@ -31,6 +31,9 @@ extern size_t serial_write(const void *buf, size_t offset, size_t len);
 extern size_t events_read(void *buf, size_t offset, size_t len);
 extern size_t dispinfo_read(void *buf, size_t offset, size_t len);
 extern size_t fb_write(const void *buf, size_t offset, size_t len);
+extern size_t fsb_write(const void *buf, size_t offset, size_t len);
+extern size_t fsbctl_read(void *buf, size_t offset, size_t len);
+extern size_t fsbctl_write(const void *buf, size_t offset, size_t len);
 
 /* This is the information about all files in disk. */
 static Finfo file_table[] __attribute__((used)) = {
@@ -40,12 +43,14 @@ static Finfo file_table[] __attribute__((used)) = {
   [FD_EVENT]    = {"/dev/events", 0, 0, events_read, invalid_write},
   [FD_DISPINFO] = {"/proc/dispinfo", 0, 0, dispinfo_read, invalid_write},
   [FD_FB]       = {"/dev/fb", 0, 0, invalid_read, fb_write},
+  [FD_SB]       = {"/dev/sb", 0, 0, invalid_read, fsb_write},
+  [FD_SBCTL]    = {"/dev/sbctl", 0, 0, fsbctl_read, fsbctl_write},
   #include "files.h"  //Load files.h (3 + .h)
   
 };
 
 int fs_open(const char *pathname, int flags, int mode){
-  //Log("Open the file <-----: %s",pathname);
+  Log("Open the file <-----: %s",pathname);
   int i = 0;
   int file_num = FILE_NUM;
   for(; i < file_num; i ++){

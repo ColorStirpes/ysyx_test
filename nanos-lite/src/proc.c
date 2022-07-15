@@ -28,7 +28,7 @@ void init_proc() {
   // load program here
   //char buf[1024] = {};
   //scanf("%s", buf);
-  naive_uload(NULL, "/bin/menu");
+  naive_uload(NULL, "/bin/nplayer");
   
 }
 
