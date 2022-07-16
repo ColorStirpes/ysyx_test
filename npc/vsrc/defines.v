@@ -22,6 +22,7 @@
 `define ysyx_22040931_REG_BUS     4 : 0
 `define ysyx_22040931_N_ENA        1'b0
 `define ysyx_22040931_ENA          1'b1
+`define ysyx_22040931_READ         1'b0 
 
 //ALUOP
 `define ysyx_22040931_NO      5'b00000

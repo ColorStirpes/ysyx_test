@@ -16,23 +16,16 @@ module ysyx_22040931_Btype(
 
     wire [9 : 0] chose = {opcode_3, opcode};
     wire [9 : 0] out;
-    wire [5 : 0] jumpb;
+    wire [2 : 0] jumpb;
 
-
-
-    assign jumpb[5] = (r_data1 == r_data2) ? 1'b1 : 1'b0;
-    assign jumpb[4] = (r_data1[63] != r_data2[63]) ? ((r_data1[63] < r_data2[63]) ? 1'b1 : 1'b0)
-                   : ((r_data1[62 : 0] >= r_data2[62 : 0]) ? 1'b1 : 1'b0);
-    assign jumpb[3] = (r_data1 >= r_data2) ? 1'b1 : 1'b0;//
-    assign jumpb[2] = (r_data1[63] != r_data2[63]) ? ((r_data1[63] > r_data2[63]) ? 1'b1 : 1'b0)
-                   : ((r_data1[62 : 0] < r_data2[62 : 0]) ? 1'b1 : 1'b0);
-    assign jumpb[1] = (r_data1 < r_data2) ? 1'b1 : 1'b0;//
-    assign jumpb[0] = (r_data1 != r_data2) ? 1'b1 : 1'b0;
+    assign jumpb[2] = {r_data1 - r_data2}[63];
+    assign jumpb[1] = {{1'b0, r_data1} - {1'b0, r_data2}}[64];
+    assign jumpb[0] = (r_data1 == r_data2) ? 1'b0 : 1'b1;
 
     ysyx_22040931_MuxD #(6, 10, 10) Btype (out, chose, 10'b0000_0000_0000_00, {
-    `ysyx_22040931_beq,  {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, jumpb[5]},
-    `ysyx_22040931_bge,  {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, jumpb[4]},
-    `ysyx_22040931_bgeu, {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, jumpb[3]},
+    `ysyx_22040931_beq,  {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, ~jumpb[0]},
+    `ysyx_22040931_bge,  {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, ~jumpb[2]},
+    `ysyx_22040931_bgeu, {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, ~jumpb[1]},
     `ysyx_22040931_blt,  {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, jumpb[2]},
     `ysyx_22040931_bltu, {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, jumpb[1]},
     `ysyx_22040931_bne,  {1'b1,`ysyx_22040931_No,`ysyx_22040931_NO, jumpb[0]}

@@ -15,7 +15,9 @@ module top(
     output wire             mem_ena,
     output wire              mem_wr,
     output wire [`ysyx_22040931_MEM_BUS] mem_addr,
-    output wire [`ysyx_22040931_DATA_BUS] mem_stor_data
+    output wire [`ysyx_22040931_DATA_BUS] mem_stor_data,
+
+    output wire [`ysyx_22040931_PC_BUS] difftest_pc
 
 );
 
@@ -52,6 +54,11 @@ always @(*) begin
       	mem_write(mem_addr, mem_stor_data, wmask);
 end
 
+
+
+wire mux_pc;
+wire [`ysyx_22040931_PC_BUS] branch;
+
 ysyx_22040931_IF ysyx_22040931_IF(
     .reset(reset),
     .clock(clock),
@@ -63,9 +70,6 @@ ysyx_22040931_IF ysyx_22040931_IF(
 
 );
 
-wire mux_pc;
-wire [`ysyx_22040931_PC_BUS] branch;
-
 
 ysyx_22040931_ID ysyx_22040931_ID(
 
@@ -74,7 +78,7 @@ ysyx_22040931_ID ysyx_22040931_ID(
     .clock(clock),
     .w_ena_i(wb_w_ena),
     .w_addr_i(wb_w_addr),
-    .w_data_i(wb_w_data),
+    .w_data_i(wb_w_data),      //////////////////
     //liushuixian
     .pc_i(pc),
     .instr(instr),

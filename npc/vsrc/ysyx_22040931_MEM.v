@@ -4,7 +4,7 @@
 module ysyx_22040931_MEM(
 
     input wire w_ena_i,
-    input wire [4 : 0] w_addr_i,
+    input wire [`ysyx_22040931_REG_BUS] w_addr_i,
     input wire [`ysyx_22040931_DATA_BUS] w_data_i,
     //mem
     input wire [2 : 0]   memwop,
@@ -20,7 +20,7 @@ module ysyx_22040931_MEM(
 
 
     output wire w_ena,
-    output wire [4 : 0] w_addr,
+    output wire [`ysyx_22040931_REG_BUS] w_addr,
     output wire [`ysyx_22040931_DATA_BUS] w_data,
     //mem
     output wire [1 : 0]       memop,//

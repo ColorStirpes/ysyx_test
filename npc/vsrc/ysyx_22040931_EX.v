@@ -5,7 +5,7 @@
 module ysyx_22040931_EX(
 
     input wire w_ena_i,
-    input wire [4 : 0] w_addr_i,
+    input wire [`ysyx_22040931_REG_BUS] w_addr_i,
     input wire [`ysyx_22040931_PC_BUS] pc_i,
     
     input wire [`ysyx_22040931_DATA_BUS] data1,
@@ -22,7 +22,7 @@ module ysyx_22040931_EX(
     
     //regfile
     output wire w_ena,
-    output wire [4 : 0] w_addr,
+    output wire [`ysyx_22040931_REG_BUS] w_addr,
     output wire [`ysyx_22040931_DATA_BUS] w_data,
     //mem
     output wire [2 : 0]   memwop,

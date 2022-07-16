@@ -70,7 +70,7 @@ void Inst(int instruct)
   if (instruct != 0 && !isebreak)
   {
     disassemble(p, log + sizeof(log) - p, top->pc, (uint8_t *)&instruct, 4);
-    printf("log: %s\n", log);
+    //printf("log: %s\n", log);
     fputs(log, fpw);
     fputs("\n", fpw);
   }
@@ -104,20 +104,13 @@ extern "C" void mem_write(long long waddr, long long wdata, char wmask)
     long long mask = 0;
     for(int i = 0; i < 8; i++){
       if((wmask >> i) & 0x01){
-        //printf("&wmask:%d, i: %d\n",wmask >> i, i);
         long long f = 0xff; 
         f = f << (i * 8);
         mask |= f;
-        //printf("...mask:%lld,  ff: %lld\n",mask, f);
       }
     }
     mask = ~mask;
-    //printf("wmask:%d, mask:%lld\n",wmask, mask);
-
     long long wdata_z = wdata | (pmem_read((waddr & ~0x7ull), 8) & mask);
-
-    //printf("w_data_z:%lld,w_data:%lld, mask:%lld\n",wdata_z,wdata, mask);
-
     pmem_write((waddr & ~0x7ull), 8, wdata_z);
   }
   }
@@ -261,9 +254,8 @@ static int cmd_si(char *args)
     
   }
 
-  printf("pc:0x%lx, instr:0x%08lx\n", top->pc, pmem_read(top->pc, 4));
-  if(top->fetch_enb == 1){
-    //printf("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\n");
+  //printf("pc:0x%lx, instr:0x%08lx\n", top->pc, pmem_read(top->pc, 4));
+  if(top->clock == 1){
     if(refpc == 0){
       refpc = top->pc;
     }
@@ -302,8 +294,8 @@ static int cmd_c(char *args)
       }
 
       if (main_time % 10 == 0){
-        printf("pc:0x%lx, instr:0x%08lx\n", top->pc, pmem_read(top->pc, 4));
-        if(top->fetch_enb == 1){
+        //printf("pc:0x%lx, instr:0x%08lx\n", top->pc, pmem_read(top->pc, 4));
+        if(top->clock == 1){
           if(refpc == 0){
             refpc = top->pc;
           }
@@ -316,7 +308,6 @@ static int cmd_c(char *args)
         }
       }
     }
-    //printf("*******************\n");
     step_and_dump_wave();
     if (isebreak || is_exit)
     {
@@ -356,11 +347,9 @@ void sdb_mainloop()
     i++;
   }
   str[i] = '\0';
-  // scanf("%s",str);
-  printf("ss:%s\n", str);
+  //printf("ss:%s\n", str);
   while (str[0] != '\0')
   {
-    // printf("********\n");
     char *str_end = str + strlen(str);
 
     /* extract the first token as the command */

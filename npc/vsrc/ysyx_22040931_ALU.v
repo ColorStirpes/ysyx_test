@@ -47,32 +47,12 @@ assign num2_sw = num2[31 : 0];
     
             end
             `ysyx_22040931_COM: begin
+                out = {63'b0, {num1 - num2}[63]};
 
-                if(num1[63] == num2[63]) begin
-                    if(num1[62 :0] < num2[62 :0]) begin
-                        out = 1;
-                    end
-                    else begin
-                        out = 0;
-                    end
-                end
-                else begin
-                    if(num1[63] > num2[63]) begin
-                        out = 1;
-                    end
-                    else begin
-                        out = 0;
-                    end
-                end
             end
             `ysyx_22040931_COMU: begin
+                out = {63'b0, {{1'b0, num1} - {1'b0, num2}}[64]};
 
-                if(num1 < num2) begin
-                    out = 1;
-                end
-                else begin
-                    out = 0;
-                end
             end
             `ysyx_22040931_SHIL:begin
                 out = num1 << num2[5 : 0];

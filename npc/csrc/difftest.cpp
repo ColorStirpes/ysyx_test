@@ -105,8 +105,8 @@ bool isa_difftest_checkregs(CPU_state *ref_r, vaddr_t pc) {
   
   if(ref_r->pc != cpuu.pc){
     printf("ref_r->pc:%lx,pc:%lx\n",ref_r->pc,cpuu.pc);
-      eqreg = false;
-      printf("The next pc is different after executing instruction at PC = 0x%lx\n", pc);
+    eqreg = false;
+    printf("The next pc is different after executing instruction at PC = 0x%lx\n", pc);
   }
       
   return eqreg;

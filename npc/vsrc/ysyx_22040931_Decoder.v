@@ -51,7 +51,7 @@ module ysyx_22040931_Decoder(
     
     ysyx_22040931_MuxD #(6, 3, 11) opt_mux ({w_ena, r_ena1, r_ena2, exop, aluop}, 
                                         ztype, 
-                            11'b0000_0000_00, 
+                             11'b0000_0000_00, 
     {
 
         `ysyx_22040931_Rt,    {1'b1, 1'b1, 1'b1, r_exop, r_aluop}, 

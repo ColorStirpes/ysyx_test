@@ -30,6 +30,7 @@ VL_MODULE(Vtop___024root) {
     VL_OUT64(pc,63,0);
     VL_OUT64(mem_addr,63,0);
     VL_OUT64(mem_stor_data,63,0);
+    VL_OUT64(difftest_pc,63,0);
 
     // LOCAL SIGNALS
     // Anonymous structures to workaround compiler member-count bugs
@@ -47,7 +48,7 @@ VL_MODULE(Vtop___024root) {
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__Itype3__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__Itype4__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Stype__DOT__Stype__DOT__i1__DOT__hit;
-        CData/*5:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__jumpb;
+        CData/*2:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__jumpb;
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Jtype__DOT__Jtype__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Utype__DOT__Utype__DOT__i1__DOT__hit;
@@ -101,6 +102,7 @@ VL_MODULE(Vtop___024root) {
     };
     struct {
         QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__r_data2;
+        QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__bbranch;
         QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__branch_mux__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_EX__DOT__result;
@@ -163,9 +165,9 @@ VL_MODULE(Vtop___024root) {
         VlUnpacked<QData/*63:0*/, 3> top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list;
         VlUnpacked<VlWide<3>/*66:0*/, 2> top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__pair_list;
         VlUnpacked<CData/*2:0*/, 2> top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__key_list;
-        VlUnpacked<QData/*63:0*/, 2> top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__data_list;
     };
     struct {
+        VlUnpacked<QData/*63:0*/, 2> top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__data_list;
         VlUnpacked<CData/*4:0*/, 7> top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__pair_list;
         VlUnpacked<CData/*2:0*/, 7> top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__key_list;
         VlUnpacked<CData/*1:0*/, 7> top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__data_list;

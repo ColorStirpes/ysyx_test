@@ -22,6 +22,7 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , mem_wr{vlSymsp->TOP.mem_wr}
     , mem_addr{vlSymsp->TOP.mem_addr}
     , mem_stor_data{vlSymsp->TOP.mem_stor_data}
+    , difftest_pc{vlSymsp->TOP.difftest_pc}
     , rootp{&(vlSymsp->TOP)}
 {
 }

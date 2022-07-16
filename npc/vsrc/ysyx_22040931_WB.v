@@ -4,14 +4,14 @@
 module ysyx_22040931_WB(
 
     input wire w_ena_i,
-    input wire [4 : 0] w_addr_i,
+    input wire [`ysyx_22040931_REG_BUS] w_addr_i,
     input wire [`ysyx_22040931_DATA_BUS] w_data_i,
     //liushuixian
     input wire [`ysyx_22040931_PC_BUS] pc_i,
     
 
     output wire w_ena,
-    output wire [4 : 0] w_addr,
+    output wire [`ysyx_22040931_REG_BUS] w_addr,
     output wire [`ysyx_22040931_DATA_BUS] w_data
 );
 

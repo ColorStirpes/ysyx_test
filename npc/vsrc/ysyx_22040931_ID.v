@@ -7,7 +7,7 @@ module ysyx_22040931_ID(
     input wire reset,
     input wire clock,
     input wire w_ena_i,
-    input wire [4 : 0] w_addr_i,
+    input wire [`ysyx_22040931_REG_BUS] w_addr_i,
     input wire [`ysyx_22040931_DATA_BUS] w_data_i,
     //liushuixian
     input wire [`ysyx_22040931_PC_BUS] pc_i,
@@ -20,7 +20,7 @@ module ysyx_22040931_ID(
     output wire mux_pc,
     //regfile
     output wire 		    w_ena,
-    output wire [4 : 0]    w_addr,
+    output wire [`ysyx_22040931_REG_BUS]    w_addr,
     output wire [`ysyx_22040931_DATA_BUS] data1,
     output wire [`ysyx_22040931_DATA_BUS] data2,
     //ex
@@ -49,7 +49,7 @@ assign pc_o = pc_i;
     wire [`ysyx_22040931_PC_BUS] jbranch;
     assign ibranch = data1 + imm;
     assign bbranch = pc_i + imm;
-    assign jbranch = pc_i + imm;
+    assign jbranch = bbranch;
 
     ysyx_22040931_MuxD #(3, 3, 64)  branch_mux (
         branch,
