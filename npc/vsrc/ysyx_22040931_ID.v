@@ -12,15 +12,28 @@ module ysyx_22040931_ID(
     //liushuixian
     input wire [`ysyx_22040931_PC_BUS] pc_i,
     input wire [`ysyx_22040931_INST_BUS] instr,
+    //bypass
+    input wire ex_w_ena,
+    input wire [`ysyx_22040931_REG_BUS] ex_w_addr,
+    input wire [`ysyx_22040931_DATA_BUS] ex_w_data,
+    input wire mem_w_ena,
+    input wire [`ysyx_22040931_REG_BUS] mem_w_addr,
+    input wire [`ysyx_22040931_DATA_BUS] mem_w_data,
+    //load hazard
+    input wire ex_mem_ena,
+    input wire ex_mem_wr,
 
+
+    //load hazard 
+    output wire stall,
     //liushuixian
     output wire [`ysyx_22040931_PC_BUS] pc_o,    
     //branch
     output wire [`ysyx_22040931_PC_BUS] branch,      //////////////////////////////////
     output wire mux_pc,
     //regfile
-    output wire 		    w_ena,
-    output wire [`ysyx_22040931_REG_BUS]    w_addr,
+    output wire 		   w_ena,
+    output wire [`ysyx_22040931_REG_BUS] w_addr,
     output wire [`ysyx_22040931_DATA_BUS] data1,
     output wire [`ysyx_22040931_DATA_BUS] data2,
     //ex
@@ -34,12 +47,12 @@ module ysyx_22040931_ID(
 
 );
 
-
 assign pc_o = pc_i;
 
     wire [2 : 0]     ztype;
     wire 		    r_ena1;
     wire [4 : 0]   r_addr1;
+    wire [`ysyx_22040931_DATA_BUS] r_data1;
     wire 		    r_ena2;
     wire [4 : 0]   r_addr2;
     wire [`ysyx_22040931_DATA_BUS] r_data2;
@@ -66,7 +79,7 @@ assign pc_o = pc_i;
 
     .instr(instr),
     .r_data1(data1),
-    .r_data2(r_data2),
+    .r_data2(data2),
 	.w_ena(w_ena),
 	.w_addr(w_addr),
     .r_ena1(r_ena1),
@@ -95,14 +108,14 @@ assign pc_o = pc_i;
 
     ysyx_22040931_Regfile ysyx_22040931_Regfile(
 	.reset(reset),
-    	.clock(clock),
+    .clock(clock),
 	.w_ena(w_ena_i),
 	.w_addr(w_addr_i),
 	.w_data(w_data_i),
 	
 	.r_ena1(r_ena1),
 	.r_addr1(r_addr1),
-	.r_data1(data1),      //OUT1
+	.r_data1(r_data1),     //OUT1
 	
 	.r_ena2(r_ena2),
 	.r_addr2(r_addr2),
@@ -110,7 +123,37 @@ assign pc_o = pc_i;
 
     );
     
-    assign data2 = r_ena2 ? r_data2 : imm;
+    //assign data2 = r_ena2 ? r_data2 : imm;
+
+
+
+    //load hazard
+    assign stall = (ex_w_addr == reg1_addr) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 
+                   (ex_w_addr == reg2_addr) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 1'b0;
+
+    //read bypass
+    wire need_ex1, need_ex2, need_mem1, need_mem2;
+    assign need_ex1 = (ex_w_addr == r_addr1) ? ((ex_w_addr == 5'b00000) ? 1'b0 : ex_w_ena) : 1'b0;
+    assign need_ex2 = (ex_w_addr == r_addr2) ? ((ex_w_addr == 5'b00000) ? 1'b0 : ex_w_ena) : 1'b0;
+    assign need_mem1 = (mem_w_addr == r_addr1) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena) : 1'b0;
+    assign need_mem2 = (mem_w_addr == r_addr2) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena) : 1'b0;
+
+    ysyx_22040931_MuxD #(4, 4, 13) reg_data1 (data1, {r_ena1, ~r_ena1, need_ex1, need_mem1}, `YSYX210457_ZERO_WORD, {
+        4'b1000,  r_data1,
+        4'b0100,  imm,
+        4'b1010,  ex_w_data,
+        4'b1001,  mem_w_data
+    });
+
+    ysyx_22040931_MuxD #(4, 4, 13) reg_data2 (data2, {r_ena2, ~r_ena2, need_ex2, need_mem2}, `YSYX210457_ZERO_WORD, {
+        4'b1000,  r_data2,
+        4'b0100,  imm,
+        4'b1010,  ex_w_data,
+        4'b1001,  mem_w_data
+    });
+
+
+
 
 
 

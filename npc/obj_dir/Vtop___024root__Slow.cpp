@@ -3530,7 +3530,7 @@ void Vtop___024root___settle__TOP__1(Vtop___024root* vlSelf) {
                             ? (vlSelf->top__DOT__data1 
                                & vlSelf->top__DOT__data2)
                             : (vlSelf->top__DOT__data1 
-                               + vlSelf->top__DOT__data2))
+                               - vlSelf->top__DOT__data2))
                         : ((1U & (IData)(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT____Vcellout__opt_mux____pinNumber1))
                             ? (vlSelf->top__DOT__data1 
                                + vlSelf->top__DOT__data2)

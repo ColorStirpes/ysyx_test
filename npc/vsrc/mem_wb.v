@@ -4,6 +4,13 @@
 module mem_wb(
     input wire reset,
     input wire clock,
+    input wire flush,
+    input wire stall,
+    //wo shou
+    input wire ex_valid,
+    //input wire wb_ready,
+    output wire mem_ready,
+    output wire mem_valid,
     //liushuixian
     input wire [`ysyx_22040931_PC_BUS] MEM_pc,
     //regfile 
@@ -19,6 +26,25 @@ module mem_wb(
     output reg [`ysyx_22040931_PC_BUS] WB_pc
 );
 
+//assign wb_valid = ~stall;
+//assign mem_ready = wb_valid & wb_ready;
+
+reg mem_now_valid;
+wire mem_go;
+assign mem_go = stall;
+assign mem_ready = !(mem_now_valid & ~flush) | mem_go;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
+assign mem_valid = (mem_now_valid & ~flush) & mem_go;
+
+    always@(posedge clock) begin
+        if(reset == 1'b1) begin
+            mem_now_valid <= 0;
+        end
+        else if(ex_ready) begin
+            mem_now_vaild <= ex_valid;
+        end
+    end
+
+
     always @(posedge clock) begin
         if(reset == 1'b1) begin
             WB_w_ena <= `ysyx_22040931_N_ENA;
@@ -27,10 +53,12 @@ module mem_wb(
             WB_pc <= `ysyx_22040931_ZERO_PC;
         end
         else begin
-            WB_w_ena <= MEM_w_ena;
-            WB_w_addr <= MEM_w_addr;
-            WB_w_data <= MEM_w_data;
-            WB_pc <= MEM_pc;
+            if(ex_valid & mem_ready) begin
+                WB_w_ena <= MEM_w_ena;
+                WB_w_addr <= MEM_w_addr;
+                WB_w_data <= MEM_w_data;
+                WB_pc <= MEM_pc;
+            end
         end
     end
 

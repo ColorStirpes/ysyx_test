@@ -4,10 +4,17 @@
 module id_ex(
     input wire reset,
     input wire clock,
+    input wire flush,     //记得flush与各级使能相与
+    input wire stall,
+    //wo shou
+    input wire if_valid,
+    input wire ex_ready,
+    output wire id_ready,
+    output wire id_valid,
     input wire [`ysyx_22040931_PC_BUS] ID_pc,  
     //regfile
-    input wire 		          ID_w_ena,
-    input wire [`ysyx_22040931_REG_BUS]       ID_w_addr,
+    input wire 		     ID_w_ena,
+    input wire [`ysyx_22040931_REG_BUS]  ID_w_addr,
     input wire [`ysyx_22040931_DATA_BUS] ID_data1,
     input wire [`ysyx_22040931_DATA_BUS] ID_data2,
     input wire [`ysyx_22040931_DATA_BUS] ID_imm,
@@ -39,6 +46,24 @@ module id_ex(
     output reg [`ysyx_22040931_PC_BUS] EX_pc
 );
 
+//assign ex_valid = ~stall;
+//assign id_ready = ex_valid & ex_ready;
+reg id_now_valid;
+wire id_go;
+assign id_go = stall;
+assign id_ready = !(id_now_valid & ~flush) | id_go & ex_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
+assign id_valid = (id_now_valid & ~flush) & id_go;
+
+    always@(posedge clock) begin
+        if(reset == 1'b1) begin
+            id_now_valid <= 0;
+        end
+        else if(id_ready) begin
+            id_now_vaild <= if_valid;
+        end
+    end
+
+
     always @(posedge clock) begin
         if(reset == 1'b1) begin
             EX_w_ena <= `ysyx_22040931_N_ENA;
@@ -55,18 +80,20 @@ module id_ex(
             EX_pc <= `ysyx_22040931_ZERO_PC;
         end
         else begin
-            EX_w_ena <= ID_w_ena;
-            EX_w_addr <= ID_w_addr;
-            EX_data1 <= ID_data1;
-            EX_data2 <= ID_data2;
-            EX_imm <= ID_imm;
-            EX_exop <= ID_exop;
-            EX_aluop <= ID_aluop;
-            EX_memwop <= ID_memwop;
-            EX_memrop <= ID_memrop;
-            EX_mem_ena <= ID_mem_ena;
-            EX_mem_wr <= ID_mem_wr;
-            EX_pc <= ID_pc;
+            if(if_valid & id_ready) begin
+                EX_w_ena <= ID_w_ena;
+                EX_w_addr <= ID_w_addr;
+                EX_data1 <= ID_data1;
+                EX_data2 <= ID_data2;
+                EX_imm <= ID_imm;
+                EX_exop <= ID_exop;
+                EX_aluop <= ID_aluop;
+                EX_memwop <= ID_memwop;
+                EX_memrop <= ID_memrop;
+                EX_mem_ena <= ID_mem_ena;
+                EX_mem_wr <= ID_mem_wr;
+                EX_pc <= ID_pc;
+            end
         end
     end
 

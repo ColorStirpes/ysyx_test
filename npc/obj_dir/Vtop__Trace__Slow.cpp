@@ -22,37 +22,37 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
     if (false && tracep && c) {}  // Prevent unused
     // Body
     {
-        tracep->declBit(c+785,"reset", false,-1);
-        tracep->declBit(c+786,"clock", false,-1);
-        tracep->declBus(c+787,"instr", false,-1, 31,0);
-        tracep->declQuad(c+788,"momory_data", false,-1, 63,0);
-        tracep->declBit(c+790,"fetch_enb", false,-1);
-        tracep->declQuad(c+791,"pc", false,-1, 63,0);
-        tracep->declBus(c+793,"memop", false,-1, 1,0);
-        tracep->declBit(c+794,"mem_ena", false,-1);
-        tracep->declBit(c+795,"mem_wr", false,-1);
-        tracep->declQuad(c+796,"mem_addr", false,-1, 63,0);
-        tracep->declQuad(c+798,"mem_stor_data", false,-1, 63,0);
-        tracep->declQuad(c+800,"difftest_pc", false,-1, 63,0);
-        tracep->declBit(c+785,"top reset", false,-1);
-        tracep->declBit(c+786,"top clock", false,-1);
-        tracep->declBus(c+787,"top instr", false,-1, 31,0);
-        tracep->declQuad(c+788,"top momory_data", false,-1, 63,0);
-        tracep->declBit(c+790,"top fetch_enb", false,-1);
-        tracep->declQuad(c+791,"top pc", false,-1, 63,0);
-        tracep->declBus(c+793,"top memop", false,-1, 1,0);
-        tracep->declBit(c+794,"top mem_ena", false,-1);
-        tracep->declBit(c+795,"top mem_wr", false,-1);
-        tracep->declQuad(c+796,"top mem_addr", false,-1, 63,0);
-        tracep->declQuad(c+798,"top mem_stor_data", false,-1, 63,0);
-        tracep->declQuad(c+800,"top difftest_pc", false,-1, 63,0);
+        tracep->declBit(c+783,"reset", false,-1);
+        tracep->declBit(c+784,"clock", false,-1);
+        tracep->declBus(c+785,"instr", false,-1, 31,0);
+        tracep->declQuad(c+786,"momory_data", false,-1, 63,0);
+        tracep->declBit(c+788,"fetch_enb", false,-1);
+        tracep->declQuad(c+789,"pc", false,-1, 63,0);
+        tracep->declBus(c+791,"memop", false,-1, 1,0);
+        tracep->declBit(c+792,"mem_ena", false,-1);
+        tracep->declBit(c+793,"mem_wr", false,-1);
+        tracep->declQuad(c+794,"mem_addr", false,-1, 63,0);
+        tracep->declQuad(c+796,"mem_stor_data", false,-1, 63,0);
+        tracep->declQuad(c+798,"difftest_pc", false,-1, 63,0);
+        tracep->declBit(c+783,"top reset", false,-1);
+        tracep->declBit(c+784,"top clock", false,-1);
+        tracep->declBus(c+785,"top instr", false,-1, 31,0);
+        tracep->declQuad(c+786,"top momory_data", false,-1, 63,0);
+        tracep->declBit(c+788,"top fetch_enb", false,-1);
+        tracep->declQuad(c+789,"top pc", false,-1, 63,0);
+        tracep->declBus(c+791,"top memop", false,-1, 1,0);
+        tracep->declBit(c+792,"top mem_ena", false,-1);
+        tracep->declBit(c+793,"top mem_wr", false,-1);
+        tracep->declQuad(c+794,"top mem_addr", false,-1, 63,0);
+        tracep->declQuad(c+796,"top mem_stor_data", false,-1, 63,0);
+        tracep->declQuad(c+798,"top difftest_pc", false,-1, 63,0);
         tracep->declQuad(c+196,"top rdata", false,-1, 63,0);
-        tracep->declBus(c+802,"top wmask", false,-1, 7,0);
+        tracep->declBus(c+800,"top wmask", false,-1, 7,0);
         tracep->declBit(c+198,"top mux_pc", false,-1);
         tracep->declQuad(c+199,"top branch", false,-1, 63,0);
-        tracep->declQuad(c+791,"top id_pc", false,-1, 63,0);
+        tracep->declQuad(c+789,"top id_pc", false,-1, 63,0);
         tracep->declBit(c+201,"top id_w_ena", false,-1);
-        tracep->declBus(c+803,"top id_w_addr", false,-1, 4,0);
+        tracep->declBus(c+801,"top id_w_addr", false,-1, 4,0);
         tracep->declQuad(c+202,"top data1", false,-1, 63,0);
         tracep->declQuad(c+204,"top data2", false,-1, 63,0);
         tracep->declBit(c+206,"top id_mem_ena", false,-1);
@@ -63,7 +63,7 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBus(c+212,"top id_memwop", false,-1, 2,0);
         tracep->declBus(c+213,"top id_memrop", false,-1, 2,0);
         tracep->declBit(c+201,"top ex_w_ena", false,-1);
-        tracep->declBus(c+803,"top ex_w_addr", false,-1, 4,0);
+        tracep->declBus(c+801,"top ex_w_addr", false,-1, 4,0);
         tracep->declQuad(c+214,"top ex_w_data", false,-1, 63,0);
         tracep->declBus(c+212,"top memwop", false,-1, 2,0);
         tracep->declBus(c+213,"top memrop", false,-1, 2,0);
@@ -71,38 +71,38 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBit(c+207,"top ex_mem_wr", false,-1);
         tracep->declQuad(c+216,"top ex_mem_addr", false,-1, 63,0);
         tracep->declQuad(c+204,"top ex_mem_data", false,-1, 63,0);
-        tracep->declQuad(c+791,"top ex_pc", false,-1, 63,0);
+        tracep->declQuad(c+789,"top ex_pc", false,-1, 63,0);
         tracep->declBit(c+201,"top mem_w_ena", false,-1);
-        tracep->declBus(c+803,"top mem_w_addr", false,-1, 4,0);
-        tracep->declQuad(c+804,"top mem_w_data", false,-1, 63,0);
-        tracep->declQuad(c+791,"top mem_pc", false,-1, 63,0);
+        tracep->declBus(c+801,"top mem_w_addr", false,-1, 4,0);
+        tracep->declQuad(c+802,"top mem_w_data", false,-1, 63,0);
+        tracep->declQuad(c+789,"top mem_pc", false,-1, 63,0);
         tracep->declBit(c+201,"top wb_w_ena", false,-1);
-        tracep->declBus(c+803,"top wb_w_addr", false,-1, 4,0);
-        tracep->declQuad(c+804,"top wb_w_data", false,-1, 63,0);
-        tracep->declBit(c+785,"top ysyx_22040931_IF reset", false,-1);
-        tracep->declBit(c+786,"top ysyx_22040931_IF clock", false,-1);
+        tracep->declBus(c+801,"top wb_w_addr", false,-1, 4,0);
+        tracep->declQuad(c+802,"top wb_w_data", false,-1, 63,0);
+        tracep->declBit(c+783,"top ysyx_22040931_IF reset", false,-1);
+        tracep->declBit(c+784,"top ysyx_22040931_IF clock", false,-1);
         tracep->declBit(c+198,"top ysyx_22040931_IF mux_pc", false,-1);
         tracep->declQuad(c+199,"top ysyx_22040931_IF branch", false,-1, 63,0);
-        tracep->declBit(c+790,"top ysyx_22040931_IF fetch_enb", false,-1);
-        tracep->declQuad(c+791,"top ysyx_22040931_IF if_pc", false,-1, 63,0);
-        tracep->declQuad(c+806,"top ysyx_22040931_IF pc_i", false,-1, 63,0);
-        tracep->declBit(c+785,"top ysyx_22040931_IF ysyx_22040931_PC reset", false,-1);
-        tracep->declBit(c+786,"top ysyx_22040931_IF ysyx_22040931_PC clock", false,-1);
-        tracep->declQuad(c+806,"top ysyx_22040931_IF ysyx_22040931_PC pc_i", false,-1, 63,0);
-        tracep->declBit(c+790,"top ysyx_22040931_IF ysyx_22040931_PC fetch_enb", false,-1);
-        tracep->declQuad(c+791,"top ysyx_22040931_IF ysyx_22040931_PC pc_o", false,-1, 63,0);
-        tracep->declBit(c+785,"top ysyx_22040931_ID reset", false,-1);
-        tracep->declBit(c+786,"top ysyx_22040931_ID clock", false,-1);
+        tracep->declBit(c+788,"top ysyx_22040931_IF fetch_enb", false,-1);
+        tracep->declQuad(c+789,"top ysyx_22040931_IF if_pc", false,-1, 63,0);
+        tracep->declQuad(c+804,"top ysyx_22040931_IF pc_i", false,-1, 63,0);
+        tracep->declBit(c+783,"top ysyx_22040931_IF ysyx_22040931_PC reset", false,-1);
+        tracep->declBit(c+784,"top ysyx_22040931_IF ysyx_22040931_PC clock", false,-1);
+        tracep->declQuad(c+804,"top ysyx_22040931_IF ysyx_22040931_PC pc_i", false,-1, 63,0);
+        tracep->declBit(c+788,"top ysyx_22040931_IF ysyx_22040931_PC fetch_enb", false,-1);
+        tracep->declQuad(c+789,"top ysyx_22040931_IF ysyx_22040931_PC pc_o", false,-1, 63,0);
+        tracep->declBit(c+783,"top ysyx_22040931_ID reset", false,-1);
+        tracep->declBit(c+784,"top ysyx_22040931_ID clock", false,-1);
         tracep->declBit(c+201,"top ysyx_22040931_ID w_ena_i", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_ID w_addr_i", false,-1, 4,0);
-        tracep->declQuad(c+804,"top ysyx_22040931_ID w_data_i", false,-1, 63,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_ID pc_i", false,-1, 63,0);
-        tracep->declBus(c+787,"top ysyx_22040931_ID instr", false,-1, 31,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_ID pc_o", false,-1, 63,0);
+        tracep->declBus(c+801,"top ysyx_22040931_ID w_addr_i", false,-1, 4,0);
+        tracep->declQuad(c+802,"top ysyx_22040931_ID w_data_i", false,-1, 63,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_ID pc_i", false,-1, 63,0);
+        tracep->declBus(c+785,"top ysyx_22040931_ID instr", false,-1, 31,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_ID pc_o", false,-1, 63,0);
         tracep->declQuad(c+199,"top ysyx_22040931_ID branch", false,-1, 63,0);
         tracep->declBit(c+198,"top ysyx_22040931_ID mux_pc", false,-1);
         tracep->declBit(c+201,"top ysyx_22040931_ID w_ena", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_ID w_addr", false,-1, 4,0);
+        tracep->declBus(c+801,"top ysyx_22040931_ID w_addr", false,-1, 4,0);
         tracep->declQuad(c+202,"top ysyx_22040931_ID data1", false,-1, 63,0);
         tracep->declQuad(c+204,"top ysyx_22040931_ID data2", false,-1, 63,0);
         tracep->declBit(c+206,"top ysyx_22040931_ID mem_ena", false,-1);
@@ -114,29 +114,29 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBus(c+213,"top ysyx_22040931_ID memrop", false,-1, 2,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ztype", false,-1, 2,0);
         tracep->declBit(c+219,"top ysyx_22040931_ID r_ena1", false,-1);
-        tracep->declBus(c+808,"top ysyx_22040931_ID r_addr1", false,-1, 4,0);
+        tracep->declBus(c+806,"top ysyx_22040931_ID r_addr1", false,-1, 4,0);
         tracep->declBit(c+220,"top ysyx_22040931_ID r_ena2", false,-1);
-        tracep->declBus(c+809,"top ysyx_22040931_ID r_addr2", false,-1, 4,0);
+        tracep->declBus(c+807,"top ysyx_22040931_ID r_addr2", false,-1, 4,0);
         tracep->declQuad(c+221,"top ysyx_22040931_ID r_data2", false,-1, 63,0);
         tracep->declQuad(c+223,"top ysyx_22040931_ID ibranch", false,-1, 63,0);
         tracep->declQuad(c+225,"top ysyx_22040931_ID bbranch", false,-1, 63,0);
         tracep->declQuad(c+225,"top ysyx_22040931_ID jbranch", false,-1, 63,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID branch_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID branch_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_ID branch_mux DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID branch_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID branch_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_ID branch_mux DATA_LEN", false,-1, 31,0);
         tracep->declQuad(c+199,"top ysyx_22040931_ID branch_mux out", false,-1, 63,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID branch_mux key", false,-1, 2,0);
-        tracep->declQuad(c+817,"top ysyx_22040931_ID branch_mux default_out", false,-1, 63,0);
+        tracep->declQuad(c+815,"top ysyx_22040931_ID branch_mux default_out", false,-1, 63,0);
         tracep->declArray(c+227,"top ysyx_22040931_ID branch_mux lut", false,-1, 200,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID branch_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID branch_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_ID branch_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID branch_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID branch_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID branch_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_ID branch_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID branch_mux i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declQuad(c+199,"top ysyx_22040931_ID branch_mux i1 out", false,-1, 63,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID branch_mux i1 key", false,-1, 2,0);
-        tracep->declQuad(c+817,"top ysyx_22040931_ID branch_mux i1 default_out", false,-1, 63,0);
+        tracep->declQuad(c+815,"top ysyx_22040931_ID branch_mux i1 default_out", false,-1, 63,0);
         tracep->declArray(c+227,"top ysyx_22040931_ID branch_mux i1 lut", false,-1, 200,0);
-        tracep->declBus(c+820,"top ysyx_22040931_ID branch_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+818,"top ysyx_22040931_ID branch_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<3; i++) {
                 tracep->declArray(c+234+i*3,"top ysyx_22040931_ID branch_mux i1 pair_list", true,(i+0), 66,0);}}
         {int i; for (i=0; i<3; i++) {
@@ -145,16 +145,16 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declQuad(c+246+i*2,"top ysyx_22040931_ID branch_mux i1 data_list", true,(i+0), 63,0);}}
         tracep->declQuad(c+252,"top ysyx_22040931_ID branch_mux i1 lut_out", false,-1, 63,0);
         tracep->declBit(c+254,"top ysyx_22040931_ID branch_mux i1 hit", false,-1);
-        tracep->declBus(c+821,"top ysyx_22040931_ID branch_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+787,"top ysyx_22040931_ID ysyx_22040931_Decoder instr", false,-1, 31,0);
+        tracep->declBus(c+819,"top ysyx_22040931_ID branch_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+785,"top ysyx_22040931_ID ysyx_22040931_Decoder instr", false,-1, 31,0);
         tracep->declQuad(c+202,"top ysyx_22040931_ID ysyx_22040931_Decoder r_data1", false,-1, 63,0);
         tracep->declQuad(c+221,"top ysyx_22040931_ID ysyx_22040931_Decoder r_data2", false,-1, 63,0);
         tracep->declBit(c+201,"top ysyx_22040931_ID ysyx_22040931_Decoder w_ena", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_ID ysyx_22040931_Decoder w_addr", false,-1, 4,0);
+        tracep->declBus(c+801,"top ysyx_22040931_ID ysyx_22040931_Decoder w_addr", false,-1, 4,0);
         tracep->declBit(c+219,"top ysyx_22040931_ID ysyx_22040931_Decoder r_ena1", false,-1);
-        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder r_addr1", false,-1, 4,0);
+        tracep->declBus(c+806,"top ysyx_22040931_ID ysyx_22040931_Decoder r_addr1", false,-1, 4,0);
         tracep->declBit(c+220,"top ysyx_22040931_ID ysyx_22040931_Decoder r_ena2", false,-1);
-        tracep->declBus(c+809,"top ysyx_22040931_ID ysyx_22040931_Decoder r_addr2", false,-1, 4,0);
+        tracep->declBus(c+807,"top ysyx_22040931_ID ysyx_22040931_Decoder r_addr2", false,-1, 4,0);
         tracep->declBit(c+206,"top ysyx_22040931_ID ysyx_22040931_Decoder mem_ena", false,-1);
         tracep->declBit(c+207,"top ysyx_22040931_ID ysyx_22040931_Decoder mem_wr", false,-1);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_Decoder ztype", false,-1, 2,0);
@@ -184,22 +184,22 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBit(c+273,"top ysyx_22040931_ID ysyx_22040931_Decoder ijump", false,-1);
         tracep->declBit(c+274,"top ysyx_22040931_ID ysyx_22040931_Decoder bjump", false,-1);
         tracep->declBit(c+275,"top ysyx_22040931_ID ysyx_22040931_Decoder jjump", false,-1);
-        tracep->declBus(c+822,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+823,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+820,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+821,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+276,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux out", false,-1, 10,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux key", false,-1, 2,0);
-        tracep->declBus(c+824,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux default_out", false,-1, 10,0);
+        tracep->declBus(c+822,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux default_out", false,-1, 10,0);
         tracep->declArray(c+277,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux lut", false,-1, 83,0);
-        tracep->declBus(c+822,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+823,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+820,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+821,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+276,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 out", false,-1, 10,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 key", false,-1, 2,0);
-        tracep->declBus(c+824,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 default_out", false,-1, 10,0);
+        tracep->declBus(c+822,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 default_out", false,-1, 10,0);
         tracep->declArray(c+277,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 lut", false,-1, 83,0);
-        tracep->declBus(c+825,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+823,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<6; i++) {
                 tracep->declBus(c+280+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 pair_list", true,(i+0), 13,0);}}
         {int i; for (i=0; i<6; i++) {
@@ -208,23 +208,23 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+292+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 data_list", true,(i+0), 10,0);}}
         tracep->declBus(c+298,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 lut_out", false,-1, 10,0);
         tracep->declBit(c+299,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 hit", false,-1);
-        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+824,"top ysyx_22040931_ID ysyx_22040931_Decoder opt_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+198,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux out", false,-1, 0,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux key", false,-1, 2,0);
-        tracep->declBus(c+827,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux default_out", false,-1, 0,0);
+        tracep->declBus(c+825,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux default_out", false,-1, 0,0);
         tracep->declBus(c+300,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux lut", false,-1, 11,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+198,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 out", false,-1, 0,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 key", false,-1, 2,0);
-        tracep->declBus(c+827,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 default_out", false,-1, 0,0);
+        tracep->declBus(c+825,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 default_out", false,-1, 0,0);
         tracep->declBus(c+300,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 lut", false,-1, 11,0);
-        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<3; i++) {
                 tracep->declBus(c+301+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 pair_list", true,(i+0), 3,0);}}
         {int i; for (i=0; i<3; i++) {
@@ -233,31 +233,31 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+307+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 data_list", true,(i+0), 0,0);}}
         tracep->declBus(c+310,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 lut_out", false,-1, 0,0);
         tracep->declBit(c+311,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 hit", false,-1);
-        tracep->declBus(c+821,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype opcode", false,-1, 6,0);
-        tracep->declBus(c+811,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype opcode_3", false,-1, 2,0);
-        tracep->declBus(c+812,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype opcode_7", false,-1, 6,0);
+        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder jump_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype opcode", false,-1, 6,0);
+        tracep->declBus(c+809,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype opcode_3", false,-1, 2,0);
+        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype opcode_7", false,-1, 6,0);
         tracep->declBus(c+267,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype aluop", false,-1, 4,0);
         tracep->declBus(c+261,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype exop", false,-1, 2,0);
         tracep->declBit(c+258,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype rtype", false,-1);
         tracep->declBus(c+312,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype out", false,-1, 8,0);
         tracep->declBus(c+313,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype chose", false,-1, 16,0);
-        tracep->declBus(c+829,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+831,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+827,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+829,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+312,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype out", false,-1, 8,0);
         tracep->declBus(c+313,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype key", false,-1, 16,0);
-        tracep->declBus(c+832,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype default_out", false,-1, 8,0);
-        tracep->declArray(c+833,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype lut", false,-1, 727,0);
-        tracep->declBus(c+829,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+831,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype default_out", false,-1, 8,0);
+        tracep->declArray(c+831,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype lut", false,-1, 727,0);
+        tracep->declBus(c+827,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+829,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+312,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 out", false,-1, 8,0);
         tracep->declBus(c+313,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 key", false,-1, 16,0);
-        tracep->declBus(c+832,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 default_out", false,-1, 8,0);
-        tracep->declArray(c+833,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 lut", false,-1, 727,0);
-        tracep->declBus(c+856,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 default_out", false,-1, 8,0);
+        tracep->declArray(c+831,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 lut", false,-1, 727,0);
+        tracep->declBus(c+854,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<28; i++) {
                 tracep->declBus(c+1+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 pair_list", true,(i+0), 25,0);}}
         {int i; for (i=0; i<28; i++) {
@@ -266,11 +266,11 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+57+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 data_list", true,(i+0), 8,0);}}
         tracep->declBus(c+314,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 lut_out", false,-1, 8,0);
         tracep->declBit(c+315,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 hit", false,-1);
-        tracep->declBus(c+857,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 i", false,-1, 31,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode", false,-1, 6,0);
-        tracep->declBus(c+811,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode_3", false,-1, 2,0);
-        tracep->declBit(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode_1", false,-1);
-        tracep->declBus(c+812,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode_7", false,-1, 6,0);
+        tracep->declBus(c+855,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Rtype Rtype i1 i", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode", false,-1, 6,0);
+        tracep->declBus(c+809,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode_3", false,-1, 2,0);
+        tracep->declBit(c+811,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode_1", false,-1);
+        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype opcode_7", false,-1, 6,0);
         tracep->declBit(c+273,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype jump", false,-1);
         tracep->declBus(c+213,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype memrop", false,-1, 2,0);
         tracep->declBus(c+268,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype aluop", false,-1, 4,0);
@@ -285,22 +285,22 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBus(c+322,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype chose2", false,-1, 15,0);
         tracep->declBus(c+323,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype chose3", false,-1, 16,0);
         tracep->declBus(c+324,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype chose4", false,-1, 17,0);
-        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+856,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+316,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype out", false,-1, 12,0);
         tracep->declBus(c+325,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype key", false,-1, 3,0);
-        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype default_out", false,-1, 12,0);
+        tracep->declBus(c+857,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype default_out", false,-1, 12,0);
         tracep->declArray(c+326,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype lut", false,-1, 67,0);
-        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+856,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+316,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 out", false,-1, 12,0);
         tracep->declBus(c+325,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 key", false,-1, 3,0);
-        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 default_out", false,-1, 12,0);
+        tracep->declBus(c+857,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 default_out", false,-1, 12,0);
         tracep->declArray(c+326,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 lut", false,-1, 67,0);
-        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<4; i++) {
                 tracep->declBus(c+329+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 pair_list", true,(i+0), 16,0);}}
         {int i; for (i=0; i<4; i++) {
@@ -309,23 +309,23 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+337+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 data_list", true,(i+0), 12,0);}}
         tracep->declBus(c+341,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 lut_out", false,-1, 12,0);
         tracep->declBit(c+342,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 hit", false,-1);
-        tracep->declBus(c+860,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 i", false,-1, 31,0);
-        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype i1 i", false,-1, 31,0);
+        tracep->declBus(c+856,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+856,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+317,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 out", false,-1, 12,0);
         tracep->declBus(c+321,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 key", false,-1, 9,0);
-        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 default_out", false,-1, 12,0);
-        tracep->declArray(c+862,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 lut", false,-1, 298,0);
-        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+857,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 default_out", false,-1, 12,0);
+        tracep->declArray(c+860,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 lut", false,-1, 298,0);
+        tracep->declBus(c+856,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+856,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+317,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 out", false,-1, 12,0);
         tracep->declBus(c+321,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 key", false,-1, 9,0);
-        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 default_out", false,-1, 12,0);
-        tracep->declArray(c+862,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 lut", false,-1, 298,0);
-        tracep->declBus(c+872,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+857,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 default_out", false,-1, 12,0);
+        tracep->declArray(c+860,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 lut", false,-1, 298,0);
+        tracep->declBus(c+870,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<13; i++) {
                 tracep->declBus(c+85+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 pair_list", true,(i+0), 22,0);}}
         {int i; for (i=0; i<13; i++) {
@@ -334,23 +334,23 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+111+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 data_list", true,(i+0), 12,0);}}
         tracep->declBus(c+343,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 lut_out", false,-1, 12,0);
         tracep->declBit(c+344,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 hit", false,-1);
-        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 i", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+871,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype1 i1 i", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+872,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+318,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 out", false,-1, 11,0);
         tracep->declBus(c+322,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 key", false,-1, 15,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 default_out", false,-1, 11,0);
-        tracep->declArray(c+877,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 lut", false,-1, 83,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 default_out", false,-1, 11,0);
+        tracep->declArray(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 lut", false,-1, 83,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+872,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+318,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 out", false,-1, 11,0);
         tracep->declBus(c+322,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 key", false,-1, 15,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 default_out", false,-1, 11,0);
-        tracep->declArray(c+877,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 lut", false,-1, 83,0);
-        tracep->declBus(c+829,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 default_out", false,-1, 11,0);
+        tracep->declArray(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 lut", false,-1, 83,0);
+        tracep->declBus(c+827,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<3; i++) {
                 tracep->declBus(c+124+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 pair_list", true,(i+0), 27,0);}}
         {int i; for (i=0; i<3; i++) {
@@ -359,23 +359,23 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+130+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 data_list", true,(i+0), 11,0);}}
         tracep->declBus(c+345,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 lut_out", false,-1, 11,0);
         tracep->declBit(c+346,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 hit", false,-1);
-        tracep->declBus(c+821,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 i", false,-1, 31,0);
-        tracep->declBus(c+880,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype2 i1 i", false,-1, 31,0);
+        tracep->declBus(c+878,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+319,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 out", false,-1, 11,0);
         tracep->declBus(c+323,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 key", false,-1, 16,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 default_out", false,-1, 11,0);
-        tracep->declArray(c+881,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 lut", false,-1, 144,0);
-        tracep->declBus(c+880,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 default_out", false,-1, 11,0);
+        tracep->declArray(c+879,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 lut", false,-1, 144,0);
+        tracep->declBus(c+878,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+319,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 out", false,-1, 11,0);
         tracep->declBus(c+323,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 key", false,-1, 16,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 default_out", false,-1, 11,0);
-        tracep->declArray(c+881,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 lut", false,-1, 144,0);
-        tracep->declBus(c+886,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 default_out", false,-1, 11,0);
+        tracep->declArray(c+879,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 lut", false,-1, 144,0);
+        tracep->declBus(c+884,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<5; i++) {
                 tracep->declBus(c+133+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 pair_list", true,(i+0), 28,0);}}
         {int i; for (i=0; i<5; i++) {
@@ -384,23 +384,23 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+143+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 data_list", true,(i+0), 11,0);}}
         tracep->declBus(c+347,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 lut_out", false,-1, 11,0);
         tracep->declBit(c+348,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 hit", false,-1);
-        tracep->declBus(c+887,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 i", false,-1, 31,0);
-        tracep->declBus(c+888,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+889,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+885,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype3 i1 i", false,-1, 31,0);
+        tracep->declBus(c+886,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+887,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+320,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 out", false,-1, 11,0);
         tracep->declBus(c+324,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 key", false,-1, 17,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 default_out", false,-1, 11,0);
-        tracep->declQuad(c+890,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 lut", false,-1, 59,0);
-        tracep->declBus(c+888,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+889,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 default_out", false,-1, 11,0);
+        tracep->declQuad(c+888,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 lut", false,-1, 59,0);
+        tracep->declBus(c+886,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+887,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+320,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 out", false,-1, 11,0);
         tracep->declBus(c+324,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 key", false,-1, 17,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 default_out", false,-1, 11,0);
-        tracep->declQuad(c+890,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 lut", false,-1, 59,0);
-        tracep->declBus(c+892,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 default_out", false,-1, 11,0);
+        tracep->declQuad(c+888,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 lut", false,-1, 59,0);
+        tracep->declBus(c+890,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<2; i++) {
                 tracep->declBus(c+148+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 pair_list", true,(i+0), 29,0);}}
         {int i; for (i=0; i<2; i++) {
@@ -409,31 +409,31 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+152+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 data_list", true,(i+0), 11,0);}}
         tracep->declBus(c+349,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 lut_out", false,-1, 11,0);
         tracep->declBit(c+350,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 hit", false,-1);
-        tracep->declBus(c+893,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 i", false,-1, 31,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype opcode", false,-1, 6,0);
-        tracep->declBus(c+811,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype opcode_3", false,-1, 2,0);
+        tracep->declBus(c+891,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Itype Itype4 i1 i", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype opcode", false,-1, 6,0);
+        tracep->declBus(c+809,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype opcode_3", false,-1, 2,0);
         tracep->declBus(c+212,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype memwop", false,-1, 2,0);
         tracep->declBus(c+269,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype aluop", false,-1, 4,0);
         tracep->declBus(c+263,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype exop", false,-1, 2,0);
         tracep->declBit(c+256,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype stype", false,-1);
         tracep->declBus(c+351,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype out", false,-1, 11,0);
         tracep->declBus(c+321,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype chose", false,-1, 9,0);
-        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+351,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype out", false,-1, 11,0);
         tracep->declBus(c+321,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype key", false,-1, 9,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype default_out", false,-1, 11,0);
-        tracep->declArray(c+894,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype lut", false,-1, 87,0);
-        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+875,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype default_out", false,-1, 11,0);
+        tracep->declArray(c+892,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype lut", false,-1, 87,0);
+        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+873,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+351,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 out", false,-1, 11,0);
         tracep->declBus(c+321,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 key", false,-1, 9,0);
-        tracep->declBus(c+876,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 default_out", false,-1, 11,0);
-        tracep->declArray(c+894,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 lut", false,-1, 87,0);
-        tracep->declBus(c+897,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 default_out", false,-1, 11,0);
+        tracep->declArray(c+892,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 lut", false,-1, 87,0);
+        tracep->declBus(c+895,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<4; i++) {
                 tracep->declBus(c+154+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 pair_list", true,(i+0), 21,0);}}
         {int i; for (i=0; i<4; i++) {
@@ -442,9 +442,9 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                 tracep->declBus(c+162+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 data_list", true,(i+0), 11,0);}}
         tracep->declBus(c+352,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 lut_out", false,-1, 11,0);
         tracep->declBit(c+353,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 hit", false,-1);
-        tracep->declBus(c+860,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 i", false,-1, 31,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype opcode", false,-1, 6,0);
-        tracep->declBus(c+811,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype opcode_3", false,-1, 2,0);
+        tracep->declBus(c+858,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Stype Stype i1 i", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype opcode", false,-1, 6,0);
+        tracep->declBus(c+809,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype opcode_3", false,-1, 2,0);
         tracep->declQuad(c+202,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype r_data1", false,-1, 63,0);
         tracep->declQuad(c+221,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype r_data2", false,-1, 63,0);
         tracep->declBit(c+274,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype jump", false,-1);
@@ -454,141 +454,139 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBus(c+354,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype chose", false,-1, 9,0);
         tracep->declBus(c+355,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype out", false,-1, 9,0);
         tracep->declBus(c+356,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype jumpb", false,-1, 2,0);
-        tracep->declBit(c+357,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype result_s", false,-1);
-        tracep->declBit(c+358,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype result_u", false,-1);
-        tracep->declBus(c+822,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+820,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype DATA_LEN", false,-1, 31,0);
         tracep->declBus(c+355,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype out", false,-1, 9,0);
         tracep->declBus(c+354,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype key", false,-1, 9,0);
-        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype default_out", false,-1, 9,0);
-        tracep->declArray(c+359,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype lut", false,-1, 119,0);
-        tracep->declBus(c+822,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+896,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype default_out", false,-1, 9,0);
+        tracep->declArray(c+357,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype lut", false,-1, 119,0);
+        tracep->declBus(c+820,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declBus(c+355,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 out", false,-1, 9,0);
         tracep->declBus(c+354,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 key", false,-1, 9,0);
-        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 default_out", false,-1, 9,0);
-        tracep->declArray(c+359,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 lut", false,-1, 119,0);
-        tracep->declBus(c+899,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+896,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 default_out", false,-1, 9,0);
+        tracep->declArray(c+357,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 lut", false,-1, 119,0);
+        tracep->declBus(c+897,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+363+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 pair_list", true,(i+0), 19,0);}}
+                tracep->declBus(c+361+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 pair_list", true,(i+0), 19,0);}}
         {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+369+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 key_list", true,(i+0), 9,0);}}
+                tracep->declBus(c+367+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 key_list", true,(i+0), 9,0);}}
         {int i; for (i=0; i<6; i++) {
-                tracep->declBus(c+375+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 data_list", true,(i+0), 9,0);}}
-        tracep->declBus(c+381,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 lut_out", false,-1, 9,0);
-        tracep->declBit(c+382,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 hit", false,-1);
-        tracep->declBus(c+826,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 i", false,-1, 31,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype opcode", false,-1, 6,0);
+                tracep->declBus(c+373+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 data_list", true,(i+0), 9,0);}}
+        tracep->declBus(c+379,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 lut_out", false,-1, 9,0);
+        tracep->declBit(c+380,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 hit", false,-1);
+        tracep->declBus(c+824,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Btype Btype i1 i", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype opcode", false,-1, 6,0);
         tracep->declBit(c+275,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype jump", false,-1);
         tracep->declBus(c+271,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype aluop", false,-1, 4,0);
         tracep->declBus(c+265,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype exop", false,-1, 2,0);
         tracep->declBit(c+259,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype jtype", false,-1);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype chose", false,-1, 6,0);
-        tracep->declBus(c+383,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype out", false,-1, 9,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+900,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+383,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype out", false,-1, 9,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype key", false,-1, 6,0);
-        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype default_out", false,-1, 9,0);
-        tracep->declBus(c+901,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype lut", false,-1, 16,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+900,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+861,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declBus(c+383,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 out", false,-1, 9,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 key", false,-1, 6,0);
-        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 default_out", false,-1, 9,0);
-        tracep->declBus(c+901,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 lut", false,-1, 16,0);
-        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype chose", false,-1, 6,0);
+        tracep->declBus(c+381,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype out", false,-1, 9,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+381,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype out", false,-1, 9,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype key", false,-1, 6,0);
+        tracep->declBus(c+896,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype default_out", false,-1, 9,0);
+        tracep->declBus(c+899,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype lut", false,-1, 16,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+859,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+381,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 out", false,-1, 9,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 key", false,-1, 6,0);
+        tracep->declBus(c+896,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 default_out", false,-1, 9,0);
+        tracep->declBus(c+899,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 lut", false,-1, 16,0);
+        tracep->declBus(c+828,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<1; i++) {
                 tracep->declBus(c+166+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 pair_list", true,(i+0), 16,0);}}
         {int i; for (i=0; i<1; i++) {
                 tracep->declBus(c+167+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 key_list", true,(i+0), 6,0);}}
         {int i; for (i=0; i<1; i++) {
                 tracep->declBus(c+168+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 data_list", true,(i+0), 9,0);}}
-        tracep->declBus(c+384,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 lut_out", false,-1, 9,0);
-        tracep->declBit(c+385,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 hit", false,-1);
-        tracep->declBus(c+902,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 i", false,-1, 31,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype opcode", false,-1, 6,0);
+        tracep->declBus(c+382,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 lut_out", false,-1, 9,0);
+        tracep->declBit(c+383,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 hit", false,-1);
+        tracep->declBus(c+900,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Jtype Jtype i1 i", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype opcode", false,-1, 6,0);
         tracep->declBus(c+270,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype aluop", false,-1, 4,0);
         tracep->declBus(c+264,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype exop", false,-1, 2,0);
         tracep->declBit(c+257,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype utype", false,-1);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype chose", false,-1, 6,0);
-        tracep->declBus(c+386,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype out", false,-1, 8,0);
-        tracep->declBus(c+888,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+900,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+831,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+386,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype out", false,-1, 8,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype key", false,-1, 6,0);
-        tracep->declBus(c+832,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype default_out", false,-1, 8,0);
-        tracep->declBus(c+903,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype lut", false,-1, 31,0);
-        tracep->declBus(c+888,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+900,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+831,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declBus(c+386,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 out", false,-1, 8,0);
-        tracep->declBus(c+810,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 key", false,-1, 6,0);
-        tracep->declBus(c+832,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 default_out", false,-1, 8,0);
-        tracep->declBus(c+903,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 lut", false,-1, 31,0);
-        tracep->declBus(c+874,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype chose", false,-1, 6,0);
+        tracep->declBus(c+384,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype out", false,-1, 8,0);
+        tracep->declBus(c+886,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+829,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+384,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype out", false,-1, 8,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype key", false,-1, 6,0);
+        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype default_out", false,-1, 8,0);
+        tracep->declBus(c+901,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype lut", false,-1, 31,0);
+        tracep->declBus(c+886,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+898,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+829,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+384,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 out", false,-1, 8,0);
+        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 key", false,-1, 6,0);
+        tracep->declBus(c+830,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 default_out", false,-1, 8,0);
+        tracep->declBus(c+901,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 lut", false,-1, 31,0);
+        tracep->declBus(c+872,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<2; i++) {
                 tracep->declBus(c+169+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 pair_list", true,(i+0), 15,0);}}
         {int i; for (i=0; i<2; i++) {
                 tracep->declBus(c+171+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 key_list", true,(i+0), 6,0);}}
         {int i; for (i=0; i<2; i++) {
                 tracep->declBus(c+173+i*1,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 data_list", true,(i+0), 8,0);}}
-        tracep->declBus(c+387,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 lut_out", false,-1, 8,0);
-        tracep->declBit(c+388,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 hit", false,-1);
-        tracep->declBus(c+893,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 i", false,-1, 31,0);
-        tracep->declBus(c+814,"top ysyx_22040931_ID ysyx_22040931_IMM instr", false,-1, 24,0);
+        tracep->declBus(c+385,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 lut_out", false,-1, 8,0);
+        tracep->declBit(c+386,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 hit", false,-1);
+        tracep->declBus(c+891,"top ysyx_22040931_ID ysyx_22040931_Decoder ysyx_22040931_Utype Utype i1 i", false,-1, 31,0);
+        tracep->declBus(c+812,"top ysyx_22040931_ID ysyx_22040931_IMM instr", false,-1, 24,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_IMM opt", false,-1, 2,0);
         tracep->declQuad(c+208,"top ysyx_22040931_ID ysyx_22040931_IMM imm", false,-1, 63,0);
-        tracep->declBus(c+880,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+878,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux DATA_LEN", false,-1, 31,0);
         tracep->declQuad(c+208,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux out", false,-1, 63,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+389,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux lut", false,-1, 334,0);
-        tracep->declBus(c+880,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+387,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux lut", false,-1, 334,0);
+        tracep->declBus(c+878,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declQuad(c+208,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 out", false,-1, 63,0);
         tracep->declBus(c+218,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+389,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 lut", false,-1, 334,0);
-        tracep->declBus(c+820,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+387,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 lut", false,-1, 334,0);
+        tracep->declBus(c+818,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<5; i++) {
-                tracep->declArray(c+400+i*3,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 pair_list", true,(i+0), 66,0);}}
+                tracep->declArray(c+398+i*3,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 pair_list", true,(i+0), 66,0);}}
         {int i; for (i=0; i<5; i++) {
-                tracep->declBus(c+415+i*1,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 key_list", true,(i+0), 2,0);}}
+                tracep->declBus(c+413+i*1,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 key_list", true,(i+0), 2,0);}}
         {int i; for (i=0; i<5; i++) {
-                tracep->declQuad(c+420+i*2,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+430,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+432,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 hit", false,-1);
-        tracep->declBus(c+887,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 i", false,-1, 31,0);
-        tracep->declBit(c+785,"top ysyx_22040931_ID ysyx_22040931_Regfile reset", false,-1);
-        tracep->declBit(c+786,"top ysyx_22040931_ID ysyx_22040931_Regfile clock", false,-1);
+                tracep->declQuad(c+418+i*2,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+428,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+430,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 hit", false,-1);
+        tracep->declBus(c+885,"top ysyx_22040931_ID ysyx_22040931_IMM imm_mux i1 i", false,-1, 31,0);
+        tracep->declBit(c+783,"top ysyx_22040931_ID ysyx_22040931_Regfile reset", false,-1);
+        tracep->declBit(c+784,"top ysyx_22040931_ID ysyx_22040931_Regfile clock", false,-1);
         tracep->declBit(c+201,"top ysyx_22040931_ID ysyx_22040931_Regfile w_ena", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_ID ysyx_22040931_Regfile w_addr", false,-1, 4,0);
-        tracep->declQuad(c+804,"top ysyx_22040931_ID ysyx_22040931_Regfile w_data", false,-1, 63,0);
+        tracep->declBus(c+801,"top ysyx_22040931_ID ysyx_22040931_Regfile w_addr", false,-1, 4,0);
+        tracep->declQuad(c+802,"top ysyx_22040931_ID ysyx_22040931_Regfile w_data", false,-1, 63,0);
         tracep->declBit(c+219,"top ysyx_22040931_ID ysyx_22040931_Regfile r_ena1", false,-1);
-        tracep->declBus(c+808,"top ysyx_22040931_ID ysyx_22040931_Regfile r_addr1", false,-1, 4,0);
+        tracep->declBus(c+806,"top ysyx_22040931_ID ysyx_22040931_Regfile r_addr1", false,-1, 4,0);
         tracep->declQuad(c+202,"top ysyx_22040931_ID ysyx_22040931_Regfile r_data1", false,-1, 63,0);
         tracep->declBit(c+220,"top ysyx_22040931_ID ysyx_22040931_Regfile r_ena2", false,-1);
-        tracep->declBus(c+809,"top ysyx_22040931_ID ysyx_22040931_Regfile r_addr2", false,-1, 4,0);
+        tracep->declBus(c+807,"top ysyx_22040931_ID ysyx_22040931_Regfile r_addr2", false,-1, 4,0);
         tracep->declQuad(c+221,"top ysyx_22040931_ID ysyx_22040931_Regfile r_data2", false,-1, 63,0);
         {int i; for (i=0; i<32; i++) {
-                tracep->declQuad(c+720+i*2,"top ysyx_22040931_ID ysyx_22040931_Regfile regs", true,(i+0), 63,0);}}
-        tracep->declBus(c+784,"top ysyx_22040931_ID ysyx_22040931_Regfile i", false,-1, 31,0);
+                tracep->declQuad(c+718+i*2,"top ysyx_22040931_ID ysyx_22040931_Regfile regs", true,(i+0), 63,0);}}
+        tracep->declBus(c+782,"top ysyx_22040931_ID ysyx_22040931_Regfile i", false,-1, 31,0);
         tracep->declBit(c+201,"top ysyx_22040931_EX w_ena_i", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_EX w_addr_i", false,-1, 4,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_EX pc_i", false,-1, 63,0);
+        tracep->declBus(c+801,"top ysyx_22040931_EX w_addr_i", false,-1, 4,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_EX pc_i", false,-1, 63,0);
         tracep->declQuad(c+202,"top ysyx_22040931_EX data1", false,-1, 63,0);
         tracep->declQuad(c+204,"top ysyx_22040931_EX data2", false,-1, 63,0);
         tracep->declQuad(c+208,"top ysyx_22040931_EX imm", false,-1, 63,0);
@@ -599,7 +597,7 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBit(c+206,"top ysyx_22040931_EX mem_ena_i", false,-1);
         tracep->declBit(c+207,"top ysyx_22040931_EX mem_wr_i", false,-1);
         tracep->declBit(c+201,"top ysyx_22040931_EX w_ena", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_EX w_addr", false,-1, 4,0);
+        tracep->declBus(c+801,"top ysyx_22040931_EX w_addr", false,-1, 4,0);
         tracep->declQuad(c+214,"top ysyx_22040931_EX w_data", false,-1, 63,0);
         tracep->declBus(c+212,"top ysyx_22040931_EX memwop", false,-1, 2,0);
         tracep->declBus(c+213,"top ysyx_22040931_EX memrop", false,-1, 2,0);
@@ -607,70 +605,70 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declBit(c+207,"top ysyx_22040931_EX mem_wr", false,-1);
         tracep->declQuad(c+216,"top ysyx_22040931_EX mem_addr", false,-1, 63,0);
         tracep->declQuad(c+204,"top ysyx_22040931_EX mem_data", false,-1, 63,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_EX pc_o", false,-1, 63,0);
-        tracep->declQuad(c+433,"top ysyx_22040931_EX result", false,-1, 63,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_EX pc_o", false,-1, 63,0);
+        tracep->declQuad(c+431,"top ysyx_22040931_EX result", false,-1, 63,0);
         tracep->declQuad(c+202,"top ysyx_22040931_EX ysyx_22040931_ALU num1", false,-1, 63,0);
         tracep->declQuad(c+204,"top ysyx_22040931_EX ysyx_22040931_ALU num2", false,-1, 63,0);
         tracep->declQuad(c+208,"top ysyx_22040931_EX ysyx_22040931_ALU imm", false,-1, 63,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_EX ysyx_22040931_ALU pc", false,-1, 63,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_EX ysyx_22040931_ALU pc", false,-1, 63,0);
         tracep->declBus(c+211,"top ysyx_22040931_EX ysyx_22040931_ALU op", false,-1, 4,0);
-        tracep->declQuad(c+433,"top ysyx_22040931_EX ysyx_22040931_ALU out", false,-1, 63,0);
+        tracep->declQuad(c+431,"top ysyx_22040931_EX ysyx_22040931_ALU out", false,-1, 63,0);
         tracep->declQuad(c+202,"top ysyx_22040931_EX ysyx_22040931_ALU num1_s", false,-1, 63,0);
-        tracep->declBus(c+435,"top ysyx_22040931_EX ysyx_22040931_ALU num1_sw", false,-1, 31,0);
+        tracep->declBus(c+433,"top ysyx_22040931_EX ysyx_22040931_ALU num1_sw", false,-1, 31,0);
         tracep->declQuad(c+204,"top ysyx_22040931_EX ysyx_22040931_ALU num2_s", false,-1, 63,0);
-        tracep->declBus(c+436,"top ysyx_22040931_EX ysyx_22040931_ALU num2_sw", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_EX w_data_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_EX w_data_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_EX w_data_mux DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+434,"top ysyx_22040931_EX ysyx_22040931_ALU num2_sw", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_EX w_data_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_EX w_data_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_EX w_data_mux DATA_LEN", false,-1, 31,0);
         tracep->declQuad(c+214,"top ysyx_22040931_EX w_data_mux out", false,-1, 63,0);
         tracep->declBus(c+210,"top ysyx_22040931_EX w_data_mux key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_EX w_data_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+437,"top ysyx_22040931_EX w_data_mux lut", false,-1, 200,0);
-        tracep->declBus(c+815,"top ysyx_22040931_EX w_data_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_EX w_data_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_EX w_data_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_EX w_data_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_EX w_data_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+435,"top ysyx_22040931_EX w_data_mux lut", false,-1, 200,0);
+        tracep->declBus(c+813,"top ysyx_22040931_EX w_data_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_EX w_data_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_EX w_data_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_EX w_data_mux i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declQuad(c+214,"top ysyx_22040931_EX w_data_mux i1 out", false,-1, 63,0);
         tracep->declBus(c+210,"top ysyx_22040931_EX w_data_mux i1 key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_EX w_data_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+437,"top ysyx_22040931_EX w_data_mux i1 lut", false,-1, 200,0);
-        tracep->declBus(c+820,"top ysyx_22040931_EX w_data_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_EX w_data_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+435,"top ysyx_22040931_EX w_data_mux i1 lut", false,-1, 200,0);
+        tracep->declBus(c+818,"top ysyx_22040931_EX w_data_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<3; i++) {
-                tracep->declArray(c+444+i*3,"top ysyx_22040931_EX w_data_mux i1 pair_list", true,(i+0), 66,0);}}
+                tracep->declArray(c+442+i*3,"top ysyx_22040931_EX w_data_mux i1 pair_list", true,(i+0), 66,0);}}
         {int i; for (i=0; i<3; i++) {
-                tracep->declBus(c+453+i*1,"top ysyx_22040931_EX w_data_mux i1 key_list", true,(i+0), 2,0);}}
+                tracep->declBus(c+451+i*1,"top ysyx_22040931_EX w_data_mux i1 key_list", true,(i+0), 2,0);}}
         {int i; for (i=0; i<3; i++) {
-                tracep->declQuad(c+456+i*2,"top ysyx_22040931_EX w_data_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+462,"top ysyx_22040931_EX w_data_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+464,"top ysyx_22040931_EX w_data_mux i1 hit", false,-1);
-        tracep->declBus(c+821,"top ysyx_22040931_EX w_data_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+888,"top ysyx_22040931_EX mem_addr_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_EX mem_addr_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_EX mem_addr_mux DATA_LEN", false,-1, 31,0);
+                tracep->declQuad(c+454+i*2,"top ysyx_22040931_EX w_data_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+460,"top ysyx_22040931_EX w_data_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+462,"top ysyx_22040931_EX w_data_mux i1 hit", false,-1);
+        tracep->declBus(c+819,"top ysyx_22040931_EX w_data_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+886,"top ysyx_22040931_EX mem_addr_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_EX mem_addr_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_EX mem_addr_mux DATA_LEN", false,-1, 31,0);
         tracep->declQuad(c+216,"top ysyx_22040931_EX mem_addr_mux out", false,-1, 63,0);
         tracep->declBus(c+210,"top ysyx_22040931_EX mem_addr_mux key", false,-1, 2,0);
-        tracep->declQuad(c+817,"top ysyx_22040931_EX mem_addr_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+465,"top ysyx_22040931_EX mem_addr_mux lut", false,-1, 133,0);
-        tracep->declBus(c+888,"top ysyx_22040931_EX mem_addr_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_EX mem_addr_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_EX mem_addr_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_EX mem_addr_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+815,"top ysyx_22040931_EX mem_addr_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+463,"top ysyx_22040931_EX mem_addr_mux lut", false,-1, 133,0);
+        tracep->declBus(c+886,"top ysyx_22040931_EX mem_addr_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_EX mem_addr_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_EX mem_addr_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_EX mem_addr_mux i1 HAS_DEFAULT", false,-1, 31,0);
         tracep->declQuad(c+216,"top ysyx_22040931_EX mem_addr_mux i1 out", false,-1, 63,0);
         tracep->declBus(c+210,"top ysyx_22040931_EX mem_addr_mux i1 key", false,-1, 2,0);
-        tracep->declQuad(c+817,"top ysyx_22040931_EX mem_addr_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+465,"top ysyx_22040931_EX mem_addr_mux i1 lut", false,-1, 133,0);
-        tracep->declBus(c+820,"top ysyx_22040931_EX mem_addr_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declQuad(c+815,"top ysyx_22040931_EX mem_addr_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+463,"top ysyx_22040931_EX mem_addr_mux i1 lut", false,-1, 133,0);
+        tracep->declBus(c+818,"top ysyx_22040931_EX mem_addr_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<2; i++) {
-                tracep->declArray(c+470+i*3,"top ysyx_22040931_EX mem_addr_mux i1 pair_list", true,(i+0), 66,0);}}
+                tracep->declArray(c+468+i*3,"top ysyx_22040931_EX mem_addr_mux i1 pair_list", true,(i+0), 66,0);}}
         {int i; for (i=0; i<2; i++) {
-                tracep->declBus(c+476+i*1,"top ysyx_22040931_EX mem_addr_mux i1 key_list", true,(i+0), 2,0);}}
+                tracep->declBus(c+474+i*1,"top ysyx_22040931_EX mem_addr_mux i1 key_list", true,(i+0), 2,0);}}
         {int i; for (i=0; i<2; i++) {
-                tracep->declQuad(c+478+i*2,"top ysyx_22040931_EX mem_addr_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+482,"top ysyx_22040931_EX mem_addr_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+484,"top ysyx_22040931_EX mem_addr_mux i1 hit", false,-1);
-        tracep->declBus(c+893,"top ysyx_22040931_EX mem_addr_mux i1 i", false,-1, 31,0);
+                tracep->declQuad(c+476+i*2,"top ysyx_22040931_EX mem_addr_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+480,"top ysyx_22040931_EX mem_addr_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+482,"top ysyx_22040931_EX mem_addr_mux i1 hit", false,-1);
+        tracep->declBus(c+891,"top ysyx_22040931_EX mem_addr_mux i1 i", false,-1, 31,0);
         tracep->declBit(c+201,"top ysyx_22040931_MEM w_ena_i", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_MEM w_addr_i", false,-1, 4,0);
+        tracep->declBus(c+801,"top ysyx_22040931_MEM w_addr_i", false,-1, 4,0);
         tracep->declQuad(c+214,"top ysyx_22040931_MEM w_data_i", false,-1, 63,0);
         tracep->declBus(c+212,"top ysyx_22040931_MEM memwop", false,-1, 2,0);
         tracep->declBus(c+213,"top ysyx_22040931_MEM memrop", false,-1, 2,0);
@@ -679,178 +677,178 @@ void Vtop___024root__traceInitSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->declQuad(c+216,"top ysyx_22040931_MEM mem_addr_i", false,-1, 63,0);
         tracep->declQuad(c+204,"top ysyx_22040931_MEM mem_stor_data_i", false,-1, 63,0);
         tracep->declQuad(c+196,"top ysyx_22040931_MEM mem_data", false,-1, 63,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_MEM pc_i", false,-1, 63,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_MEM pc_i", false,-1, 63,0);
         tracep->declBit(c+201,"top ysyx_22040931_MEM w_ena", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_MEM w_addr", false,-1, 4,0);
-        tracep->declQuad(c+804,"top ysyx_22040931_MEM w_data", false,-1, 63,0);
-        tracep->declBus(c+793,"top ysyx_22040931_MEM memop", false,-1, 1,0);
-        tracep->declBit(c+794,"top ysyx_22040931_MEM mem_ena", false,-1);
-        tracep->declBit(c+795,"top ysyx_22040931_MEM mem_wr", false,-1);
-        tracep->declQuad(c+796,"top ysyx_22040931_MEM mem_addr", false,-1, 63,0);
-        tracep->declQuad(c+798,"top ysyx_22040931_MEM mem_stor_data", false,-1, 63,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_MEM pc_o", false,-1, 63,0);
-        tracep->declQuad(c+485,"top ysyx_22040931_MEM mem_r_data", false,-1, 63,0);
-        tracep->declBus(c+487,"top ysyx_22040931_MEM memwrop", false,-1, 2,0);
-        tracep->declQuad(c+488,"top ysyx_22040931_MEM stor_data_one", false,-1, 63,0);
-        tracep->declQuad(c+490,"top ysyx_22040931_MEM stor_data_two", false,-1, 63,0);
-        tracep->declQuad(c+492,"top ysyx_22040931_MEM stor_data_for", false,-1, 63,0);
-        tracep->declBus(c+900,"top ysyx_22040931_MEM memop_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_MEM memop_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+888,"top ysyx_22040931_MEM memop_mux DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+793,"top ysyx_22040931_MEM memop_mux out", false,-1, 1,0);
-        tracep->declBus(c+487,"top ysyx_22040931_MEM memop_mux key", false,-1, 2,0);
-        tracep->declBus(c+906,"top ysyx_22040931_MEM memop_mux default_out", false,-1, 1,0);
-        tracep->declQuad(c+907,"top ysyx_22040931_MEM memop_mux lut", false,-1, 34,0);
-        tracep->declBus(c+900,"top ysyx_22040931_MEM memop_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_MEM memop_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+888,"top ysyx_22040931_MEM memop_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_MEM memop_mux i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declBus(c+793,"top ysyx_22040931_MEM memop_mux i1 out", false,-1, 1,0);
-        tracep->declBus(c+487,"top ysyx_22040931_MEM memop_mux i1 key", false,-1, 2,0);
-        tracep->declBus(c+906,"top ysyx_22040931_MEM memop_mux i1 default_out", false,-1, 1,0);
-        tracep->declQuad(c+907,"top ysyx_22040931_MEM memop_mux i1 lut", false,-1, 34,0);
-        tracep->declBus(c+880,"top ysyx_22040931_MEM memop_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declBus(c+801,"top ysyx_22040931_MEM w_addr", false,-1, 4,0);
+        tracep->declQuad(c+802,"top ysyx_22040931_MEM w_data", false,-1, 63,0);
+        tracep->declBus(c+791,"top ysyx_22040931_MEM memop", false,-1, 1,0);
+        tracep->declBit(c+792,"top ysyx_22040931_MEM mem_ena", false,-1);
+        tracep->declBit(c+793,"top ysyx_22040931_MEM mem_wr", false,-1);
+        tracep->declQuad(c+794,"top ysyx_22040931_MEM mem_addr", false,-1, 63,0);
+        tracep->declQuad(c+796,"top ysyx_22040931_MEM mem_stor_data", false,-1, 63,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_MEM pc_o", false,-1, 63,0);
+        tracep->declQuad(c+483,"top ysyx_22040931_MEM mem_r_data", false,-1, 63,0);
+        tracep->declBus(c+485,"top ysyx_22040931_MEM memwrop", false,-1, 2,0);
+        tracep->declQuad(c+486,"top ysyx_22040931_MEM stor_data_one", false,-1, 63,0);
+        tracep->declQuad(c+488,"top ysyx_22040931_MEM stor_data_two", false,-1, 63,0);
+        tracep->declQuad(c+490,"top ysyx_22040931_MEM stor_data_for", false,-1, 63,0);
+        tracep->declBus(c+898,"top ysyx_22040931_MEM memop_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_MEM memop_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+886,"top ysyx_22040931_MEM memop_mux DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+791,"top ysyx_22040931_MEM memop_mux out", false,-1, 1,0);
+        tracep->declBus(c+485,"top ysyx_22040931_MEM memop_mux key", false,-1, 2,0);
+        tracep->declBus(c+904,"top ysyx_22040931_MEM memop_mux default_out", false,-1, 1,0);
+        tracep->declQuad(c+905,"top ysyx_22040931_MEM memop_mux lut", false,-1, 34,0);
+        tracep->declBus(c+898,"top ysyx_22040931_MEM memop_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_MEM memop_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+886,"top ysyx_22040931_MEM memop_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_MEM memop_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declBus(c+791,"top ysyx_22040931_MEM memop_mux i1 out", false,-1, 1,0);
+        tracep->declBus(c+485,"top ysyx_22040931_MEM memop_mux i1 key", false,-1, 2,0);
+        tracep->declBus(c+904,"top ysyx_22040931_MEM memop_mux i1 default_out", false,-1, 1,0);
+        tracep->declQuad(c+905,"top ysyx_22040931_MEM memop_mux i1 lut", false,-1, 34,0);
+        tracep->declBus(c+878,"top ysyx_22040931_MEM memop_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<7; i++) {
                 tracep->declBus(c+175+i*1,"top ysyx_22040931_MEM memop_mux i1 pair_list", true,(i+0), 4,0);}}
         {int i; for (i=0; i<7; i++) {
                 tracep->declBus(c+182+i*1,"top ysyx_22040931_MEM memop_mux i1 key_list", true,(i+0), 2,0);}}
         {int i; for (i=0; i<7; i++) {
                 tracep->declBus(c+189+i*1,"top ysyx_22040931_MEM memop_mux i1 data_list", true,(i+0), 1,0);}}
-        tracep->declBus(c+494,"top ysyx_22040931_MEM memop_mux i1 lut_out", false,-1, 1,0);
-        tracep->declBit(c+495,"top ysyx_22040931_MEM memop_mux i1 hit", false,-1);
-        tracep->declBus(c+909,"top ysyx_22040931_MEM memop_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+900,"top ysyx_22040931_MEM mem_r_data_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_MEM mem_r_data_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_r_data_mux DATA_LEN", false,-1, 31,0);
-        tracep->declQuad(c+485,"top ysyx_22040931_MEM mem_r_data_mux out", false,-1, 63,0);
+        tracep->declBus(c+492,"top ysyx_22040931_MEM memop_mux i1 lut_out", false,-1, 1,0);
+        tracep->declBit(c+493,"top ysyx_22040931_MEM memop_mux i1 hit", false,-1);
+        tracep->declBus(c+907,"top ysyx_22040931_MEM memop_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+898,"top ysyx_22040931_MEM mem_r_data_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_MEM mem_r_data_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_r_data_mux DATA_LEN", false,-1, 31,0);
+        tracep->declQuad(c+483,"top ysyx_22040931_MEM mem_r_data_mux out", false,-1, 63,0);
         tracep->declBus(c+213,"top ysyx_22040931_MEM mem_r_data_mux key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_r_data_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+496,"top ysyx_22040931_MEM mem_r_data_mux lut", false,-1, 468,0);
-        tracep->declBus(c+900,"top ysyx_22040931_MEM mem_r_data_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_MEM mem_r_data_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_r_data_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_MEM mem_r_data_mux i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declQuad(c+485,"top ysyx_22040931_MEM mem_r_data_mux i1 out", false,-1, 63,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_r_data_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+494,"top ysyx_22040931_MEM mem_r_data_mux lut", false,-1, 468,0);
+        tracep->declBus(c+898,"top ysyx_22040931_MEM mem_r_data_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_MEM mem_r_data_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_r_data_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_MEM mem_r_data_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+483,"top ysyx_22040931_MEM mem_r_data_mux i1 out", false,-1, 63,0);
         tracep->declBus(c+213,"top ysyx_22040931_MEM mem_r_data_mux i1 key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_r_data_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+496,"top ysyx_22040931_MEM mem_r_data_mux i1 lut", false,-1, 468,0);
-        tracep->declBus(c+820,"top ysyx_22040931_MEM mem_r_data_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_r_data_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+494,"top ysyx_22040931_MEM mem_r_data_mux i1 lut", false,-1, 468,0);
+        tracep->declBus(c+818,"top ysyx_22040931_MEM mem_r_data_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<7; i++) {
-                tracep->declArray(c+511+i*3,"top ysyx_22040931_MEM mem_r_data_mux i1 pair_list", true,(i+0), 66,0);}}
+                tracep->declArray(c+509+i*3,"top ysyx_22040931_MEM mem_r_data_mux i1 pair_list", true,(i+0), 66,0);}}
         {int i; for (i=0; i<7; i++) {
-                tracep->declBus(c+532+i*1,"top ysyx_22040931_MEM mem_r_data_mux i1 key_list", true,(i+0), 2,0);}}
+                tracep->declBus(c+530+i*1,"top ysyx_22040931_MEM mem_r_data_mux i1 key_list", true,(i+0), 2,0);}}
         {int i; for (i=0; i<7; i++) {
-                tracep->declQuad(c+539+i*2,"top ysyx_22040931_MEM mem_r_data_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+553,"top ysyx_22040931_MEM mem_r_data_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+555,"top ysyx_22040931_MEM mem_r_data_mux i1 hit", false,-1);
-        tracep->declBus(c+909,"top ysyx_22040931_MEM mem_r_data_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+828,"top ysyx_22040931_MEM mem_stor_data_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_MEM mem_stor_data_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data_mux DATA_LEN", false,-1, 31,0);
-        tracep->declQuad(c+798,"top ysyx_22040931_MEM mem_stor_data_mux out", false,-1, 63,0);
+                tracep->declQuad(c+537+i*2,"top ysyx_22040931_MEM mem_r_data_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+551,"top ysyx_22040931_MEM mem_r_data_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+553,"top ysyx_22040931_MEM mem_r_data_mux i1 hit", false,-1);
+        tracep->declBus(c+907,"top ysyx_22040931_MEM mem_r_data_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_MEM mem_stor_data_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_MEM mem_stor_data_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data_mux DATA_LEN", false,-1, 31,0);
+        tracep->declQuad(c+796,"top ysyx_22040931_MEM mem_stor_data_mux out", false,-1, 63,0);
         tracep->declBus(c+212,"top ysyx_22040931_MEM mem_stor_data_mux key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+556,"top ysyx_22040931_MEM mem_stor_data_mux lut", false,-1, 267,0);
-        tracep->declBus(c+828,"top ysyx_22040931_MEM mem_stor_data_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+815,"top ysyx_22040931_MEM mem_stor_data_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_MEM mem_stor_data_mux i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declQuad(c+798,"top ysyx_22040931_MEM mem_stor_data_mux i1 out", false,-1, 63,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+554,"top ysyx_22040931_MEM mem_stor_data_mux lut", false,-1, 267,0);
+        tracep->declBus(c+826,"top ysyx_22040931_MEM mem_stor_data_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+813,"top ysyx_22040931_MEM mem_stor_data_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_MEM mem_stor_data_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+796,"top ysyx_22040931_MEM mem_stor_data_mux i1 out", false,-1, 63,0);
         tracep->declBus(c+212,"top ysyx_22040931_MEM mem_stor_data_mux i1 key", false,-1, 2,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+556,"top ysyx_22040931_MEM mem_stor_data_mux i1 lut", false,-1, 267,0);
-        tracep->declBus(c+820,"top ysyx_22040931_MEM mem_stor_data_mux i1 PAIR_LEN", false,-1, 31,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+554,"top ysyx_22040931_MEM mem_stor_data_mux i1 lut", false,-1, 267,0);
+        tracep->declBus(c+818,"top ysyx_22040931_MEM mem_stor_data_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<4; i++) {
-                tracep->declArray(c+565+i*3,"top ysyx_22040931_MEM mem_stor_data_mux i1 pair_list", true,(i+0), 66,0);}}
+                tracep->declArray(c+563+i*3,"top ysyx_22040931_MEM mem_stor_data_mux i1 pair_list", true,(i+0), 66,0);}}
         {int i; for (i=0; i<4; i++) {
-                tracep->declBus(c+577+i*1,"top ysyx_22040931_MEM mem_stor_data_mux i1 key_list", true,(i+0), 2,0);}}
+                tracep->declBus(c+575+i*1,"top ysyx_22040931_MEM mem_stor_data_mux i1 key_list", true,(i+0), 2,0);}}
         {int i; for (i=0; i<4; i++) {
-                tracep->declQuad(c+581+i*2,"top ysyx_22040931_MEM mem_stor_data_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+589,"top ysyx_22040931_MEM mem_stor_data_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+591,"top ysyx_22040931_MEM mem_stor_data_mux i1 hit", false,-1);
-        tracep->declBus(c+860,"top ysyx_22040931_MEM mem_stor_data_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+910,"top ysyx_22040931_MEM mem_stor_data1_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+822,"top ysyx_22040931_MEM mem_stor_data1_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data1_mux DATA_LEN", false,-1, 31,0);
-        tracep->declQuad(c+488,"top ysyx_22040931_MEM mem_stor_data1_mux out", false,-1, 63,0);
-        tracep->declBus(c+592,"top ysyx_22040931_MEM mem_stor_data1_mux key", false,-1, 5,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data1_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+593,"top ysyx_22040931_MEM mem_stor_data1_mux lut", false,-1, 559,0);
-        tracep->declBus(c+910,"top ysyx_22040931_MEM mem_stor_data1_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+822,"top ysyx_22040931_MEM mem_stor_data1_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data1_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_MEM mem_stor_data1_mux i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declQuad(c+488,"top ysyx_22040931_MEM mem_stor_data1_mux i1 out", false,-1, 63,0);
-        tracep->declBus(c+592,"top ysyx_22040931_MEM mem_stor_data1_mux i1 key", false,-1, 5,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data1_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+593,"top ysyx_22040931_MEM mem_stor_data1_mux i1 lut", false,-1, 559,0);
-        tracep->declBus(c+911,"top ysyx_22040931_MEM mem_stor_data1_mux i1 PAIR_LEN", false,-1, 31,0);
+                tracep->declQuad(c+579+i*2,"top ysyx_22040931_MEM mem_stor_data_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+587,"top ysyx_22040931_MEM mem_stor_data_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+589,"top ysyx_22040931_MEM mem_stor_data_mux i1 hit", false,-1);
+        tracep->declBus(c+858,"top ysyx_22040931_MEM mem_stor_data_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+908,"top ysyx_22040931_MEM mem_stor_data1_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+820,"top ysyx_22040931_MEM mem_stor_data1_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data1_mux DATA_LEN", false,-1, 31,0);
+        tracep->declQuad(c+486,"top ysyx_22040931_MEM mem_stor_data1_mux out", false,-1, 63,0);
+        tracep->declBus(c+590,"top ysyx_22040931_MEM mem_stor_data1_mux key", false,-1, 5,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data1_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+591,"top ysyx_22040931_MEM mem_stor_data1_mux lut", false,-1, 559,0);
+        tracep->declBus(c+908,"top ysyx_22040931_MEM mem_stor_data1_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+820,"top ysyx_22040931_MEM mem_stor_data1_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data1_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_MEM mem_stor_data1_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+486,"top ysyx_22040931_MEM mem_stor_data1_mux i1 out", false,-1, 63,0);
+        tracep->declBus(c+590,"top ysyx_22040931_MEM mem_stor_data1_mux i1 key", false,-1, 5,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data1_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+591,"top ysyx_22040931_MEM mem_stor_data1_mux i1 lut", false,-1, 559,0);
+        tracep->declBus(c+909,"top ysyx_22040931_MEM mem_stor_data1_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<8; i++) {
-                tracep->declArray(c+611+i*3,"top ysyx_22040931_MEM mem_stor_data1_mux i1 pair_list", true,(i+0), 69,0);}}
+                tracep->declArray(c+609+i*3,"top ysyx_22040931_MEM mem_stor_data1_mux i1 pair_list", true,(i+0), 69,0);}}
         {int i; for (i=0; i<8; i++) {
-                tracep->declBus(c+635+i*1,"top ysyx_22040931_MEM mem_stor_data1_mux i1 key_list", true,(i+0), 5,0);}}
+                tracep->declBus(c+633+i*1,"top ysyx_22040931_MEM mem_stor_data1_mux i1 key_list", true,(i+0), 5,0);}}
         {int i; for (i=0; i<8; i++) {
-                tracep->declQuad(c+643+i*2,"top ysyx_22040931_MEM mem_stor_data1_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+659,"top ysyx_22040931_MEM mem_stor_data1_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+661,"top ysyx_22040931_MEM mem_stor_data1_mux i1 hit", false,-1);
-        tracep->declBus(c+912,"top ysyx_22040931_MEM mem_stor_data1_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+828,"top ysyx_22040931_MEM mem_stor_data2_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+880,"top ysyx_22040931_MEM mem_stor_data2_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data2_mux DATA_LEN", false,-1, 31,0);
-        tracep->declQuad(c+490,"top ysyx_22040931_MEM mem_stor_data2_mux out", false,-1, 63,0);
-        tracep->declBus(c+662,"top ysyx_22040931_MEM mem_stor_data2_mux key", false,-1, 4,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data2_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+663,"top ysyx_22040931_MEM mem_stor_data2_mux lut", false,-1, 275,0);
-        tracep->declBus(c+828,"top ysyx_22040931_MEM mem_stor_data2_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+880,"top ysyx_22040931_MEM mem_stor_data2_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data2_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_MEM mem_stor_data2_mux i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declQuad(c+490,"top ysyx_22040931_MEM mem_stor_data2_mux i1 out", false,-1, 63,0);
-        tracep->declBus(c+662,"top ysyx_22040931_MEM mem_stor_data2_mux i1 key", false,-1, 4,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data2_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+663,"top ysyx_22040931_MEM mem_stor_data2_mux i1 lut", false,-1, 275,0);
-        tracep->declBus(c+913,"top ysyx_22040931_MEM mem_stor_data2_mux i1 PAIR_LEN", false,-1, 31,0);
+                tracep->declQuad(c+641+i*2,"top ysyx_22040931_MEM mem_stor_data1_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+657,"top ysyx_22040931_MEM mem_stor_data1_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+659,"top ysyx_22040931_MEM mem_stor_data1_mux i1 hit", false,-1);
+        tracep->declBus(c+910,"top ysyx_22040931_MEM mem_stor_data1_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_MEM mem_stor_data2_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+878,"top ysyx_22040931_MEM mem_stor_data2_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data2_mux DATA_LEN", false,-1, 31,0);
+        tracep->declQuad(c+488,"top ysyx_22040931_MEM mem_stor_data2_mux out", false,-1, 63,0);
+        tracep->declBus(c+660,"top ysyx_22040931_MEM mem_stor_data2_mux key", false,-1, 4,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data2_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+661,"top ysyx_22040931_MEM mem_stor_data2_mux lut", false,-1, 275,0);
+        tracep->declBus(c+826,"top ysyx_22040931_MEM mem_stor_data2_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+878,"top ysyx_22040931_MEM mem_stor_data2_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data2_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_MEM mem_stor_data2_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+488,"top ysyx_22040931_MEM mem_stor_data2_mux i1 out", false,-1, 63,0);
+        tracep->declBus(c+660,"top ysyx_22040931_MEM mem_stor_data2_mux i1 key", false,-1, 4,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data2_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+661,"top ysyx_22040931_MEM mem_stor_data2_mux i1 lut", false,-1, 275,0);
+        tracep->declBus(c+911,"top ysyx_22040931_MEM mem_stor_data2_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<4; i++) {
-                tracep->declArray(c+672+i*3,"top ysyx_22040931_MEM mem_stor_data2_mux i1 pair_list", true,(i+0), 68,0);}}
+                tracep->declArray(c+670+i*3,"top ysyx_22040931_MEM mem_stor_data2_mux i1 pair_list", true,(i+0), 68,0);}}
         {int i; for (i=0; i<4; i++) {
-                tracep->declBus(c+684+i*1,"top ysyx_22040931_MEM mem_stor_data2_mux i1 key_list", true,(i+0), 4,0);}}
+                tracep->declBus(c+682+i*1,"top ysyx_22040931_MEM mem_stor_data2_mux i1 key_list", true,(i+0), 4,0);}}
         {int i; for (i=0; i<4; i++) {
-                tracep->declQuad(c+688+i*2,"top ysyx_22040931_MEM mem_stor_data2_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+696,"top ysyx_22040931_MEM mem_stor_data2_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+698,"top ysyx_22040931_MEM mem_stor_data2_mux i1 hit", false,-1);
-        tracep->declBus(c+860,"top ysyx_22040931_MEM mem_stor_data2_mux i1 i", false,-1, 31,0);
-        tracep->declBus(c+888,"top ysyx_22040931_MEM mem_stor_data3_mux NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+828,"top ysyx_22040931_MEM mem_stor_data3_mux KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data3_mux DATA_LEN", false,-1, 31,0);
-        tracep->declQuad(c+492,"top ysyx_22040931_MEM mem_stor_data3_mux out", false,-1, 63,0);
-        tracep->declBus(c+699,"top ysyx_22040931_MEM mem_stor_data3_mux key", false,-1, 3,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data3_mux default_out", false,-1, 63,0);
-        tracep->declArray(c+700,"top ysyx_22040931_MEM mem_stor_data3_mux lut", false,-1, 135,0);
-        tracep->declBus(c+888,"top ysyx_22040931_MEM mem_stor_data3_mux i1 NR_KEY", false,-1, 31,0);
-        tracep->declBus(c+828,"top ysyx_22040931_MEM mem_stor_data3_mux i1 KEY_LEN", false,-1, 31,0);
-        tracep->declBus(c+816,"top ysyx_22040931_MEM mem_stor_data3_mux i1 DATA_LEN", false,-1, 31,0);
-        tracep->declBus(c+819,"top ysyx_22040931_MEM mem_stor_data3_mux i1 HAS_DEFAULT", false,-1, 31,0);
-        tracep->declQuad(c+492,"top ysyx_22040931_MEM mem_stor_data3_mux i1 out", false,-1, 63,0);
-        tracep->declBus(c+699,"top ysyx_22040931_MEM mem_stor_data3_mux i1 key", false,-1, 3,0);
-        tracep->declQuad(c+904,"top ysyx_22040931_MEM mem_stor_data3_mux i1 default_out", false,-1, 63,0);
-        tracep->declArray(c+700,"top ysyx_22040931_MEM mem_stor_data3_mux i1 lut", false,-1, 135,0);
-        tracep->declBus(c+914,"top ysyx_22040931_MEM mem_stor_data3_mux i1 PAIR_LEN", false,-1, 31,0);
+                tracep->declQuad(c+686+i*2,"top ysyx_22040931_MEM mem_stor_data2_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+694,"top ysyx_22040931_MEM mem_stor_data2_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+696,"top ysyx_22040931_MEM mem_stor_data2_mux i1 hit", false,-1);
+        tracep->declBus(c+858,"top ysyx_22040931_MEM mem_stor_data2_mux i1 i", false,-1, 31,0);
+        tracep->declBus(c+886,"top ysyx_22040931_MEM mem_stor_data3_mux NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_MEM mem_stor_data3_mux KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data3_mux DATA_LEN", false,-1, 31,0);
+        tracep->declQuad(c+490,"top ysyx_22040931_MEM mem_stor_data3_mux out", false,-1, 63,0);
+        tracep->declBus(c+697,"top ysyx_22040931_MEM mem_stor_data3_mux key", false,-1, 3,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data3_mux default_out", false,-1, 63,0);
+        tracep->declArray(c+698,"top ysyx_22040931_MEM mem_stor_data3_mux lut", false,-1, 135,0);
+        tracep->declBus(c+886,"top ysyx_22040931_MEM mem_stor_data3_mux i1 NR_KEY", false,-1, 31,0);
+        tracep->declBus(c+826,"top ysyx_22040931_MEM mem_stor_data3_mux i1 KEY_LEN", false,-1, 31,0);
+        tracep->declBus(c+814,"top ysyx_22040931_MEM mem_stor_data3_mux i1 DATA_LEN", false,-1, 31,0);
+        tracep->declBus(c+817,"top ysyx_22040931_MEM mem_stor_data3_mux i1 HAS_DEFAULT", false,-1, 31,0);
+        tracep->declQuad(c+490,"top ysyx_22040931_MEM mem_stor_data3_mux i1 out", false,-1, 63,0);
+        tracep->declBus(c+697,"top ysyx_22040931_MEM mem_stor_data3_mux i1 key", false,-1, 3,0);
+        tracep->declQuad(c+902,"top ysyx_22040931_MEM mem_stor_data3_mux i1 default_out", false,-1, 63,0);
+        tracep->declArray(c+698,"top ysyx_22040931_MEM mem_stor_data3_mux i1 lut", false,-1, 135,0);
+        tracep->declBus(c+912,"top ysyx_22040931_MEM mem_stor_data3_mux i1 PAIR_LEN", false,-1, 31,0);
         {int i; for (i=0; i<2; i++) {
-                tracep->declArray(c+705+i*3,"top ysyx_22040931_MEM mem_stor_data3_mux i1 pair_list", true,(i+0), 67,0);}}
+                tracep->declArray(c+703+i*3,"top ysyx_22040931_MEM mem_stor_data3_mux i1 pair_list", true,(i+0), 67,0);}}
         {int i; for (i=0; i<2; i++) {
-                tracep->declBus(c+711+i*1,"top ysyx_22040931_MEM mem_stor_data3_mux i1 key_list", true,(i+0), 3,0);}}
+                tracep->declBus(c+709+i*1,"top ysyx_22040931_MEM mem_stor_data3_mux i1 key_list", true,(i+0), 3,0);}}
         {int i; for (i=0; i<2; i++) {
-                tracep->declQuad(c+713+i*2,"top ysyx_22040931_MEM mem_stor_data3_mux i1 data_list", true,(i+0), 63,0);}}
-        tracep->declQuad(c+717,"top ysyx_22040931_MEM mem_stor_data3_mux i1 lut_out", false,-1, 63,0);
-        tracep->declBit(c+719,"top ysyx_22040931_MEM mem_stor_data3_mux i1 hit", false,-1);
-        tracep->declBus(c+893,"top ysyx_22040931_MEM mem_stor_data3_mux i1 i", false,-1, 31,0);
+                tracep->declQuad(c+711+i*2,"top ysyx_22040931_MEM mem_stor_data3_mux i1 data_list", true,(i+0), 63,0);}}
+        tracep->declQuad(c+715,"top ysyx_22040931_MEM mem_stor_data3_mux i1 lut_out", false,-1, 63,0);
+        tracep->declBit(c+717,"top ysyx_22040931_MEM mem_stor_data3_mux i1 hit", false,-1);
+        tracep->declBus(c+891,"top ysyx_22040931_MEM mem_stor_data3_mux i1 i", false,-1, 31,0);
         tracep->declBit(c+201,"top ysyx_22040931_WB w_ena_i", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_WB w_addr_i", false,-1, 4,0);
-        tracep->declQuad(c+804,"top ysyx_22040931_WB w_data_i", false,-1, 63,0);
-        tracep->declQuad(c+791,"top ysyx_22040931_WB pc_i", false,-1, 63,0);
+        tracep->declBus(c+801,"top ysyx_22040931_WB w_addr_i", false,-1, 4,0);
+        tracep->declQuad(c+802,"top ysyx_22040931_WB w_data_i", false,-1, 63,0);
+        tracep->declQuad(c+789,"top ysyx_22040931_WB pc_i", false,-1, 63,0);
         tracep->declBit(c+201,"top ysyx_22040931_WB w_ena", false,-1);
-        tracep->declBus(c+803,"top ysyx_22040931_WB w_addr", false,-1, 4,0);
-        tracep->declQuad(c+804,"top ysyx_22040931_WB w_data", false,-1, 63,0);
+        tracep->declBus(c+801,"top ysyx_22040931_WB w_addr", false,-1, 4,0);
+        tracep->declQuad(c+802,"top ysyx_22040931_WB w_data", false,-1, 63,0);
     }
 }
 
@@ -886,12 +884,9 @@ extern const VlWide<10>/*319:0*/ Vtop__ConstPool__CONST_f35eebe5_0;
 void Vtop___024root__traceFullSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep) {
     if (false && vlSelf) {}  // Prevent unused
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VlWide<3>/*95:0*/ __Vtemp948;
+    VlWide<3>/*95:0*/ __Vtemp947;
+    VlWide<5>/*159:0*/ __Vtemp948;
     VlWide<3>/*95:0*/ __Vtemp949;
-    VlWide<3>/*95:0*/ __Vtemp950;
-    VlWide<3>/*95:0*/ __Vtemp952;
-    VlWide<5>/*159:0*/ __Vtemp953;
-    VlWide<3>/*95:0*/ __Vtemp954;
     vluint32_t* const oldp = tracep->oldp(vlSymsp->__Vm_baseCode);
     if (false && oldp) {}  // Prevent unused
     // Body
@@ -1247,228 +1242,221 @@ void Vtop___024root__traceFullSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
         tracep->fullSData(oldp+354,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__chose),10);
         tracep->fullSData(oldp+355,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__out),10);
         tracep->fullCData(oldp+356,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__jumpb),3);
-        tracep->fullBit(oldp+357,((1U & (IData)(((vlSelf->top__DOT__data1 
-                                                  - vlSelf->top__DOT__ysyx_22040931_ID__DOT__r_data2) 
-                                                 >> 0x3fU)))));
-        VL_EXTEND_WQ(65,64, __Vtemp948, vlSelf->top__DOT__data1);
-        VL_EXTEND_WQ(65,64, __Vtemp949, vlSelf->top__DOT__ysyx_22040931_ID__DOT__r_data2);
-        VL_SUB_W(3, __Vtemp950, __Vtemp948, __Vtemp949);
-        tracep->fullBit(oldp+358,((1U & __Vtemp950[2U])));
-        tracep->fullWData(oldp+359,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT____Vcellinp__Btype____pinNumber4),120);
-        tracep->fullIData(oldp+363,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[0]),20);
-        tracep->fullIData(oldp+364,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[1]),20);
-        tracep->fullIData(oldp+365,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[2]),20);
-        tracep->fullIData(oldp+366,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[3]),20);
-        tracep->fullIData(oldp+367,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[4]),20);
-        tracep->fullIData(oldp+368,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[5]),20);
-        tracep->fullSData(oldp+369,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[0]),10);
-        tracep->fullSData(oldp+370,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[1]),10);
-        tracep->fullSData(oldp+371,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[2]),10);
-        tracep->fullSData(oldp+372,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[3]),10);
-        tracep->fullSData(oldp+373,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[4]),10);
-        tracep->fullSData(oldp+374,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[5]),10);
-        tracep->fullSData(oldp+375,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[0]),10);
-        tracep->fullSData(oldp+376,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[1]),10);
-        tracep->fullSData(oldp+377,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[2]),10);
-        tracep->fullSData(oldp+378,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[3]),10);
-        tracep->fullSData(oldp+379,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[4]),10);
-        tracep->fullSData(oldp+380,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[5]),10);
-        tracep->fullSData(oldp+381,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__lut_out),10);
-        tracep->fullBit(oldp+382,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__hit));
-        tracep->fullSData(oldp+383,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Jtype__DOT__out),10);
-        tracep->fullSData(oldp+384,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Jtype__DOT__Jtype__DOT__i1__DOT__lut_out),10);
-        tracep->fullBit(oldp+385,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Jtype__DOT__Jtype__DOT__i1__DOT__hit));
-        tracep->fullSData(oldp+386,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Utype__DOT__out),9);
-        tracep->fullSData(oldp+387,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Utype__DOT__Utype__DOT__i1__DOT__lut_out),9);
-        tracep->fullBit(oldp+388,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Utype__DOT__Utype__DOT__i1__DOT__hit));
-        tracep->fullWData(oldp+389,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT____Vcellinp__imm_mux____pinNumber4),335);
-        tracep->fullWData(oldp+400,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[0]),67);
-        tracep->fullWData(oldp+403,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[1]),67);
-        tracep->fullWData(oldp+406,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[2]),67);
-        tracep->fullWData(oldp+409,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[3]),67);
-        tracep->fullWData(oldp+412,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[4]),67);
-        tracep->fullCData(oldp+415,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[0]),3);
-        tracep->fullCData(oldp+416,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[1]),3);
-        tracep->fullCData(oldp+417,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[2]),3);
-        tracep->fullCData(oldp+418,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[3]),3);
-        tracep->fullCData(oldp+419,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[4]),3);
-        tracep->fullQData(oldp+420,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+422,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+424,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[2]),64);
-        tracep->fullQData(oldp+426,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[3]),64);
-        tracep->fullQData(oldp+428,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[4]),64);
-        tracep->fullQData(oldp+430,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+432,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__hit));
-        tracep->fullQData(oldp+433,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__result),64);
-        tracep->fullIData(oldp+435,((IData)(vlSelf->top__DOT__data1)),32);
-        tracep->fullIData(oldp+436,((IData)(vlSelf->top__DOT__data2)),32);
-        tracep->fullWData(oldp+437,(vlSelf->top__DOT__ysyx_22040931_EX__DOT____Vcellinp__w_data_mux____pinNumber4),201);
-        tracep->fullWData(oldp+444,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__pair_list[0]),67);
-        tracep->fullWData(oldp+447,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__pair_list[1]),67);
-        tracep->fullWData(oldp+450,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__pair_list[2]),67);
-        tracep->fullCData(oldp+453,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__key_list[0]),3);
-        tracep->fullCData(oldp+454,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__key_list[1]),3);
-        tracep->fullCData(oldp+455,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__key_list[2]),3);
-        tracep->fullQData(oldp+456,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+458,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+460,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list[2]),64);
-        tracep->fullQData(oldp+462,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+464,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__hit));
-        tracep->fullWData(oldp+465,(vlSelf->top__DOT__ysyx_22040931_EX__DOT____Vcellinp__mem_addr_mux____pinNumber4),134);
-        tracep->fullWData(oldp+470,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__pair_list[0]),67);
-        tracep->fullWData(oldp+473,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__pair_list[1]),67);
-        tracep->fullCData(oldp+476,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__key_list[0]),3);
-        tracep->fullCData(oldp+477,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__key_list[1]),3);
-        tracep->fullQData(oldp+478,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+480,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+482,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+484,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__hit));
-        tracep->fullQData(oldp+485,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data),64);
-        tracep->fullCData(oldp+487,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__memwrop),3);
-        tracep->fullQData(oldp+488,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__stor_data_one),64);
-        tracep->fullQData(oldp+490,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__stor_data_two),64);
-        tracep->fullQData(oldp+492,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__stor_data_for),64);
-        tracep->fullCData(oldp+494,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__lut_out),2);
-        tracep->fullBit(oldp+495,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__hit));
-        tracep->fullWData(oldp+496,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_r_data_mux____pinNumber4),469);
-        tracep->fullWData(oldp+511,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[0]),67);
-        tracep->fullWData(oldp+514,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[1]),67);
-        tracep->fullWData(oldp+517,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[2]),67);
-        tracep->fullWData(oldp+520,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[3]),67);
-        tracep->fullWData(oldp+523,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[4]),67);
-        tracep->fullWData(oldp+526,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[5]),67);
-        tracep->fullWData(oldp+529,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[6]),67);
-        tracep->fullCData(oldp+532,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[0]),3);
-        tracep->fullCData(oldp+533,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[1]),3);
-        tracep->fullCData(oldp+534,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[2]),3);
-        tracep->fullCData(oldp+535,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[3]),3);
-        tracep->fullCData(oldp+536,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[4]),3);
-        tracep->fullCData(oldp+537,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[5]),3);
-        tracep->fullCData(oldp+538,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[6]),3);
-        tracep->fullQData(oldp+539,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+541,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+543,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[2]),64);
-        tracep->fullQData(oldp+545,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[3]),64);
-        tracep->fullQData(oldp+547,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[4]),64);
-        tracep->fullQData(oldp+549,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[5]),64);
-        tracep->fullQData(oldp+551,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[6]),64);
-        tracep->fullQData(oldp+553,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+555,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__hit));
-        tracep->fullWData(oldp+556,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data_mux____pinNumber4),268);
-        tracep->fullWData(oldp+565,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[0]),67);
-        tracep->fullWData(oldp+568,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[1]),67);
-        tracep->fullWData(oldp+571,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[2]),67);
-        tracep->fullWData(oldp+574,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[3]),67);
-        tracep->fullCData(oldp+577,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[0]),3);
-        tracep->fullCData(oldp+578,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[1]),3);
-        tracep->fullCData(oldp+579,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[2]),3);
-        tracep->fullCData(oldp+580,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[3]),3);
-        tracep->fullQData(oldp+581,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+583,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+585,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[2]),64);
-        tracep->fullQData(oldp+587,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[3]),64);
-        tracep->fullQData(oldp+589,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+591,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__hit));
-        tracep->fullCData(oldp+592,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data1_mux____pinNumber2),6);
-        tracep->fullWData(oldp+593,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data1_mux____pinNumber4),560);
-        tracep->fullWData(oldp+611,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[0]),70);
-        tracep->fullWData(oldp+614,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[1]),70);
-        tracep->fullWData(oldp+617,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[2]),70);
-        tracep->fullWData(oldp+620,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[3]),70);
-        tracep->fullWData(oldp+623,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[4]),70);
-        tracep->fullWData(oldp+626,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[5]),70);
-        tracep->fullWData(oldp+629,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[6]),70);
-        tracep->fullWData(oldp+632,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[7]),70);
-        tracep->fullCData(oldp+635,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[0]),6);
-        tracep->fullCData(oldp+636,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[1]),6);
-        tracep->fullCData(oldp+637,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[2]),6);
-        tracep->fullCData(oldp+638,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[3]),6);
-        tracep->fullCData(oldp+639,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[4]),6);
-        tracep->fullCData(oldp+640,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[5]),6);
-        tracep->fullCData(oldp+641,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[6]),6);
-        tracep->fullCData(oldp+642,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[7]),6);
-        tracep->fullQData(oldp+643,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+645,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+647,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[2]),64);
-        tracep->fullQData(oldp+649,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[3]),64);
-        tracep->fullQData(oldp+651,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[4]),64);
-        tracep->fullQData(oldp+653,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[5]),64);
-        tracep->fullQData(oldp+655,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[6]),64);
-        tracep->fullQData(oldp+657,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[7]),64);
-        tracep->fullQData(oldp+659,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+661,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__hit));
-        tracep->fullCData(oldp+662,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data2_mux____pinNumber2),5);
-        tracep->fullWData(oldp+663,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data2_mux____pinNumber4),276);
-        tracep->fullWData(oldp+672,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[0]),69);
-        tracep->fullWData(oldp+675,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[1]),69);
-        tracep->fullWData(oldp+678,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[2]),69);
-        tracep->fullWData(oldp+681,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[3]),69);
-        tracep->fullCData(oldp+684,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[0]),5);
-        tracep->fullCData(oldp+685,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[1]),5);
-        tracep->fullCData(oldp+686,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[2]),5);
-        tracep->fullCData(oldp+687,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[3]),5);
-        tracep->fullQData(oldp+688,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+690,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+692,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[2]),64);
-        tracep->fullQData(oldp+694,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[3]),64);
-        tracep->fullQData(oldp+696,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+698,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__hit));
-        tracep->fullCData(oldp+699,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data3_mux____pinNumber2),4);
-        tracep->fullWData(oldp+700,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data3_mux____pinNumber4),136);
-        tracep->fullWData(oldp+705,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__pair_list[0]),68);
-        tracep->fullWData(oldp+708,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__pair_list[1]),68);
-        tracep->fullCData(oldp+711,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__key_list[0]),4);
-        tracep->fullCData(oldp+712,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__key_list[1]),4);
-        tracep->fullQData(oldp+713,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__data_list[0]),64);
-        tracep->fullQData(oldp+715,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__data_list[1]),64);
-        tracep->fullQData(oldp+717,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__lut_out),64);
-        tracep->fullBit(oldp+719,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__hit));
-        tracep->fullQData(oldp+720,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[0]),64);
-        tracep->fullQData(oldp+722,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[1]),64);
-        tracep->fullQData(oldp+724,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[2]),64);
-        tracep->fullQData(oldp+726,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[3]),64);
-        tracep->fullQData(oldp+728,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[4]),64);
-        tracep->fullQData(oldp+730,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[5]),64);
-        tracep->fullQData(oldp+732,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[6]),64);
-        tracep->fullQData(oldp+734,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[7]),64);
-        tracep->fullQData(oldp+736,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[8]),64);
-        tracep->fullQData(oldp+738,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[9]),64);
-        tracep->fullQData(oldp+740,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[10]),64);
-        tracep->fullQData(oldp+742,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[11]),64);
-        tracep->fullQData(oldp+744,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[12]),64);
-        tracep->fullQData(oldp+746,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[13]),64);
-        tracep->fullQData(oldp+748,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[14]),64);
-        tracep->fullQData(oldp+750,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[15]),64);
-        tracep->fullQData(oldp+752,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[16]),64);
-        tracep->fullQData(oldp+754,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[17]),64);
-        tracep->fullQData(oldp+756,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[18]),64);
-        tracep->fullQData(oldp+758,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[19]),64);
-        tracep->fullQData(oldp+760,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[20]),64);
-        tracep->fullQData(oldp+762,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[21]),64);
-        tracep->fullQData(oldp+764,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[22]),64);
-        tracep->fullQData(oldp+766,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[23]),64);
-        tracep->fullQData(oldp+768,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[24]),64);
-        tracep->fullQData(oldp+770,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[25]),64);
-        tracep->fullQData(oldp+772,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[26]),64);
-        tracep->fullQData(oldp+774,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[27]),64);
-        tracep->fullQData(oldp+776,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[28]),64);
-        tracep->fullQData(oldp+778,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[29]),64);
-        tracep->fullQData(oldp+780,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[30]),64);
-        tracep->fullQData(oldp+782,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[31]),64);
-        tracep->fullIData(oldp+784,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__i),32);
-        tracep->fullBit(oldp+785,(vlSelf->reset));
-        tracep->fullBit(oldp+786,(vlSelf->clock));
-        tracep->fullIData(oldp+787,(vlSelf->instr),32);
-        tracep->fullQData(oldp+788,(vlSelf->momory_data),64);
-        tracep->fullBit(oldp+790,(vlSelf->fetch_enb));
-        tracep->fullQData(oldp+791,(vlSelf->pc),64);
-        tracep->fullCData(oldp+793,(vlSelf->memop),2);
-        tracep->fullBit(oldp+794,(vlSelf->mem_ena));
-        tracep->fullBit(oldp+795,(vlSelf->mem_wr));
-        tracep->fullQData(oldp+796,(vlSelf->mem_addr),64);
-        tracep->fullQData(oldp+798,(vlSelf->mem_stor_data),64);
-        tracep->fullQData(oldp+800,(vlSelf->difftest_pc),64);
-        tracep->fullCData(oldp+802,(((3U == (IData)(vlSelf->memop))
+        tracep->fullWData(oldp+357,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT____Vcellinp__Btype____pinNumber4),120);
+        tracep->fullIData(oldp+361,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[0]),20);
+        tracep->fullIData(oldp+362,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[1]),20);
+        tracep->fullIData(oldp+363,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[2]),20);
+        tracep->fullIData(oldp+364,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[3]),20);
+        tracep->fullIData(oldp+365,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[4]),20);
+        tracep->fullIData(oldp+366,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list[5]),20);
+        tracep->fullSData(oldp+367,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[0]),10);
+        tracep->fullSData(oldp+368,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[1]),10);
+        tracep->fullSData(oldp+369,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[2]),10);
+        tracep->fullSData(oldp+370,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[3]),10);
+        tracep->fullSData(oldp+371,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[4]),10);
+        tracep->fullSData(oldp+372,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__key_list[5]),10);
+        tracep->fullSData(oldp+373,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[0]),10);
+        tracep->fullSData(oldp+374,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[1]),10);
+        tracep->fullSData(oldp+375,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[2]),10);
+        tracep->fullSData(oldp+376,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[3]),10);
+        tracep->fullSData(oldp+377,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[4]),10);
+        tracep->fullSData(oldp+378,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__data_list[5]),10);
+        tracep->fullSData(oldp+379,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__lut_out),10);
+        tracep->fullBit(oldp+380,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__hit));
+        tracep->fullSData(oldp+381,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Jtype__DOT__out),10);
+        tracep->fullSData(oldp+382,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Jtype__DOT__Jtype__DOT__i1__DOT__lut_out),10);
+        tracep->fullBit(oldp+383,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Jtype__DOT__Jtype__DOT__i1__DOT__hit));
+        tracep->fullSData(oldp+384,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Utype__DOT__out),9);
+        tracep->fullSData(oldp+385,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Utype__DOT__Utype__DOT__i1__DOT__lut_out),9);
+        tracep->fullBit(oldp+386,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Utype__DOT__Utype__DOT__i1__DOT__hit));
+        tracep->fullWData(oldp+387,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT____Vcellinp__imm_mux____pinNumber4),335);
+        tracep->fullWData(oldp+398,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[0]),67);
+        tracep->fullWData(oldp+401,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[1]),67);
+        tracep->fullWData(oldp+404,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[2]),67);
+        tracep->fullWData(oldp+407,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[3]),67);
+        tracep->fullWData(oldp+410,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__pair_list[4]),67);
+        tracep->fullCData(oldp+413,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[0]),3);
+        tracep->fullCData(oldp+414,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[1]),3);
+        tracep->fullCData(oldp+415,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[2]),3);
+        tracep->fullCData(oldp+416,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[3]),3);
+        tracep->fullCData(oldp+417,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__key_list[4]),3);
+        tracep->fullQData(oldp+418,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+420,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+422,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[2]),64);
+        tracep->fullQData(oldp+424,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[3]),64);
+        tracep->fullQData(oldp+426,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__data_list[4]),64);
+        tracep->fullQData(oldp+428,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+430,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_IMM__DOT__imm_mux__DOT__i1__DOT__hit));
+        tracep->fullQData(oldp+431,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__result),64);
+        tracep->fullIData(oldp+433,((IData)(vlSelf->top__DOT__data1)),32);
+        tracep->fullIData(oldp+434,((IData)(vlSelf->top__DOT__data2)),32);
+        tracep->fullWData(oldp+435,(vlSelf->top__DOT__ysyx_22040931_EX__DOT____Vcellinp__w_data_mux____pinNumber4),201);
+        tracep->fullWData(oldp+442,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__pair_list[0]),67);
+        tracep->fullWData(oldp+445,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__pair_list[1]),67);
+        tracep->fullWData(oldp+448,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__pair_list[2]),67);
+        tracep->fullCData(oldp+451,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__key_list[0]),3);
+        tracep->fullCData(oldp+452,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__key_list[1]),3);
+        tracep->fullCData(oldp+453,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__key_list[2]),3);
+        tracep->fullQData(oldp+454,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+456,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+458,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list[2]),64);
+        tracep->fullQData(oldp+460,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+462,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__hit));
+        tracep->fullWData(oldp+463,(vlSelf->top__DOT__ysyx_22040931_EX__DOT____Vcellinp__mem_addr_mux____pinNumber4),134);
+        tracep->fullWData(oldp+468,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__pair_list[0]),67);
+        tracep->fullWData(oldp+471,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__pair_list[1]),67);
+        tracep->fullCData(oldp+474,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__key_list[0]),3);
+        tracep->fullCData(oldp+475,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__key_list[1]),3);
+        tracep->fullQData(oldp+476,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+478,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+480,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+482,(vlSelf->top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__hit));
+        tracep->fullQData(oldp+483,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data),64);
+        tracep->fullCData(oldp+485,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__memwrop),3);
+        tracep->fullQData(oldp+486,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__stor_data_one),64);
+        tracep->fullQData(oldp+488,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__stor_data_two),64);
+        tracep->fullQData(oldp+490,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__stor_data_for),64);
+        tracep->fullCData(oldp+492,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__lut_out),2);
+        tracep->fullBit(oldp+493,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__hit));
+        tracep->fullWData(oldp+494,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_r_data_mux____pinNumber4),469);
+        tracep->fullWData(oldp+509,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[0]),67);
+        tracep->fullWData(oldp+512,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[1]),67);
+        tracep->fullWData(oldp+515,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[2]),67);
+        tracep->fullWData(oldp+518,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[3]),67);
+        tracep->fullWData(oldp+521,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[4]),67);
+        tracep->fullWData(oldp+524,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[5]),67);
+        tracep->fullWData(oldp+527,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__pair_list[6]),67);
+        tracep->fullCData(oldp+530,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[0]),3);
+        tracep->fullCData(oldp+531,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[1]),3);
+        tracep->fullCData(oldp+532,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[2]),3);
+        tracep->fullCData(oldp+533,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[3]),3);
+        tracep->fullCData(oldp+534,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[4]),3);
+        tracep->fullCData(oldp+535,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[5]),3);
+        tracep->fullCData(oldp+536,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__key_list[6]),3);
+        tracep->fullQData(oldp+537,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+539,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+541,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[2]),64);
+        tracep->fullQData(oldp+543,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[3]),64);
+        tracep->fullQData(oldp+545,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[4]),64);
+        tracep->fullQData(oldp+547,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[5]),64);
+        tracep->fullQData(oldp+549,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__data_list[6]),64);
+        tracep->fullQData(oldp+551,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+553,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__hit));
+        tracep->fullWData(oldp+554,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data_mux____pinNumber4),268);
+        tracep->fullWData(oldp+563,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[0]),67);
+        tracep->fullWData(oldp+566,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[1]),67);
+        tracep->fullWData(oldp+569,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[2]),67);
+        tracep->fullWData(oldp+572,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__pair_list[3]),67);
+        tracep->fullCData(oldp+575,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[0]),3);
+        tracep->fullCData(oldp+576,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[1]),3);
+        tracep->fullCData(oldp+577,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[2]),3);
+        tracep->fullCData(oldp+578,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__key_list[3]),3);
+        tracep->fullQData(oldp+579,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+581,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+583,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[2]),64);
+        tracep->fullQData(oldp+585,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__data_list[3]),64);
+        tracep->fullQData(oldp+587,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+589,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__hit));
+        tracep->fullCData(oldp+590,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data1_mux____pinNumber2),6);
+        tracep->fullWData(oldp+591,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data1_mux____pinNumber4),560);
+        tracep->fullWData(oldp+609,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[0]),70);
+        tracep->fullWData(oldp+612,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[1]),70);
+        tracep->fullWData(oldp+615,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[2]),70);
+        tracep->fullWData(oldp+618,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[3]),70);
+        tracep->fullWData(oldp+621,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[4]),70);
+        tracep->fullWData(oldp+624,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[5]),70);
+        tracep->fullWData(oldp+627,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[6]),70);
+        tracep->fullWData(oldp+630,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__pair_list[7]),70);
+        tracep->fullCData(oldp+633,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[0]),6);
+        tracep->fullCData(oldp+634,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[1]),6);
+        tracep->fullCData(oldp+635,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[2]),6);
+        tracep->fullCData(oldp+636,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[3]),6);
+        tracep->fullCData(oldp+637,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[4]),6);
+        tracep->fullCData(oldp+638,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[5]),6);
+        tracep->fullCData(oldp+639,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[6]),6);
+        tracep->fullCData(oldp+640,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__key_list[7]),6);
+        tracep->fullQData(oldp+641,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+643,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+645,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[2]),64);
+        tracep->fullQData(oldp+647,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[3]),64);
+        tracep->fullQData(oldp+649,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[4]),64);
+        tracep->fullQData(oldp+651,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[5]),64);
+        tracep->fullQData(oldp+653,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[6]),64);
+        tracep->fullQData(oldp+655,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__data_list[7]),64);
+        tracep->fullQData(oldp+657,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+659,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__hit));
+        tracep->fullCData(oldp+660,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data2_mux____pinNumber2),5);
+        tracep->fullWData(oldp+661,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data2_mux____pinNumber4),276);
+        tracep->fullWData(oldp+670,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[0]),69);
+        tracep->fullWData(oldp+673,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[1]),69);
+        tracep->fullWData(oldp+676,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[2]),69);
+        tracep->fullWData(oldp+679,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__pair_list[3]),69);
+        tracep->fullCData(oldp+682,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[0]),5);
+        tracep->fullCData(oldp+683,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[1]),5);
+        tracep->fullCData(oldp+684,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[2]),5);
+        tracep->fullCData(oldp+685,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__key_list[3]),5);
+        tracep->fullQData(oldp+686,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+688,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+690,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[2]),64);
+        tracep->fullQData(oldp+692,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__data_list[3]),64);
+        tracep->fullQData(oldp+694,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+696,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__hit));
+        tracep->fullCData(oldp+697,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data3_mux____pinNumber2),4);
+        tracep->fullWData(oldp+698,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT____Vcellinp__mem_stor_data3_mux____pinNumber4),136);
+        tracep->fullWData(oldp+703,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__pair_list[0]),68);
+        tracep->fullWData(oldp+706,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__pair_list[1]),68);
+        tracep->fullCData(oldp+709,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__key_list[0]),4);
+        tracep->fullCData(oldp+710,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__key_list[1]),4);
+        tracep->fullQData(oldp+711,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__data_list[0]),64);
+        tracep->fullQData(oldp+713,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__data_list[1]),64);
+        tracep->fullQData(oldp+715,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__lut_out),64);
+        tracep->fullBit(oldp+717,(vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__hit));
+        tracep->fullQData(oldp+718,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[0]),64);
+        tracep->fullQData(oldp+720,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[1]),64);
+        tracep->fullQData(oldp+722,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[2]),64);
+        tracep->fullQData(oldp+724,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[3]),64);
+        tracep->fullQData(oldp+726,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[4]),64);
+        tracep->fullQData(oldp+728,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[5]),64);
+        tracep->fullQData(oldp+730,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[6]),64);
+        tracep->fullQData(oldp+732,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[7]),64);
+        tracep->fullQData(oldp+734,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[8]),64);
+        tracep->fullQData(oldp+736,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[9]),64);
+        tracep->fullQData(oldp+738,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[10]),64);
+        tracep->fullQData(oldp+740,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[11]),64);
+        tracep->fullQData(oldp+742,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[12]),64);
+        tracep->fullQData(oldp+744,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[13]),64);
+        tracep->fullQData(oldp+746,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[14]),64);
+        tracep->fullQData(oldp+748,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[15]),64);
+        tracep->fullQData(oldp+750,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[16]),64);
+        tracep->fullQData(oldp+752,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[17]),64);
+        tracep->fullQData(oldp+754,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[18]),64);
+        tracep->fullQData(oldp+756,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[19]),64);
+        tracep->fullQData(oldp+758,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[20]),64);
+        tracep->fullQData(oldp+760,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[21]),64);
+        tracep->fullQData(oldp+762,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[22]),64);
+        tracep->fullQData(oldp+764,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[23]),64);
+        tracep->fullQData(oldp+766,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[24]),64);
+        tracep->fullQData(oldp+768,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[25]),64);
+        tracep->fullQData(oldp+770,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[26]),64);
+        tracep->fullQData(oldp+772,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[27]),64);
+        tracep->fullQData(oldp+774,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[28]),64);
+        tracep->fullQData(oldp+776,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[29]),64);
+        tracep->fullQData(oldp+778,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[30]),64);
+        tracep->fullQData(oldp+780,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__regs[31]),64);
+        tracep->fullIData(oldp+782,(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__i),32);
+        tracep->fullBit(oldp+783,(vlSelf->reset));
+        tracep->fullBit(oldp+784,(vlSelf->clock));
+        tracep->fullIData(oldp+785,(vlSelf->instr),32);
+        tracep->fullQData(oldp+786,(vlSelf->momory_data),64);
+        tracep->fullBit(oldp+788,(vlSelf->fetch_enb));
+        tracep->fullQData(oldp+789,(vlSelf->pc),64);
+        tracep->fullCData(oldp+791,(vlSelf->memop),2);
+        tracep->fullBit(oldp+792,(vlSelf->mem_ena));
+        tracep->fullBit(oldp+793,(vlSelf->mem_wr));
+        tracep->fullQData(oldp+794,(vlSelf->mem_addr),64);
+        tracep->fullQData(oldp+796,(vlSelf->mem_stor_data),64);
+        tracep->fullQData(oldp+798,(vlSelf->difftest_pc),64);
+        tracep->fullCData(oldp+800,(((3U == (IData)(vlSelf->memop))
                                       ? 0xffU : (0xffU 
                                                  & ((2U 
                                                      == (IData)(vlSelf->memop))
@@ -1497,95 +1485,95 @@ void Vtop___024root__traceFullSub0(Vtop___024root* vlSelf, VerilatedVcd* tracep)
                                                        (7U 
                                                         & (IData)(vlSelf->mem_addr)))
                                                        : 0U)))))),8);
-        tracep->fullCData(oldp+803,((0x1fU & (vlSelf->instr 
+        tracep->fullCData(oldp+801,((0x1fU & (vlSelf->instr 
                                               >> 7U))),5);
-        tracep->fullQData(oldp+804,((((IData)(vlSelf->mem_ena) 
+        tracep->fullQData(oldp+802,((((IData)(vlSelf->mem_ena) 
                                       & (~ (IData)(vlSelf->mem_wr)))
                                       ? vlSelf->top__DOT__ysyx_22040931_MEM__DOT__mem_r_data
                                       : vlSelf->top__DOT__ex_w_data)),64);
-        tracep->fullQData(oldp+806,(((IData)(vlSelf->top__DOT__mux_pc)
+        tracep->fullQData(oldp+804,(((IData)(vlSelf->top__DOT__mux_pc)
                                       ? vlSelf->top__DOT__branch
                                       : (4ULL + vlSelf->pc))),64);
-        tracep->fullCData(oldp+808,((0x1fU & (vlSelf->instr 
+        tracep->fullCData(oldp+806,((0x1fU & (vlSelf->instr 
                                               >> 0xfU))),5);
-        tracep->fullCData(oldp+809,((0x1fU & (vlSelf->instr 
+        tracep->fullCData(oldp+807,((0x1fU & (vlSelf->instr 
                                               >> 0x14U))),5);
-        tracep->fullCData(oldp+810,((0x7fU & vlSelf->instr)),7);
-        tracep->fullCData(oldp+811,((7U & (vlSelf->instr 
+        tracep->fullCData(oldp+808,((0x7fU & vlSelf->instr)),7);
+        tracep->fullCData(oldp+809,((7U & (vlSelf->instr 
                                            >> 0xcU))),3);
-        tracep->fullCData(oldp+812,((vlSelf->instr 
+        tracep->fullCData(oldp+810,((vlSelf->instr 
                                      >> 0x19U)),7);
-        tracep->fullBit(oldp+813,((1U & (vlSelf->instr 
+        tracep->fullBit(oldp+811,((1U & (vlSelf->instr 
                                          >> 0x14U))));
-        tracep->fullIData(oldp+814,((vlSelf->instr 
+        tracep->fullIData(oldp+812,((vlSelf->instr 
                                      >> 7U)),25);
-        tracep->fullIData(oldp+815,(3U),32);
-        tracep->fullIData(oldp+816,(0x40U),32);
-        tracep->fullQData(oldp+817,(0x80000000ULL),64);
-        tracep->fullIData(oldp+819,(1U),32);
-        tracep->fullIData(oldp+820,(0x43U),32);
-        tracep->fullIData(oldp+821,(3U),32);
-        tracep->fullIData(oldp+822,(6U),32);
-        tracep->fullIData(oldp+823,(0xbU),32);
-        tracep->fullSData(oldp+824,(0U),11);
-        tracep->fullIData(oldp+825,(0xeU),32);
-        tracep->fullIData(oldp+826,(6U),32);
-        tracep->fullBit(oldp+827,(0U));
-        tracep->fullIData(oldp+828,(4U),32);
-        tracep->fullIData(oldp+829,(0x1cU),32);
-        tracep->fullIData(oldp+830,(0x11U),32);
-        tracep->fullIData(oldp+831,(9U),32);
-        tracep->fullSData(oldp+832,(0U),9);
-        tracep->fullWData(oldp+833,(Vtop__ConstPool__CONST_62d53ceb_0),728);
-        tracep->fullIData(oldp+856,(0x1aU),32);
-        tracep->fullIData(oldp+857,(0x1cU),32);
-        tracep->fullIData(oldp+858,(0xdU),32);
-        tracep->fullSData(oldp+859,(0U),13);
-        tracep->fullIData(oldp+860,(4U),32);
-        tracep->fullIData(oldp+861,(0xaU),32);
-        tracep->fullWData(oldp+862,(Vtop__ConstPool__CONST_f35eebe5_0),299);
-        tracep->fullIData(oldp+872,(0x17U),32);
-        tracep->fullIData(oldp+873,(0xdU),32);
-        tracep->fullIData(oldp+874,(0x10U),32);
-        tracep->fullIData(oldp+875,(0xcU),32);
-        tracep->fullSData(oldp+876,(0U),12);
-        __Vtemp952[0U] = 0x293f48U;
-        __Vtemp952[1U] = 0x404293f5U;
-        __Vtemp952[2U] = 0x93fU;
-        tracep->fullWData(oldp+877,(__Vtemp952),84);
-        tracep->fullIData(oldp+880,(5U),32);
-        __Vtemp953[0U] = 0x29bf68U;
-        __Vtemp953[1U] = 0xe10537ecU;
-        __Vtemp953[2U] = 0x980064fcU;
-        __Vtemp953[3U] = 0xe580089fU;
-        __Vtemp953[4U] = 0x9bU;
-        tracep->fullWData(oldp+881,(__Vtemp953),145);
-        tracep->fullIData(oldp+886,(0x1dU),32);
-        tracep->fullIData(oldp+887,(5U),32);
-        tracep->fullIData(oldp+888,(2U),32);
-        tracep->fullIData(oldp+889,(0x12U),32);
-        tracep->fullQData(oldp+890,(0x1cec000473b00ULL),60);
-        tracep->fullIData(oldp+892,(0x1eU),32);
-        tracep->fullIData(oldp+893,(2U),32);
-        __Vtemp954[0U] = 0x5ec23d79U;
-        __Vtemp954[1U] = 0x23d7d28fU;
-        __Vtemp954[2U] = 0x68f5fdU;
-        tracep->fullWData(oldp+894,(__Vtemp954),88);
-        tracep->fullIData(oldp+897,(0x16U),32);
-        tracep->fullSData(oldp+898,(0U),10);
-        tracep->fullIData(oldp+899,(0x14U),32);
-        tracep->fullIData(oldp+900,(7U),32);
-        tracep->fullIData(oldp+901,(0x1bfe1U),17);
-        tracep->fullIData(oldp+902,(1U),32);
-        tracep->fullIData(oldp+903,(0x2fee6f40U),32);
-        tracep->fullQData(oldp+904,(0ULL),64);
-        tracep->fullCData(oldp+906,(0U),2);
-        tracep->fullQData(oldp+907,(0x110d8db5fULL),35);
-        tracep->fullIData(oldp+909,(7U),32);
+        tracep->fullIData(oldp+813,(3U),32);
+        tracep->fullIData(oldp+814,(0x40U),32);
+        tracep->fullQData(oldp+815,(0x80000000ULL),64);
+        tracep->fullIData(oldp+817,(1U),32);
+        tracep->fullIData(oldp+818,(0x43U),32);
+        tracep->fullIData(oldp+819,(3U),32);
+        tracep->fullIData(oldp+820,(6U),32);
+        tracep->fullIData(oldp+821,(0xbU),32);
+        tracep->fullSData(oldp+822,(0U),11);
+        tracep->fullIData(oldp+823,(0xeU),32);
+        tracep->fullIData(oldp+824,(6U),32);
+        tracep->fullBit(oldp+825,(0U));
+        tracep->fullIData(oldp+826,(4U),32);
+        tracep->fullIData(oldp+827,(0x1cU),32);
+        tracep->fullIData(oldp+828,(0x11U),32);
+        tracep->fullIData(oldp+829,(9U),32);
+        tracep->fullSData(oldp+830,(0U),9);
+        tracep->fullWData(oldp+831,(Vtop__ConstPool__CONST_62d53ceb_0),728);
+        tracep->fullIData(oldp+854,(0x1aU),32);
+        tracep->fullIData(oldp+855,(0x1cU),32);
+        tracep->fullIData(oldp+856,(0xdU),32);
+        tracep->fullSData(oldp+857,(0U),13);
+        tracep->fullIData(oldp+858,(4U),32);
+        tracep->fullIData(oldp+859,(0xaU),32);
+        tracep->fullWData(oldp+860,(Vtop__ConstPool__CONST_f35eebe5_0),299);
+        tracep->fullIData(oldp+870,(0x17U),32);
+        tracep->fullIData(oldp+871,(0xdU),32);
+        tracep->fullIData(oldp+872,(0x10U),32);
+        tracep->fullIData(oldp+873,(0xcU),32);
+        tracep->fullSData(oldp+874,(0U),12);
+        __Vtemp947[0U] = 0x293f48U;
+        __Vtemp947[1U] = 0x404293f5U;
+        __Vtemp947[2U] = 0x93fU;
+        tracep->fullWData(oldp+875,(__Vtemp947),84);
+        tracep->fullIData(oldp+878,(5U),32);
+        __Vtemp948[0U] = 0x29bf68U;
+        __Vtemp948[1U] = 0xe10537ecU;
+        __Vtemp948[2U] = 0x980064fcU;
+        __Vtemp948[3U] = 0xe580089fU;
+        __Vtemp948[4U] = 0x9bU;
+        tracep->fullWData(oldp+879,(__Vtemp948),145);
+        tracep->fullIData(oldp+884,(0x1dU),32);
+        tracep->fullIData(oldp+885,(5U),32);
+        tracep->fullIData(oldp+886,(2U),32);
+        tracep->fullIData(oldp+887,(0x12U),32);
+        tracep->fullQData(oldp+888,(0x1cec000473b00ULL),60);
+        tracep->fullIData(oldp+890,(0x1eU),32);
+        tracep->fullIData(oldp+891,(2U),32);
+        __Vtemp949[0U] = 0x5ec23d79U;
+        __Vtemp949[1U] = 0x23d7d28fU;
+        __Vtemp949[2U] = 0x68f5fdU;
+        tracep->fullWData(oldp+892,(__Vtemp949),88);
+        tracep->fullIData(oldp+895,(0x16U),32);
+        tracep->fullSData(oldp+896,(0U),10);
+        tracep->fullIData(oldp+897,(0x14U),32);
+        tracep->fullIData(oldp+898,(7U),32);
+        tracep->fullIData(oldp+899,(0x1bfe1U),17);
+        tracep->fullIData(oldp+900,(1U),32);
+        tracep->fullIData(oldp+901,(0x2fee6f40U),32);
+        tracep->fullQData(oldp+902,(0ULL),64);
+        tracep->fullCData(oldp+904,(0U),2);
+        tracep->fullQData(oldp+905,(0x110d8db5fULL),35);
+        tracep->fullIData(oldp+907,(7U),32);
+        tracep->fullIData(oldp+908,(8U),32);
+        tracep->fullIData(oldp+909,(0x46U),32);
         tracep->fullIData(oldp+910,(8U),32);
-        tracep->fullIData(oldp+911,(0x46U),32);
-        tracep->fullIData(oldp+912,(8U),32);
-        tracep->fullIData(oldp+913,(0x45U),32);
-        tracep->fullIData(oldp+914,(0x44U),32);
+        tracep->fullIData(oldp+911,(0x45U),32);
+        tracep->fullIData(oldp+912,(0x44U),32);
     }
 }

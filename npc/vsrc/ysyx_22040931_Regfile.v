@@ -37,53 +37,43 @@ reg [`ysyx_22040931_DATA_BUS]	regs[0 : 31];
     end
 
 
-assign r_data1 = regs[r_addr1];
-assign r_data2 = regs[r_addr2];
+// assign r_data1 = regs[r_addr1];
+// assign r_data2 = regs[r_addr2];
 
-    // //read
-    // always @(*) begin
-	// 	if (reset == 1'b1) 
-    //     begin
-	// 		r_data1 = `ysyx_22040931_ZERO_NUM;
-	// 	end
-	// 	else if (r_ena1 == 1'b1) 
-    //     begin
-	// 		//if((r_addr1 == w_addr) && (w_addr != 5'h00) && (w_ena == 1'b1)) 
-    //         //begin
-	// 			//r_data1 = w_data;
-	// 		//end
-	// 		//else 
-    //         //begin
-	// 			r_data1 = regs[r_addr1];
-	// 		//end
-	// 	end
-	// 	else 
-    //     begin
-	// 		r_data1 = `ysyx_22040931_ZERO_NUM;
-	// 	end
-	// end
+    //read
+    always @(*) begin
+		if (reset == 1'b1) begin
+			r_data1 = `ysyx_22040931_ZERO_NUM;
+		end
+		else if (r_ena1 == 1'b1) begin
+			if((r_addr1 == w_addr) && (w_addr != 5'h00) && w_ena) begin
+				r_data1 = w_data;
+			end
+			else begin
+				r_data1 = regs[r_addr1];
+			end
+		end
+		else begin
+			r_data1 = `ysyx_22040931_ZERO_NUM;
+		end
+	end
 	
-	// always @(*) begin
-	// 	if (reset == 1'b1) 
-    //     begin
-	// 		r_data2 = `ysyx_22040931_ZERO_NUM;
-	// 	end
-	// 	else if (r_ena2 == 1'b1) 
-    //     begin
-	// 		//if((r_addr2 == w_addr) && (w_addr != 5'h00) && (w_ena == 1'b1)) 
-    //         //begin
-	// 			//r_data2 = w_data;
-	// 		//end
-	// 		//else 
-    //         //begin
-	// 			r_data2 = regs[r_addr2];
-	// 		//end
-	// 	end	
-	// 	else 
-    //     begin
-	// 		r_data2 = `ysyx_22040931_ZERO_NUM;
-	// 	end
-	// end	
+	always @(*) begin
+		if (reset == 1'b1) begin
+			r_data2 = `ysyx_22040931_ZERO_NUM;
+		end
+		else if (r_ena2 == 1'b1) begin
+			if((r_addr2 == w_addr) && (w_addr != 5'h00) && w_ena) begin
+				r_data2 = w_data;
+			end
+			else begin
+				r_data2 = regs[r_addr2];
+			end
+		end	
+		else begin
+			r_data2 = `ysyx_22040931_ZERO_NUM;
+		end
+	end	
 	
 import "DPI-C" function void set_gpr_ptr(input logic [63:0] a []);
 initial set_gpr_ptr(regs);  // rf为通用寄存器的二维数组变量
