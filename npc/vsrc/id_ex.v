@@ -11,7 +11,8 @@ module id_ex(
     input wire ex_ready,
     output wire id_ready,
     output wire id_valid,
-    input wire [`ysyx_22040931_PC_BUS] ID_pc,  
+    input wire [`ysyx_22040931_PC_BUS] ID_pc,
+    input wire [`ysyx_22040931_INST_BUS] ID_instr,  
     //regfile
     input wire 		     ID_w_ena,
     input wire [`ysyx_22040931_REG_BUS]  ID_w_addr,
@@ -43,23 +44,25 @@ module id_ex(
     output reg          EX_mem_ena,
     output reg           EX_mem_wr,
 
+    output reg [`ysyx_22040931_INST_BUS] EX_instr,
     output reg [`ysyx_22040931_PC_BUS] EX_pc
 );
 
 //assign ex_valid = ~stall;
 //assign id_ready = ex_valid & ex_ready;
-reg id_now_valid;
+
 wire id_go;
-assign id_go = stall;
+reg id_now_valid;
+assign id_go = ~stall;
 assign id_ready = !(id_now_valid & ~flush) | id_go & ex_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
-assign id_valid = (id_now_valid & ~flush) & id_go;
+assign id_valid = id_now_valid;
 
     always@(posedge clock) begin
         if(reset == 1'b1) begin
             id_now_valid <= 0;
         end
         else if(id_ready) begin
-            id_now_vaild <= if_valid;
+            id_now_valid <= if_valid;
         end
     end
 
@@ -78,6 +81,7 @@ assign id_valid = (id_now_valid & ~flush) & id_go;
             EX_mem_ena <= `ysyx_22040931_N_ENA;
             EX_mem_wr <= `ysyx_22040931_READ;
             EX_pc <= `ysyx_22040931_ZERO_PC;
+            EX_instr <= `ysyx_22040931_NONE_INST;
         end
         else begin
             if(if_valid & id_ready) begin
@@ -93,6 +97,22 @@ assign id_valid = (id_now_valid & ~flush) & id_go;
                 EX_mem_ena <= ID_mem_ena;
                 EX_mem_wr <= ID_mem_wr;
                 EX_pc <= ID_pc;
+                EX_instr <= ID_instr;
+            end
+            else if(id_go) begin
+                EX_w_ena <= `ysyx_22040931_N_ENA;
+                EX_w_addr <= `ysyx_22040931_ZERO_REG;
+                EX_data1 <= `ysyx_22040931_ZERO_NUM;
+                EX_data2 <= `ysyx_22040931_ZERO_NUM;
+                EX_imm <= `ysyx_22040931_ZERO_NUM;
+                EX_exop <= `ysyx_22040931_No;
+                EX_aluop <= `ysyx_22040931_NO;
+                EX_memwop <= `ysyx_22040931_MNO;
+                EX_memrop <= `ysyx_22040931_MNO;
+                EX_mem_ena <= `ysyx_22040931_N_ENA;
+                EX_mem_wr <= `ysyx_22040931_READ;
+                EX_pc <= `ysyx_22040931_ZERO_PC;
+                EX_instr <= `ysyx_22040931_NONE_INST;
             end
         end
     end

@@ -17,6 +17,7 @@ module ysyx_22040931_MEM(
     
     //liushuixian
     input wire [`ysyx_22040931_PC_BUS] pc_i,
+    input wire [`ysyx_22040931_INST_BUS] instr,
 
 
     output wire w_ena,
@@ -29,11 +30,14 @@ module ysyx_22040931_MEM(
     output wire [`ysyx_22040931_MEM_BUS] mem_addr,
     output wire [`ysyx_22040931_DATA_BUS] mem_stor_data,//
     //liushuixian
+    output wire [`ysyx_22040931_INST_BUS] instr_o,
     output wire [`ysyx_22040931_PC_BUS] pc_o
 
 );
 
-    assign pc_o = pc_i;
+assign pc_o = pc_i;
+assign instr_o = instr;
+
     assign w_ena = w_ena_i;
     assign w_addr = w_addr_i;
 

@@ -17,6 +17,7 @@ module top(
     output wire [`ysyx_22040931_MEM_BUS] mem_addr,
     output wire [`ysyx_22040931_DATA_BUS] mem_stor_data,
 
+    output wire [`ysyx_22040931_INST_BUS] difftest_instr,
     output wire [`ysyx_22040931_PC_BUS] difftest_pc
 
 );
@@ -31,7 +32,7 @@ end
 
 import "DPI-C" function void E(input int a);
 always @(instr) begin
-	if(instr == 32'b0000000_00001_00000_000_00000_11100_11) begin
+	if(difftest_instr == 32'b0000000_00001_00000_000_00000_11100_11) begin
 		Inst(instr);
 		E(1);
 	end
@@ -85,11 +86,12 @@ wire pc_valid;
 wire if_ready;
 wire if_valid;
 
-module if_id(
+if_id if_id(
     .reset(reset),
     .clock(clock),
     .flush(),
-    .stall(),
+    .stall(),         //////
+    .nop(nop),      ///////
     //wo shou
     .pc_valid(pc_valid),
     .id_ready(id_ready),
@@ -108,29 +110,33 @@ module if_id(
 wire [`ysyx_22040931_PC_BUS]   ID_pc;
 wire [`ysyx_22040931_INST_BUS] ID_instr;
 
-module ysyx_22040931_ID(
+ysyx_22040931_ID ysyx_22040931_ID(
 
     //regfile
     .reset(reset),
     .clock(clock),
-    input wire w_ena_i,
-    input wire [`ysyx_22040931_REG_BUS] w_addr_i,
-    input wire [`ysyx_22040931_DATA_BUS] w_data_i,
+    .w_ena_i(wb_w_ena),
+    .w_addr_i(wb_w_addr),
+    .w_data_i(wb_w_data),
     //liushuixian
     .pc_i(ID_pc),
     .instr(ID_instr),
     //bypass
     .ex_w_ena(EX_w_ena),
     .ex_w_addr(EX_w_addr),
-    .ex_w_data(EX_w_data),
-    input wire mem_w_ena,
-    input wire [`ysyx_22040931_REG_BUS] mem_w_addr,
-    input wire [`ysyx_22040931_DATA_BUS] mem_w_data,
+    .ex_w_data(ex_w_data),
+    .mem_w_ena(MEM_w_ena),
+    .mem_w_addr(MEM_w_addr),
+    .mem_w_data(MEM_w_data),
+    //load hazard
+    .ex_mem_ena(EX_mem_ena),
+    .ex_mem_wr(EX_mem_ena),
 
 
-    //load hazard 
-    .stall(load_stall),
+    //load hazard and mux_pc
+    .nop(nop),
     //liushuixian
+    .instr_o(id_instr),
     .pc_o(id_pc),    
     //branch
     .branch(branch),
@@ -152,9 +158,10 @@ module ysyx_22040931_ID(
 );
 
 //load hazard 
-wire load_stall;
+wire nop;
 //liushuixian
-wire [`ysyx_22040931_PC_BUS] id_pc;   
+wire [`ysyx_22040931_PC_BUS] id_pc;
+wire [`ysyx_22040931_INST_BUS] id_instr;   
 //branch
 wire [`ysyx_22040931_PC_BUS] branch;
 wire mux_pc;
@@ -176,7 +183,7 @@ wire [2 : 0]   id_memrop;
 wire id_ready;
 wire id_valid;
 
-module id_ex(
+id_ex id_ex(
     .reset(reset),
     .clock(clock),
     .flush(),     //记得flush与各级使能相与 p71
@@ -187,6 +194,7 @@ module id_ex(
     .id_ready(id_ready),
     .id_valid(id_valid),
     .ID_pc(id_pc),
+    .ID_instr(ID_instr),
     //regfile
     .ID_w_ena(id_w_ena),
     .ID_w_addr(id_w_addr),
@@ -218,7 +226,8 @@ module id_ex(
     .EX_mem_ena(EX_mem_ena),
     .EX_mem_wr(EX_mem_wr),
 
-    .EX_pc(.EX_pc)
+    .EX_instr(EX_instr),
+    .EX_pc(EX_pc)
 );
 
 wire          EX_w_ena;
@@ -234,6 +243,7 @@ wire [2 : 0]   EX_memwop;
 wire [2 : 0]   EX_memrop;
 wire          EX_mem_ena;
 wire           EX_mem_wr;
+wire [`ysyx_22040931_INST_BUS] EX_instr;
 wire [`ysyx_22040931_PC_BUS] EX_pc;
 
 ysyx_22040931_EX ysyx_22040931_EX(
@@ -241,6 +251,7 @@ ysyx_22040931_EX ysyx_22040931_EX(
     .w_ena_i(EX_w_ena),
     .w_addr_i(EX_w_addr),
     .pc_i(EX_pc),
+    .instr(EX_instr),
     
     .data1(EX_data1),
     .data2(EX_data2),
@@ -267,6 +278,7 @@ ysyx_22040931_EX ysyx_22040931_EX(
     .mem_addr(ex_mem_addr),
     .mem_data(ex_mem_data),
     //liushuixian
+    .instr_o(ex_instr),
     .pc_o(ex_pc)
 
 );
@@ -284,6 +296,7 @@ wire           ex_mem_wr;
 wire [`ysyx_22040931_MEM_BUS] ex_mem_addr;
 wire [`ysyx_22040931_DATA_BUS] ex_mem_data;
 //liushuixian
+wire [`ysyx_22040931_INST_BUS] ex_instr;
 wire [`ysyx_22040931_PC_BUS] ex_pc;
 
 
@@ -291,7 +304,7 @@ wire [`ysyx_22040931_PC_BUS] ex_pc;
 wire ex_ready;
 wire ex_valid;
 
-module ex_mem(
+ex_mem ex_mem(
     .reset(reset),
     .clock(clock),
     .flush(),
@@ -303,6 +316,7 @@ module ex_mem(
     .ex_valid(ex_valid),
     //liushuixian
     .EX_pc(ex_pc),
+    .EX_instr(ex_instr),
     //regfile
     .EX_w_ena(ex_w_ena),
     .EX_w_addr(ex_w_addr),
@@ -320,14 +334,15 @@ module ex_mem(
     .MEM_w_addr(MEM_w_addr),
     .MEM_w_data(MEM_w_data),
     //mem
-    output reg [2 : 0]   MEM_memwop,
-    output reg [2 : 0]   MEM_memrop,
-    output reg           MEM_mem_ena,
-    output reg           MEM_mem_wr,
-    output reg [`ysyx_22040931_MEM_BUS]  MEM_mem_addr,
-    output reg [`ysyx_22040931_DATA_BUS] MEM_mem_stor_data,
+    .MEM_memwop(MEM_memwop),
+    .MEM_memrop(MEM_memrop),
+    .MEM_mem_ena(MEM_mem_ena),
+    .MEM_mem_wr(MEM_mem_wr),
+    .MEM_mem_addr(MEM_mem_addr),
+    .MEM_mem_stor_data(MEM_mem_stor_data),
     //liushuixian
-    output reg [`ysyx_22040931_PC_BUS]  MEM_pc
+    .MEM_instr(MEM_instr),
+    .MEM_pc(MEM_pc)
 
 );
 
@@ -336,70 +351,107 @@ wire          MEM_w_ena;
 wire [`ysyx_22040931_REG_BUS] MEM_w_addr;
 wire [`ysyx_22040931_DATA_BUS] MEM_w_data;
 //mem
-    output reg [2 : 0]   MEM_memwop,
-    output reg [2 : 0]   MEM_memrop,
-    output reg           MEM_mem_ena,
-    output reg           MEM_mem_wr,
-    output reg [`ysyx_22040931_MEM_BUS]  MEM_mem_addr,
-    output reg [`ysyx_22040931_DATA_BUS] MEM_mem_stor_data,
-    //liushuixian
-    output reg [`ysyx_22040931_PC_BUS]  MEM_pc
+wire [2 : 0]   MEM_memwop;
+wire [2 : 0]   MEM_memrop;
+wire           MEM_mem_ena;
+wire           MEM_mem_wr;
+wire [`ysyx_22040931_MEM_BUS]  MEM_mem_addr;
+wire [`ysyx_22040931_DATA_BUS] MEM_mem_stor_data;
+//liushuixian
+wire [`ysyx_22040931_INST_BUS] MEM_instr;
+wire [`ysyx_22040931_PC_BUS]  MEM_pc;
 
 
-module ysyx_22040931_MEM(
+ysyx_22040931_MEM ysyx_22040931_MEM(
 
     .w_ena_i(MEM_w_ena),
     .w_addr_i(MEM_w_addr),
     .w_data_i(MEM_w_data),
     //mem
-    input wire [2 : 0]   memwop,
-    input wire [2 : 0]   memrop,
-    input wire           mem_ena_i,
-    input wire           mem_wr_i,
-    input wire [`ysyx_22040931_MEM_BUS] mem_addr_i,
-    input wire [`ysyx_22040931_DATA_BUS] mem_stor_data_i,
-    input wire [`ysyx_22040931_DATA_BUS] mem_data,
+    .memwop(MEM_memwop),
+    .memrop(MEM_memrop),
+    .mem_ena_i(MEM_mem_ena),
+    .mem_wr_i(MEM_mem_wr),
+    .mem_addr_i(MEM_mem_addr),
+    .mem_stor_data_i(MEM_mem_stor_data),
+    .mem_data(momory_data),
     //liushuixian
-    input wire [`ysyx_22040931_PC_BUS] pc_i,
-    //load hazard
-    input wire ex_mem_ena,
-    input wire ex_mem_wr,
+    .pc_i(MEM_pc),
+    .instr(MEM_instr),
 
 
-    output wire w_ena,
-    output wire [`ysyx_22040931_REG_BUS] w_addr,
-    output wire [`ysyx_22040931_DATA_BUS] w_data,
+    .w_ena(mem_w_ena),
+    .w_addr(mem_w_addr),
+    .w_data(mem_w_data),
     //mem
-    output wire [1 : 0]       memop,//
-    output wire             mem_ena,
-    output wire              mem_wr,
-    output wire [`ysyx_22040931_MEM_BUS] mem_addr,
-    output wire [`ysyx_22040931_DATA_BUS] mem_stor_data,//
+    .memop(memop),//
+    .mem_ena(mem_ena),
+    .mem_wr(mem_wr),
+    .mem_addr(mem_addr),
+    .mem_stor_data(mem_stor_data),//
     //liushuixian
-    output wire [`ysyx_22040931_PC_BUS] pc_o
+    .instr_o(mem_instr),
+    .pc_o(mem_pc)
 
 );
 
-    output wire w_ena,
-    output wire [`ysyx_22040931_REG_BUS] w_addr,
-    output wire [`ysyx_22040931_DATA_BUS] w_data,
-    //mem
-    output wire [1 : 0]       memop,//
-    output wire             mem_ena,
-    output wire              mem_wr,
-    output wire [`ysyx_22040931_MEM_BUS] mem_addr,
-    output wire [`ysyx_22040931_DATA_BUS] mem_stor_data,//
-    //liushuixian
-    output wire [`ysyx_22040931_PC_BUS] pc_o
+wire mem_w_ena;
+wire [`ysyx_22040931_REG_BUS] mem_w_addr;
+wire [`ysyx_22040931_DATA_BUS] mem_w_data;
+//liushuixian
+wire [`ysyx_22040931_PC_BUS] mem_pc;
+wire [`ysyx_22040931_INST_BUS] mem_instr;
 
+
+//mem valid <-> ready
+wire mem_ready;
+wire mem_valid;
+
+mem_wb mem_wb(
+    .reset(reset),
+    .clock(clock),
+    .flush(),
+    .stall(),
+    //wo shou
+    .ex_valid(ex_valid),
+    //input wire wb_ready,
+    .mem_ready(mem_ready),
+    .mem_valid(mem_valid),
+    //liushuixian
+    .MEM_pc(mem_pc),
+    .MEM_instr(mem_instr),
+    //regfile 
+    .MEM_w_ena(mem_w_ena),
+    .MEM_w_addr(mem_w_addr),
+    .MEM_w_data(mem_w_data),
+
+
+    .WB_w_ena(WB_w_ena),
+    .WB_w_addr(WB_w_addr),
+    .WB_w_data(WB_w_data),
+    //liushuixian
+    .WB_instr(WB_instr),
+    .WB_pc(WB_pc)
+);
+
+
+wire          WB_w_ena;
+wire [`ysyx_22040931_REG_BUS]  WB_w_addr;
+wire [`ysyx_22040931_DATA_BUS] WB_w_data;
+//liushuixian
+wire [`ysyx_22040931_PC_BUS] WB_pc;
+wire [`ysyx_22040931_INST_BUS] WB_instr;
+//difftest
+assign difftest_pc = WB_pc;
+assign difftest_instr = WB_instr;
 
 ysyx_22040931_WB ysyx_22040931_WB(
 
-    .w_ena_i(mem_w_ena),
-    .w_addr_i(mem_w_addr),
-    .w_data_i(mem_w_data),
+    .w_ena_i(WB_w_ena),
+    .w_addr_i(WB_w_addr),
+    .w_data_i(WB_w_data),
     //liushuixian
-    .pc_i(mem_pc),
+    .pc_i(WB_pc),
     
 
     .w_ena(wb_w_ena),

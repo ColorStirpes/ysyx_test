@@ -156,7 +156,7 @@ void step_and_dump_wave()
     top->eval();
     top->clock = 1, top->eval();
   }
-  cpuu.pc = top->pc;
+  cpuu.pc = top->difftest_pc;
   main_time++;
 }
 
@@ -216,6 +216,7 @@ static int cmd_info(char *args)
 }
 
 static uint64_t refpc = 0;
+bool start = true;
 
 static int cmd_si(char *args)
 {
@@ -290,20 +291,26 @@ static int cmd_c(char *args)
       if (top->fetch_enb == 1)
       {
         top->instr = pmem_read(top->pc, 4);
-        
       }
 
       if (main_time % 10 == 0){
         //printf("pc:0x%lx, instr:0x%08lx\n", top->pc, pmem_read(top->pc, 4));
         if(top->clock == 1){
-          if(refpc == 0){
-            refpc = top->pc;
+          //printf("pc:0x%lx, instr:0x%08lx\n", top->difftest_pc, top->difftest_instr);
+          if(top->difftest_pc == 0x80000000 && start){
+            refpc = top->difftest_pc;
+            if(top->difftest_instr != 0){
+              start = false;
+            }
           }
-          else{
+          else {
+            printf("pc:0x%lx, instr:0x%08lx\n", top->difftest_pc, top->difftest_instr);
             for(int i = 0; i < 32; i++)
               cpuu.gpr[i] = cpu_gpr[i];
-            difftest_step(refpc, top->pc);
-            refpc = top->pc;
+            if(top->difftest_instr != 0){
+              difftest_step(refpc, top->difftest_pc);
+              refpc = top->difftest_pc;
+            }
           }
         }
       }
@@ -413,7 +420,11 @@ int main(int argc, char **argv)
     if (isebreak || is_exit)
     {
       if(cpuu.gpr[10] != 0){
+        printf("######################Not Good!!!##################\n");
         assert(0);
+      }
+      else{
+        printf("########GOOD*******!!!!#####\n");
       }
       break;
     }

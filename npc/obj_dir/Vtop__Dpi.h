@@ -13,15 +13,15 @@ extern "C" {
 
 
     // DPI IMPORTS
-    // DPI import at vsrc/top.v:32:30
+    // DPI import at vsrc/top.v:33:30
     extern void E(int a);
-    // DPI import at vsrc/top.v:25:30
+    // DPI import at vsrc/top.v:26:30
     extern void Inst(int instruct);
-    // DPI import at vsrc/top.v:44:30
-    extern void mem_read(long long raddr, long long* rdata);
     // DPI import at vsrc/top.v:45:30
+    extern void mem_read(long long raddr, long long* rdata);
+    // DPI import at vsrc/top.v:46:30
     extern void mem_write(long long waddr, long long wdata, char wmask);
-    // DPI import at vsrc/ysyx_22040931_Regfile.v:88:30
+    // DPI import at vsrc/ysyx_22040931_Regfile.v:78:30
     extern void set_gpr_ptr(const svOpenArrayHandle a);
 
 #ifdef __cplusplus

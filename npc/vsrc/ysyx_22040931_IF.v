@@ -22,7 +22,7 @@ module ysyx_22040931_IF(
 
 reg pc_now_valid;
 wire pc_go;
-assign pc_go = stall;
+assign pc_go = ~stall;
 assign pc_ready = !(pc_now_valid & ~flush) | pc_go & if_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
 assign pc_valid = (pc_now_valid & ~flush) & pc_go;
 
@@ -31,7 +31,7 @@ assign pc_valid = (pc_now_valid & ~flush) & pc_go;
             pc_now_valid <= 0;
         end
         else if(pc_ready) begin
-            pc_now_vaild <= 1;
+            pc_now_valid <= 1;
         end
     end
 

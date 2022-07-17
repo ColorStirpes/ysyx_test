@@ -37,8 +37,8 @@ reg [`ysyx_22040931_DATA_BUS]	regs[0 : 31];
     end
 
 
-// assign r_data1 = regs[r_addr1];
-// assign r_data2 = regs[r_addr2];
+//  assign r_data1 = regs[r_addr1];
+//  assign r_data2 = regs[r_addr2];
 
     //read
     always @(*) begin

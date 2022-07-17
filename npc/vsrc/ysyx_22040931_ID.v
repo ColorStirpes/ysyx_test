@@ -25,9 +25,10 @@ module ysyx_22040931_ID(
 
 
     //load hazard 
-    output wire stall,
+    output wire nop,
     //liushuixian
-    output wire [`ysyx_22040931_PC_BUS] pc_o,    
+    output wire [`ysyx_22040931_PC_BUS] pc_o,
+    output wire [`ysyx_22040931_INST_BUS] instr_o,   
     //branch
     output wire [`ysyx_22040931_PC_BUS] branch,      //////////////////////////////////
     output wire mux_pc,
@@ -48,6 +49,10 @@ module ysyx_22040931_ID(
 );
 
 assign pc_o = pc_i;
+assign instr_o = instr;
+
+wire load_stall;
+assign nop = load_stall | mux_pc;
 
     wire [2 : 0]     ztype;
     wire 		    r_ena1;
@@ -128,8 +133,8 @@ assign pc_o = pc_i;
 
 
     //load hazard
-    assign stall = (ex_w_addr == reg1_addr) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 
-                   (ex_w_addr == reg2_addr) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 1'b0;
+    assign load_stall = (ex_w_addr == r_addr1) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 
+                        (ex_w_addr == r_addr2) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 1'b0;
 
     //read bypass
     wire need_ex1, need_ex2, need_mem1, need_mem2;
@@ -138,14 +143,14 @@ assign pc_o = pc_i;
     assign need_mem1 = (mem_w_addr == r_addr1) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena) : 1'b0;
     assign need_mem2 = (mem_w_addr == r_addr2) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena) : 1'b0;
 
-    ysyx_22040931_MuxD #(4, 4, 13) reg_data1 (data1, {r_ena1, ~r_ena1, need_ex1, need_mem1}, `YSYX210457_ZERO_WORD, {
+    ysyx_22040931_MuxD #(4, 4, 64) reg_data1 (data1, {r_ena1, ~r_ena1, need_ex1, need_mem1}, `ysyx_22040931_ZERO_NUM, {
         4'b1000,  r_data1,
         4'b0100,  imm,
         4'b1010,  ex_w_data,
         4'b1001,  mem_w_data
     });
 
-    ysyx_22040931_MuxD #(4, 4, 13) reg_data2 (data2, {r_ena2, ~r_ena2, need_ex2, need_mem2}, `YSYX210457_ZERO_WORD, {
+    ysyx_22040931_MuxD #(4, 4, 64) reg_data2 (data2, {r_ena2, ~r_ena2, need_ex2, need_mem2}, `ysyx_22040931_ZERO_NUM, {
         4'b1000,  r_data2,
         4'b0100,  imm,
         4'b1010,  ex_w_data,
