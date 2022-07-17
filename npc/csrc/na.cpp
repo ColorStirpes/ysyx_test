@@ -421,7 +421,7 @@ int main(int argc, char **argv)
     {
       if(cpuu.gpr[10] != 0){
         printf("######################Not Good!!!##################\n");
-        assert(0);
+        //assert(0);
       }
       else{
         printf("########GOOD*******!!!!#####\n");

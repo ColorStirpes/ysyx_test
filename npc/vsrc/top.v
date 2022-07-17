@@ -90,8 +90,8 @@ if_id if_id(
     .reset(reset),
     .clock(clock),
     .flush(),
-    .stall(),         //////
-    .nop(nop),      ///////
+    .stall(load_stall),         ////////////////
+    .nop(nop),                 ////////////////
     //wo shou
     .pc_valid(pc_valid),
     .id_ready(id_ready),
@@ -122,12 +122,12 @@ ysyx_22040931_ID ysyx_22040931_ID(
     .pc_i(ID_pc),
     .instr(ID_instr),
     //bypass
-    .ex_w_ena(EX_w_ena),
-    .ex_w_addr(EX_w_addr),
+    .ex_w_ena(ex_w_ena),
+    .ex_w_addr(ex_w_addr),
     .ex_w_data(ex_w_data),
-    .mem_w_ena(MEM_w_ena),
-    .mem_w_addr(MEM_w_addr),
-    .mem_w_data(MEM_w_data),
+    .mem_w_ena(mem_w_ena),
+    .mem_w_addr(mem_w_addr),
+    .mem_w_data(mem_w_data),
     //load hazard
     .ex_mem_ena(EX_mem_ena),
     .ex_mem_wr(EX_mem_ena),
@@ -135,6 +135,7 @@ ysyx_22040931_ID ysyx_22040931_ID(
 
     //load hazard and mux_pc
     .nop(nop),
+    .load_stall(load_stall),
     //liushuixian
     .instr_o(id_instr),
     .pc_o(id_pc),    
@@ -159,6 +160,7 @@ ysyx_22040931_ID ysyx_22040931_ID(
 
 //load hazard 
 wire nop;
+wire load_stall;
 //liushuixian
 wire [`ysyx_22040931_PC_BUS] id_pc;
 wire [`ysyx_22040931_INST_BUS] id_instr;   
@@ -188,6 +190,7 @@ id_ex id_ex(
     .clock(clock),
     .flush(),     //记得flush与各级使能相与 p71
     .stall(),
+    .nop(load_stall),
     //wo shou
     .if_valid(if_valid),
     .ex_ready(ex_ready),
@@ -374,7 +377,7 @@ ysyx_22040931_MEM ysyx_22040931_MEM(
     .mem_wr_i(MEM_mem_wr),
     .mem_addr_i(MEM_mem_addr),
     .mem_stor_data_i(MEM_mem_stor_data),
-    .mem_data(momory_data),
+    .mem_data(rdata),                                      ////////////
     //liushuixian
     .pc_i(MEM_pc),
     .instr(MEM_instr),

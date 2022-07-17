@@ -26,6 +26,7 @@ module ysyx_22040931_ID(
 
     //load hazard 
     output wire nop,
+    output wire load_stall,
     //liushuixian
     output wire [`ysyx_22040931_PC_BUS] pc_o,
     output wire [`ysyx_22040931_INST_BUS] instr_o,   
@@ -51,8 +52,7 @@ module ysyx_22040931_ID(
 assign pc_o = pc_i;
 assign instr_o = instr;
 
-wire load_stall;
-assign nop = load_stall | mux_pc;
+assign nop = mux_pc;
 
     wire [2 : 0]     ztype;
     wire 		    r_ena1;
@@ -138,22 +138,24 @@ assign nop = load_stall | mux_pc;
 
     //read bypass
     wire need_ex1, need_ex2, need_mem1, need_mem2;
-    assign need_ex1 = (ex_w_addr == r_addr1) ? ((ex_w_addr == 5'b00000) ? 1'b0 : ex_w_ena) : 1'b0;
-    assign need_ex2 = (ex_w_addr == r_addr2) ? ((ex_w_addr == 5'b00000) ? 1'b0 : ex_w_ena) : 1'b0;
-    assign need_mem1 = (mem_w_addr == r_addr1) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena) : 1'b0;
-    assign need_mem2 = (mem_w_addr == r_addr2) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena) : 1'b0;
+    assign need_ex1 = (ex_w_addr == r_addr1) ? ((ex_w_addr == 5'b00000) ? 1'b0 : ex_w_ena & r_ena1) : 1'b0;
+    assign need_ex2 = (ex_w_addr == r_addr2) ? ((ex_w_addr == 5'b00000) ? 1'b0 : ex_w_ena & r_ena2) : 1'b0;
+    assign need_mem1 = (mem_w_addr == r_addr1) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena & r_ena1) : 1'b0;
+    assign need_mem2 = (mem_w_addr == r_addr2) ? ((mem_w_addr == 5'b00000) ? 1'b0 : mem_w_ena & r_ena2) : 1'b0;
 
-    ysyx_22040931_MuxD #(4, 4, 64) reg_data1 (data1, {r_ena1, ~r_ena1, need_ex1, need_mem1}, `ysyx_22040931_ZERO_NUM, {
+    ysyx_22040931_MuxD #(5, 4, 64) reg_data1 (data1, {r_ena1, ~r_ena1, need_ex1, need_mem1}, `ysyx_22040931_ZERO_NUM, {
         4'b1000,  r_data1,
         4'b0100,  imm,
         4'b1010,  ex_w_data,
+        4'b1011,  ex_w_data,
         4'b1001,  mem_w_data
     });
 
-    ysyx_22040931_MuxD #(4, 4, 64) reg_data2 (data2, {r_ena2, ~r_ena2, need_ex2, need_mem2}, `ysyx_22040931_ZERO_NUM, {
+    ysyx_22040931_MuxD #(5, 4, 64) reg_data2 (data2, {r_ena2, ~r_ena2, need_ex2, need_mem2}, `ysyx_22040931_ZERO_NUM, {
         4'b1000,  r_data2,
         4'b0100,  imm,
         4'b1010,  ex_w_data,
+        4'b1011,  ex_w_data,
         4'b1001,  mem_w_data
     });
 
