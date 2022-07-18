@@ -75,8 +75,8 @@ void do_syscall(Context *c) {
 
 #if CONFIG_STRACE
 if(c->GPR1 == SYS_open)
-  printf("****System Call:open, openfile:%s, fd:%d\n", c->GPR1, c->GPR2, c->GPRx);
-  printf("****System Call:%d, a0:%d, a1:%d, a2:%d, ret:%d****\n", c->GPR1, c->GPR2, c->GPR3, c->GPR4, c->GPRx);
+  //printf("****System Call:open, openfile:%s, fd:%d\n", c->GPR1, c->GPR2, c->GPRx);
+printf("****System Call:%d, a0:%d, a1:%d, a2:%d, ret:%d****\n", c->GPR1, c->GPR2, c->GPR3, c->GPR4, c->GPRx);
 #endif
   
 }

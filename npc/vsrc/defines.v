@@ -7,6 +7,11 @@
 `define D_NUM  1024
 `define D_NUMLOG  10
 
+//forcase
+`define ysyx_22040931_PHT_SIZE  256     //1<<`ysyx_22040931_BHT_WIDTH
+`define ysyx_22040931_BHT_WIDTH  8      //ysyx_22040931_HASH_WIDTH
+`define ysyx_22040931_BHT_SIZE  256     //1<<`ysyx_22040931_HASH_WIDTH
+`define ysyx_22040931_HASH_WIDTH 8      //
 
 `define ysyx_22040931_REG        32
 `define ysyx_22040931_MEM        64
