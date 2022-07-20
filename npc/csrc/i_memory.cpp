@@ -82,7 +82,7 @@ static inline void host_write(void *addr, int len, uint64_t data)
 
 uint64_t pmem_read(paddr_t addr, int len)
 { 
-  //host_read(guest_to_host(addr), len);
+  //printf("read:%lx\n");
   uint64_t ret = host_read(guest_to_host(addr), len);
   return ret;
 }

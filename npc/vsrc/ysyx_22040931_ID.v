@@ -22,10 +22,13 @@ module ysyx_22040931_ID(
     //load hazard
     input wire ex_mem_ena,
     input wire ex_mem_wr,
+    //pre
+    input wire pre_jump,
+    input wire [`ysyx_22040931_PC_BUS] pre_branch,
 
 
     //load hazard 
-    output wire nop,
+    //output wire nop,
     output wire load_stall,
     //liushuixian
     output wire [`ysyx_22040931_PC_BUS] pc_o,
@@ -33,6 +36,8 @@ module ysyx_22040931_ID(
     //branch
     output wire [`ysyx_22040931_PC_BUS] branch,      //////////////////////////////////
     output wire mux_pc,
+    output wire [1 : 0] jumptype,
+    output wire error_pre,
     //regfile
     output wire 		   w_ena,
     output wire [`ysyx_22040931_REG_BUS] w_addr,
@@ -52,7 +57,29 @@ module ysyx_22040931_ID(
 assign pc_o = pc_i;
 assign instr_o = instr;
 
-assign nop = mux_pc;
+assign jumptype = (ztype == `ysyx_22040931_Bt) ? 2'b01 : (ztype == `ysyx_22040931_Jt) ? 2'b10 : ((ztype == `ysyx_22040931_It) && mux_pc) ? 2'b11 : 2'b00;
+assign error_pre = (pre_jump != mux_pc) ? 1'b1 : (pre_branch != branch) ? mux_pc : 1'b0;
+
+//assign nop = mux_pc;
+reg [31 : 0] r_count;
+reg [31 : 0] count;
+always @(posedge clock) begin
+    if(reset == 1'b1) begin
+        count <= 0;
+        r_count <= 0;
+    end
+    else begin
+        if(~error_pre && (jumptype != 0)) begin
+            r_count <= r_count + 1;
+        end
+        if(jumptype != 0) begin
+            count <= count + 1;
+        end
+    end
+end
+    initial begin
+        $monitor("%d/%d 正确率:%d  \n",r_count, count,  r_count*100 / count );
+    end
 
     wire [2 : 0]     ztype;
     wire 		    r_ena1;
@@ -158,8 +185,6 @@ assign nop = mux_pc;
         4'b1011,  ex_w_data,
         4'b1001,  mem_w_data
     });
-
-
 
 
 

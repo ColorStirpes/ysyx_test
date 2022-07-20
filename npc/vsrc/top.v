@@ -50,11 +50,11 @@ assign wmask = (memop == `ysyx_22040931_SIZE_D) ? 8'b1111_1111 :
                (memop == `ysyx_22040931_SIZE_H) ? (8'b0000_0011 << (mem_addr[2 : 0] << 1))    :
                (memop == `ysyx_22040931_SIZE_B) ? (8'b0000_0001 <<  mem_addr[2 : 0] )         : 8'b0000_0000;
 
+
 always @(*) begin
       	mem_read(mem_addr, rdata);
       	mem_write(mem_addr, mem_stor_data, wmask);
 end
-
 
 
 wire mux_pc;
@@ -69,13 +69,23 @@ ysyx_22040931_IF ysyx_22040931_IF(
     .if_ready(if_ready),
     .pc_ready(pc_ready),
     .pc_valid(pc_valid),
-    .mux_pc(mux_pc),
-    .branch(branch),
+
+
+    .error_pre(error_pre),
+    .id_jump(mux_pc),
+    .id_jumptype(jumptype),
+    .id_pc(id_pc),
+    .id_branch(branch),
     
+    .pre_jump(pre_jump),
+    .pre_branch(pre_branch),
     .fetch_enb(fetch_enb),
     .if_pc(pc)
-
 );
+
+//forecase
+wire pre_jump;
+wire [`ysyx_22040931_PC_BUS] pre_branch;
 
 //pc valid <-> ready
 wire pc_ready;
@@ -91,22 +101,26 @@ if_id if_id(
     .clock(clock),
     .flush(),
     .stall(load_stall),         ////////////////
-    .nop(nop),                 ////////////////
+    .nop(error_pre),            ////////////////
     //wo shou
     .pc_valid(pc_valid),
     .id_ready(id_ready),
     .if_ready(if_ready),
     .if_valid(if_valid),
 
+    .IF_pre_jump(pre_jump),
+    .IF_pre_branch(pre_branch),
     .IF_pc(pc),
     .IF_instr(instr),
 
-
+    .ID_pre_jump(ID_pre_jump),
+    .ID_pre_branch(ID_pre_branch),
     .ID_pc(ID_pc),
     .ID_instr(ID_instr)
 );
 
-
+wire ID_pre_jump;
+wire [`ysyx_22040931_PC_BUS] ID_pre_branch;
 wire [`ysyx_22040931_PC_BUS]   ID_pc;
 wire [`ysyx_22040931_INST_BUS] ID_instr;
 
@@ -131,10 +145,13 @@ ysyx_22040931_ID ysyx_22040931_ID(
     //load hazard
     .ex_mem_ena(EX_mem_ena),
     .ex_mem_wr(EX_mem_ena),
+    //pre
+    .pre_jump(ID_pre_jump),
+    .pre_branch(ID_pre_branch),
 
 
     //load hazard and mux_pc
-    .nop(nop),
+    //.nop(nop),
     .load_stall(load_stall),
     //liushuixian
     .instr_o(id_instr),
@@ -142,6 +159,8 @@ ysyx_22040931_ID ysyx_22040931_ID(
     //branch
     .branch(branch),
     .mux_pc(mux_pc),
+    .jumptype(jumptype),
+    .error_pre(error_pre),
     //regfile
     .w_ena(id_w_ena),
     .w_addr(id_w_addr),
@@ -165,8 +184,10 @@ wire load_stall;
 wire [`ysyx_22040931_PC_BUS] id_pc;
 wire [`ysyx_22040931_INST_BUS] id_instr;   
 //branch
+wire [1 : 0] jumptype;
 wire [`ysyx_22040931_PC_BUS] branch;
 wire mux_pc;
+wire error_pre;
 //regfile
 wire 		   id_w_ena;
 wire [`ysyx_22040931_REG_BUS] id_w_addr;

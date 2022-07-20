@@ -304,7 +304,7 @@ static int cmd_c(char *args)
             }
           }
           else {
-            printf("pc:0x%lx, instr:0x%08lx\n", top->difftest_pc, top->difftest_instr);
+            //printf("pc:0x%lx, instr:0x%08lx\n", top->difftest_pc, top->difftest_instr);
             for(int i = 0; i < 32; i++)
               cpuu.gpr[i] = cpu_gpr[i];
             if(top->difftest_instr != 0){

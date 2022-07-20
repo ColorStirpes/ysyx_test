@@ -13,10 +13,14 @@ module if_id(
     output wire if_ready,
     output wire if_valid,
     
+    input wire IF_pre_jump,
+    input wire [`ysyx_22040931_PC_BUS] IF_pre_branch,
     input wire [`ysyx_22040931_PC_BUS]   IF_pc,
     input wire [`ysyx_22040931_INST_BUS] IF_instr,
 
 
+    output reg ID_pre_jump,
+    output reg [`ysyx_22040931_PC_BUS] ID_pre_branch,
     output reg [`ysyx_22040931_PC_BUS]   ID_pc,
     output reg [`ysyx_22040931_INST_BUS] ID_instr
 );
@@ -42,21 +46,29 @@ assign if_valid = if_now_valid;
         if(reset == 1'b1) begin
             ID_pc <= `ysyx_22040931_ZERO_PC;
             ID_instr <= `ysyx_22040931_NONE_INST;
+            ID_pre_jump <= 1'b0;
+            ID_pre_branch <= `ysyx_22040931_ZERO_PC;
         end
         else begin
             if(pc_valid & if_ready) begin
                 if(nop) begin
                     ID_pc <= `ysyx_22040931_ZERO_PC;
                     ID_instr <= `ysyx_22040931_NONE_INST;
+                    ID_pre_jump <= 1'b0;
+                    ID_pre_branch <= `ysyx_22040931_ZERO_PC;
                 end    
                 else begin
                     ID_pc <= IF_pc;
                     ID_instr <= IF_instr;
+                    ID_pre_jump <= IF_pre_jump;
+                    ID_pre_branch <= IF_pre_branch;
                 end 
             end
             else if(if_go) begin
                 ID_pc <= `ysyx_22040931_ZERO_PC;
                 ID_instr <= `ysyx_22040931_NONE_INST;
+                ID_pre_jump <= 1'b0;
+                ID_pre_branch <= `ysyx_22040931_ZERO_PC;
             end
         end
     end

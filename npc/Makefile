@@ -50,12 +50,14 @@ all:
 
 sim:$(VSRCS) $(CSRCS) $(DISASMSRC)
 	$(call git_commit, "sim RTL")
+	rm -rf ./obj_dir
 	verilator --cc -Ivsrc vsrc/top.v csrc/*.cpp $(DISASMSRC) --build --exe --trace -LDFLAGS $(shell llvm-config --libs) -LDFLAGS -ldl
 
 simw:siming
 	#gtkwave $(WAVE_FLAG)
 siming:
 	$(call git_commit, "sim RTL")
+	rm -rf ./obj_dir
 	echo $(IMG)
 	verilator --cc -Ivsrc --trace vsrc/top.v csrc/*.cpp $(DISASMSRC) --build --exe -LDFLAGS $(shell llvm-config --libs) -LDFLAGS -ldl
 	-./obj_dir/Vtop $(IMG) 

@@ -11,12 +11,15 @@
 
 class Vtop__Syms;
 class Vtop_VerilatedVcd;
+class Vtop___024unit;
 
 
 //----------
 
 VL_MODULE(Vtop___024root) {
   public:
+    // CELLS
+    Vtop___024unit* __PVT____024unit;
 
     // PORTS
     VL_IN8(clock,0,0);
@@ -37,10 +40,15 @@ VL_MODULE(Vtop___024root) {
     // Anonymous structures to workaround compiler member-count bugs
     struct {
         CData/*0:0*/ top__DOT__mux_pc;
+        CData/*0:0*/ top__DOT__pre_jump;
         CData/*0:0*/ top__DOT__pc_ready;
         CData/*0:0*/ top__DOT__pc_valid;
         CData/*0:0*/ top__DOT__if_ready;
+        CData/*0:0*/ top__DOT__ID_pre_jump;
+        CData/*0:0*/ top__DOT__nop;
         CData/*0:0*/ top__DOT__load_stall;
+        CData/*1:0*/ top__DOT__jumptype;
+        CData/*0:0*/ top__DOT__error_pre;
         CData/*0:0*/ top__DOT__id_ready;
         CData/*0:0*/ top__DOT__EX_w_ena;
         CData/*4:0*/ top__DOT__EX_w_addr;
@@ -63,6 +71,11 @@ VL_MODULE(Vtop___024root) {
         CData/*0:0*/ top__DOT__ysyx_22040931_IF__DOT__flush;
         CData/*0:0*/ top__DOT__ysyx_22040931_IF__DOT__stall;
         CData/*0:0*/ top__DOT__ysyx_22040931_IF__DOT__pc_now_valid;
+        CData/*0:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__valid_pre;
+        CData/*7:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__id_hash;
+        CData/*7:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__id_pht_index;
+        CData/*1:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__target_predictor__DOT__jumptype;
+        CData/*3:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__target_predictor__DOT__ras_index;
         CData/*0:0*/ top__DOT__if_id__DOT__flush;
         CData/*0:0*/ top__DOT__if_id__DOT__if_now_valid;
         CData/*2:0*/ top__DOT__ysyx_22040931_ID__DOT__ztype;
@@ -90,6 +103,8 @@ VL_MODULE(Vtop___024root) {
         CData/*0:0*/ top__DOT__id_ex__DOT__flush;
         CData/*0:0*/ top__DOT__id_ex__DOT__stall;
         CData/*0:0*/ top__DOT__id_ex__DOT__id_now_valid;
+    };
+    struct {
         CData/*0:0*/ top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ex_mem__DOT__flush;
@@ -100,8 +115,6 @@ VL_MODULE(Vtop___024root) {
         CData/*0:0*/ top__DOT__ysyx_22040931_MEM__DOT__memop_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_r_data_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data_mux__DOT__i1__DOT__hit;
-    };
-    struct {
         CData/*0:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__hit;
@@ -136,18 +149,28 @@ VL_MODULE(Vtop___024root) {
         IData/*31:0*/ top__DOT__EX_instr;
         IData/*31:0*/ top__DOT__MEM_instr;
         IData/*31:0*/ top__DOT__WB_instr;
+        IData/*31:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__i;
+        IData/*31:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__j;
+        IData/*31:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__target_predictor__DOT__i;
+        IData/*31:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__target_predictor__DOT__j;
+        IData/*31:0*/ top__DOT__ysyx_22040931_ID__DOT__r_count;
+        IData/*31:0*/ top__DOT__ysyx_22040931_ID__DOT__count;
         IData/*16:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Rtype__DOT__chose;
         IData/*16:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__chose3;
         IData/*17:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__chose4;
         IData/*31:0*/ top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Regfile__DOT__i;
         QData/*63:0*/ top__DOT__rdata;
         QData/*63:0*/ top__DOT__branch;
+        QData/*63:0*/ top__DOT__pre_branch;
+        QData/*63:0*/ top__DOT__ID_pre_branch;
         QData/*63:0*/ top__DOT__ID_pc;
         QData/*63:0*/ top__DOT__id_data1;
         QData/*63:0*/ top__DOT__id_data2;
         QData/*63:0*/ top__DOT__id_imm;
         QData/*63:0*/ top__DOT__EX_data1;
         QData/*63:0*/ top__DOT__EX_data2;
+    };
+    struct {
         QData/*63:0*/ top__DOT__EX_imm;
         QData/*63:0*/ top__DOT__EX_pc;
         QData/*63:0*/ top__DOT__ex_w_data;
@@ -166,8 +189,6 @@ VL_MODULE(Vtop___024root) {
         QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__reg_data1__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__reg_data2__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_EX__DOT__result;
-    };
-    struct {
         QData/*63:0*/ top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_r_data;
@@ -179,6 +200,10 @@ VL_MODULE(Vtop___024root) {
         QData/*63:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data1_mux__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data2_mux__DOT__i1__DOT__lut_out;
         QData/*63:0*/ top__DOT__ysyx_22040931_MEM__DOT__mem_stor_data3_mux__DOT__i1__DOT__lut_out;
+        VlUnpacked<CData/*1:0*/, 256> top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__PHT;
+        VlUnpacked<CData/*7:0*/, 256> top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__BHT;
+        VlUnpacked<VlWide<4>/*97:0*/, 256> top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__target_predictor__DOT__BTB1;
+        VlUnpacked<QData/*63:0*/, 16> top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__target_predictor__DOT__RAS;
         VlUnpacked<VlWide<3>/*66:0*/, 3> top__DOT__ysyx_22040931_ID__DOT__branch_mux__DOT__i1__DOT__pair_list;
         VlUnpacked<CData/*2:0*/, 3> top__DOT__ysyx_22040931_ID__DOT__branch_mux__DOT__i1__DOT__key_list;
         VlUnpacked<QData/*63:0*/, 3> top__DOT__ysyx_22040931_ID__DOT__branch_mux__DOT__i1__DOT__data_list;
@@ -210,6 +235,8 @@ VL_MODULE(Vtop___024root) {
         VlUnpacked<SData/*9:0*/, 4> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Stype__DOT__Stype__DOT__i1__DOT__key_list;
         VlUnpacked<SData/*11:0*/, 4> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Stype__DOT__Stype__DOT__i1__DOT__data_list;
         VlUnpacked<SData/*10:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Jump_b__DOT__i1__DOT__pair_list;
+    };
+    struct {
         VlUnpacked<SData/*9:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Jump_b__DOT__i1__DOT__key_list;
         VlUnpacked<CData/*0:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Jump_b__DOT__i1__DOT__data_list;
         VlUnpacked<IData/*18:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list;
@@ -232,8 +259,6 @@ VL_MODULE(Vtop___024root) {
         VlUnpacked<CData/*3:0*/, 5> top__DOT__ysyx_22040931_ID__DOT__reg_data2__DOT__i1__DOT__key_list;
         VlUnpacked<QData/*63:0*/, 5> top__DOT__ysyx_22040931_ID__DOT__reg_data2__DOT__i1__DOT__data_list;
         VlUnpacked<VlWide<3>/*66:0*/, 3> top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__pair_list;
-    };
-    struct {
         VlUnpacked<CData/*2:0*/, 3> top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__key_list;
         VlUnpacked<QData/*63:0*/, 3> top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__data_list;
         VlUnpacked<VlWide<3>/*66:0*/, 2> top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__pair_list;

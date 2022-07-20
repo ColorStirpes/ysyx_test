@@ -12,6 +12,12 @@
 `define ysyx_22040931_BHT_WIDTH  8      //ysyx_22040931_HASH_WIDTH
 `define ysyx_22040931_BHT_SIZE  256     //1<<`ysyx_22040931_HASH_WIDTH
 `define ysyx_22040931_HASH_WIDTH 8      //
+//
+`define ysyx_22040931_BTB_WIDTH 98
+`define ysyx_22040931_BTB_SIZE 256
+`define ysyx_22040931_RAS_INDEX 4
+`define ysyx_22040931_RAS_SIZE 16
+
 
 `define ysyx_22040931_REG        32
 `define ysyx_22040931_MEM        64
