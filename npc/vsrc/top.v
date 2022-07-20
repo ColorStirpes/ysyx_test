@@ -73,7 +73,7 @@ divider divider(
     .reset(reset),
     .div(div),
     .div_signed(1),
-    .dividend(1165),
+    .dividend(1164),
     .divisor(7),
 
 
