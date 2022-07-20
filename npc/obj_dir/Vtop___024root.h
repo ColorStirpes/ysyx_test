@@ -39,6 +39,7 @@ VL_MODULE(Vtop___024root) {
     // LOCAL SIGNALS
     // Anonymous structures to workaround compiler member-count bugs
     struct {
+        CData/*6:0*/ top__DOT__test;
         CData/*0:0*/ top__DOT__mux_pc;
         CData/*0:0*/ top__DOT__pre_jump;
         CData/*0:0*/ top__DOT__pc_ready;
@@ -68,6 +69,7 @@ VL_MODULE(Vtop___024root) {
         CData/*0:0*/ top__DOT__mem_ready;
         CData/*0:0*/ top__DOT__WB_w_ena;
         CData/*4:0*/ top__DOT__WB_w_addr;
+        CData/*6:0*/ top__DOT__divider__DOT__count;
         CData/*0:0*/ top__DOT__ysyx_22040931_IF__DOT__flush;
         CData/*0:0*/ top__DOT__ysyx_22040931_IF__DOT__stall;
         CData/*0:0*/ top__DOT__ysyx_22040931_IF__DOT__pc_now_valid;
@@ -101,10 +103,10 @@ VL_MODULE(Vtop___024root) {
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__reg_data1__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_ID__DOT__reg_data2__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__id_ex__DOT__flush;
-        CData/*0:0*/ top__DOT__id_ex__DOT__stall;
-        CData/*0:0*/ top__DOT__id_ex__DOT__id_now_valid;
     };
     struct {
+        CData/*0:0*/ top__DOT__id_ex__DOT__stall;
+        CData/*0:0*/ top__DOT__id_ex__DOT__id_now_valid;
         CData/*0:0*/ top__DOT__ysyx_22040931_EX__DOT__w_data_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ysyx_22040931_EX__DOT__mem_addr_mux__DOT__i1__DOT__hit;
         CData/*0:0*/ top__DOT__ex_mem__DOT__flush;
@@ -149,6 +151,9 @@ VL_MODULE(Vtop___024root) {
         IData/*31:0*/ top__DOT__EX_instr;
         IData/*31:0*/ top__DOT__MEM_instr;
         IData/*31:0*/ top__DOT__WB_instr;
+        VlWide<4>/*127:0*/ top__DOT__divider__DOT__dividend_reg;
+        VlWide<3>/*64:0*/ top__DOT__divider__DOT__remainder_reg;
+        VlWide<3>/*64:0*/ top__DOT__divider__DOT__sub;
         IData/*31:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__i;
         IData/*31:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__direction_predictor__DOT__j;
         IData/*31:0*/ top__DOT__ysyx_22040931_IF__DOT__predictor__DOT__target_predictor__DOT__i;
@@ -164,13 +169,13 @@ VL_MODULE(Vtop___024root) {
         QData/*63:0*/ top__DOT__pre_branch;
         QData/*63:0*/ top__DOT__ID_pre_branch;
         QData/*63:0*/ top__DOT__ID_pc;
+    };
+    struct {
         QData/*63:0*/ top__DOT__id_data1;
         QData/*63:0*/ top__DOT__id_data2;
         QData/*63:0*/ top__DOT__id_imm;
         QData/*63:0*/ top__DOT__EX_data1;
         QData/*63:0*/ top__DOT__EX_data2;
-    };
-    struct {
         QData/*63:0*/ top__DOT__EX_imm;
         QData/*63:0*/ top__DOT__EX_pc;
         QData/*63:0*/ top__DOT__ex_w_data;
@@ -182,6 +187,7 @@ VL_MODULE(Vtop___024root) {
         QData/*63:0*/ top__DOT__mem_w_data;
         QData/*63:0*/ top__DOT__WB_w_data;
         QData/*63:0*/ top__DOT__WB_pc;
+        QData/*63:0*/ top__DOT__divider__DOT__quotient_reg;
         QData/*63:0*/ top__DOT__ysyx_22040931_IF__DOT__pc_i;
         QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__bbranch;
         QData/*63:0*/ top__DOT__ysyx_22040931_ID__DOT__branch_mux__DOT__i1__DOT__lut_out;
@@ -229,14 +235,14 @@ VL_MODULE(Vtop___024root) {
         VlUnpacked<IData/*16:0*/, 5> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__Itype3__DOT__i1__DOT__key_list;
         VlUnpacked<SData/*11:0*/, 5> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__Itype3__DOT__i1__DOT__data_list;
         VlUnpacked<IData/*29:0*/, 2> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__Itype4__DOT__i1__DOT__pair_list;
+    };
+    struct {
         VlUnpacked<IData/*17:0*/, 2> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__Itype4__DOT__i1__DOT__key_list;
         VlUnpacked<SData/*11:0*/, 2> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Itype__DOT__Itype4__DOT__i1__DOT__data_list;
         VlUnpacked<IData/*21:0*/, 4> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Stype__DOT__Stype__DOT__i1__DOT__pair_list;
         VlUnpacked<SData/*9:0*/, 4> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Stype__DOT__Stype__DOT__i1__DOT__key_list;
         VlUnpacked<SData/*11:0*/, 4> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Stype__DOT__Stype__DOT__i1__DOT__data_list;
         VlUnpacked<SData/*10:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Jump_b__DOT__i1__DOT__pair_list;
-    };
-    struct {
         VlUnpacked<SData/*9:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Jump_b__DOT__i1__DOT__key_list;
         VlUnpacked<CData/*0:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Jump_b__DOT__i1__DOT__data_list;
         VlUnpacked<IData/*18:0*/, 6> top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__Btype__DOT__i1__DOT__pair_list;

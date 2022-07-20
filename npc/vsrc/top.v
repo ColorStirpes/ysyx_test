@@ -56,6 +56,33 @@ always @(*) begin
       	mem_write(mem_addr, mem_stor_data, wmask);
 end
 
+reg [6 : 0] test;
+always @(posedge clock) begin
+    if(reset) begin
+        test <= 0;
+    end
+    else begin
+        test <= test + 1;
+    end
+end
+wire div;
+assign div = (test <= 65) ? 1'b1 : 1'b0;
+
+divider divider(
+    .clock(clock),
+    .reset(reset),
+    .div(div),
+    .div_signed(1),
+    .dividend(1165),
+    .divisor(7),
+
+
+    .quotient(),
+    .remainder(),
+    .complete()
+);
+
+
 
 wire mux_pc;
 wire [`ysyx_22040931_PC_BUS] branch;
