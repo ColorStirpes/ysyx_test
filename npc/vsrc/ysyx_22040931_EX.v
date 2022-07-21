@@ -3,6 +3,12 @@
 
 
 module ysyx_22040931_EX(
+    input wire reset,
+    input wire clock,
+    //woshou
+    output wire 
+
+
 
     input wire w_ena_i,
     input wire [`ysyx_22040931_REG_BUS] w_addr_i,
@@ -52,11 +58,20 @@ assign instr_o = instr;
 
     wire [`ysyx_22040931_DATA_BUS]result;
     ysyx_22040931_ALU ysyx_22040931_ALU(
+    .reset(reset),
+    .clock(clock),
+    .alu_valid(),
+    .alu_ready(),
+    .ex_ready(),
+    .id_valid(),
+
+
     .num1(data1),
     .num2(data2),
     .imm(imm),
     .pc(pc_i),
     .op(aluop),
+
 
     .out(result)
     );

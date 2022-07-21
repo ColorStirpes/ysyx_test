@@ -43,12 +43,18 @@ module ex_mem(
 
 );
 
+
+    input wire id_valid,
+    input wire mem_ready,
+    output wire ex_ready,
+    output wire ex_valid,
 //assign mem_valid = ~stall;
 //assign ex_ready = mem_vaild & mem_ready;
 reg ex_now_valid;
 wire ex_go;
 assign ex_go = ~stall;
-assign ex_ready = !(ex_now_valid & ~flush) | ex_go & mem_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
+
+assign ex_ready = !ex_now_valid | mem_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
 assign ex_valid = ex_now_valid;
 
     always@(posedge clock) begin

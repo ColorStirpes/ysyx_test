@@ -41,7 +41,7 @@ module ysyx_22040931_Rtype(
     `ysyx_22040931_div,    {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_DIV},
     `ysyx_22040931_divu,   {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_DIVU},
     `ysyx_22040931_divuw,  {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_DIVUW},
-    `ysyx_22040931_divw,   {1'b1,`ysyx_22040931_Short,`ysyx_22040931_DIV}
+    `ysyx_22040931_divw,   {1'b1,`ysyx_22040931_Short,`ysyx_22040931_DIVW}
   });
 
     assign aluop = out[4 : 0];

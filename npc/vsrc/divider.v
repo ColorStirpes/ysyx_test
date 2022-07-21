@@ -4,6 +4,7 @@
 module divider(
     input wire clock,
     input wire reset,
+    input wire w,
     input wire div,
     input wire div_signed,
     input wire [63 : 0] dividend,
@@ -27,10 +28,15 @@ module divider(
     assign abs_divisor =  div_signed ? (divisor[63]  ? ~divisor+1  : divisor)  : divisor;
     assign quotient_signed = divisor[63] ^ dividend[63];  //1- 0+
     assign remainder_signed = dividend[63];
+
+
     //2
-    wire [64 : 0] sub, ads_testsor;
-    assign sub = {dividend_reg[127 : 63] - {1'b0, abs_divisor}};
-    assign ads_testsor = {1'b0, abs_divisor};
+    wire [64 : 0] sub_64;
+    assign sub_64 = {dividend_reg[127 : 63] - {1'b0, abs_divisor}};
+    //32
+    wire [32 : 0] sub_32;
+    assign sub_32 = {dividend_reg[63 : 31] - {1'b0, abs_divisor[31 : 0]}};
+    //assign ads_testsor_32 = {1'b0, abs_divisor[31 : 0]};
 
     always@(posedge clock) begin
         if(reset == 1'b1) begin
@@ -41,19 +47,40 @@ module divider(
         end
         else if(div) begin
             if(count == 0) begin
-                dividend_reg <= {64'b0, abs_dividend};
-                count <= 1;
+                if(w) begin
+                    dividend_reg <= {64'b0, 32'b0, abs_dividend[31 : 0]};
+                    count <= 33;
+                end
+                else begin
+                    dividend_reg <= {64'b0, abs_dividend};
+                    count <= 1;
+                end
             end
             else begin
                 count <= count + 1;
+                
                 if(count != 65) begin
-                    quotient_reg <= {quotient_reg[62 : 0], ~sub[64]};
-                    remainder_reg <= sub;
-                    if(sub[64]) begin
-                        dividend_reg <= dividend_reg << 1;
+                    if(w) begin
+                        quotient_reg <= {32'b0, quotient_reg[30 : 0], ~sub_32[32]};
+                        remainder_reg <= {32'b0, sub_32};
+                        if(sub_32[32]) begin
+                            dividend_reg <= dividend_reg << 1;
+                        end
+                        else begin
+                            dividend_reg <= {64'b0, sub_32, dividend_reg[30 : 0]} << 1;
+                        end
                     end
                     else begin
-                        dividend_reg <= {sub, dividend_reg[62 : 0]} << 1;
+                       
+                        quotient_reg <= {quotient_reg[62 : 0], ~sub_64[64]};
+                        remainder_reg <= sub_64;
+                        if(sub_64[64]) begin
+                            dividend_reg <= dividend_reg << 1;
+                        end
+                        else begin
+                            dividend_reg <= {sub_64, dividend_reg[62 : 0]} << 1;
+                        end
+
                     end
                 end
                 else begin
@@ -65,13 +92,26 @@ module divider(
             count <= 0;
         end
     end
+
+
     
     //3
-    assign quotient =  div_signed ? (quotient_signed  ? ~quotient_reg + 1  : quotient_reg)  : quotient_reg;
-    wire [63 : 0] last_remainder;
-    assign last_remainder = remainder_reg[64] ? dividend_reg[127 : 64] : remainder_reg[63 : 0];
-    assign remainder = div_signed ? (remainder_signed ? ~last_remainder + 1 : last_remainder) : last_remainder;
-    
+    wire [63 : 0] quotient_64;
+    assign quotient_64 =  div_signed ? (quotient_signed  ? ~quotient_reg + 1  : quotient_reg)  : quotient_reg;
+    assign quotient = w ? {32'b0, quotient_64[31 : 0]} : quotient_64;
+
+    wire [63 : 0] last_remainder_64;
+    assign last_remainder_64 = remainder_reg[64] ? dividend_reg[127 : 64] : remainder_reg[63 : 0];
+    wire [63 : 0] remainder_64;
+    assign remainder_64 = div_signed ? (remainder_signed ? ~last_remainder_64 + 1 : last_remainder_64) : last_remainder_64;
+    //32
+    wire [31 : 0] last_remainder_32;
+    assign last_remainder_32 = remainder_reg[32] ? dividend_reg[63 : 32] : remainder_reg[31 : 0];
+    wire [31 : 0] remainder_32;
+    assign remainder_32 = div_signed ? (remainder_signed ? ~last_remainder_32 + 1 : last_remainder_32) : last_remainder_32;
+
+    assign remainder = w ? {{32{remainder_32[31]}}, remainder_32} : remainder_64;
+
     //4
     assign complete = (count == 65) ? 1'b1 : 1'b0;
     

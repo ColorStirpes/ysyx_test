@@ -56,31 +56,32 @@ always @(*) begin
       	mem_write(mem_addr, mem_stor_data, wmask);
 end
 
-reg [6 : 0] test;
-always @(posedge clock) begin
-    if(reset) begin
-        test <= 0;
-    end
-    else begin
-        test <= test + 1;
-    end
-end
-wire div;
-assign div = (test <= 65) ? 1'b1 : 1'b0;
+// reg [6 : 0] test;
+// always @(posedge clock) begin
+//     if(reset) begin
+//         test <= 0;
+//     end
+//     else begin
+//         test <= test + 1;
+//     end
+// end
+// wire div;
+// assign div = (test <= 65) ? 1'b1 : 1'b0;
 
-divider divider(
-    .clock(clock),
-    .reset(reset),
-    .div(div),
-    .div_signed(1),
-    .dividend(1164),
-    .divisor(7),
+// divider divider(
+//     .clock(clock),
+//     .reset(reset),
+//     .w(1),
+//     .div(div),
+//     .div_signed(1),
+//     .dividend(1598),
+//     .divisor(5),
 
 
-    .quotient(),
-    .remainder(),
-    .complete()
-);
+//     .quotient(),
+//     .remainder(),
+//     .complete()
+// );
 
 
 
@@ -298,7 +299,8 @@ wire [`ysyx_22040931_INST_BUS] EX_instr;
 wire [`ysyx_22040931_PC_BUS] EX_pc;
 
 ysyx_22040931_EX ysyx_22040931_EX(
-
+    .reset(reset),
+    .clock(clock),
     .w_ena_i(EX_w_ena),
     .w_addr_i(EX_w_addr),
     .pc_i(EX_pc),

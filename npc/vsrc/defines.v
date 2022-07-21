@@ -64,6 +64,7 @@
 `define ysyx_22040931_DIV     5'b11001
 `define ysyx_22040931_DIVU    5'b11010
 `define ysyx_22040931_DIVUW   5'b11011
+`define ysyx_22040931_DIVW    5'b11100
 
 //EXOP
 `define ysyx_22040931_No      3'b000

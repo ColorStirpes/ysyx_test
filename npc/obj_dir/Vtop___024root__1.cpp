@@ -15,11 +15,11 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__4(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___combo__TOP__4\n"); );
     // Variables
-    VlWide<11>/*351:0*/ __Vtemp1290;
-    VlWide<11>/*351:0*/ __Vtemp1299;
-    VlWide<3>/*95:0*/ __Vtemp1373;
-    VlWide<3>/*95:0*/ __Vtemp1374;
-    VlWide<3>/*95:0*/ __Vtemp1375;
+    VlWide<11>/*351:0*/ __Vtemp1825;
+    VlWide<11>/*351:0*/ __Vtemp1834;
+    VlWide<3>/*95:0*/ __Vtemp1908;
+    VlWide<3>/*95:0*/ __Vtemp1909;
+    VlWide<3>/*95:0*/ __Vtemp1910;
     // Body
     if ((0x100073U == vlSelf->difftest_instr)) {
         Vtop___024root____Vdpiimwrap_top__DOT__Inst_TOP(vlSelf->instr);
@@ -27,7 +27,7 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__4(Vtop___024root* vlSelf) {
     } else {
         Vtop___024root____Vdpiimwrap_top__DOT__E_TOP(0U);
     }
-    __Vtemp1290[9U] = (((IData)(((IData)(vlSelf->reset)
+    __Vtemp1825[9U] = (((IData)(((IData)(vlSelf->reset)
                                   ? 0ULL : ((0x100U 
                                              & (IData)(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT____Vcellout__opt_mux____pinNumber1))
                                              ? ((((
@@ -118,7 +118,7 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__4(Vtop___024root* vlSelf) {
                                              >> 0x20U)) 
                                     >> 0x14U)));
     vlSelf->top__DOT__ysyx_22040931_ID__DOT____Vcellinp__reg_data2____pinNumber4[9U] 
-        = __Vtemp1290[9U];
+        = __Vtemp1825[9U];
     vlSelf->top__DOT__ysyx_22040931_ID__DOT____Vcellinp__reg_data2____pinNumber4[0xaU] 
         = (0x80000U | ((IData)((((IData)(vlSelf->reset)
                                   ? 0ULL : ((0x100U 
@@ -139,7 +139,7 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__4(Vtop___024root* vlSelf) {
                                                      >> 0x14U))])
                                              : 0ULL)) 
                                 >> 0x20U)) >> 0x10U));
-    __Vtemp1299[9U] = (((IData)(((IData)(vlSelf->reset)
+    __Vtemp1834[9U] = (((IData)(((IData)(vlSelf->reset)
                                   ? 0ULL : ((0x200U 
                                              & (IData)(vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT____Vcellout__opt_mux____pinNumber1))
                                              ? ((((
@@ -230,7 +230,7 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__4(Vtop___024root* vlSelf) {
                                              >> 0x20U)) 
                                     >> 0x14U)));
     vlSelf->top__DOT__ysyx_22040931_ID__DOT____Vcellinp__reg_data1____pinNumber4[9U] 
-        = __Vtemp1299[9U];
+        = __Vtemp1834[9U];
     vlSelf->top__DOT__ysyx_22040931_ID__DOT____Vcellinp__reg_data1____pinNumber4[0xaU] 
         = (0x80000U | ((IData)((((IData)(vlSelf->reset)
                                   ? 0ULL : ((0x200U 
@@ -570,14 +570,14 @@ VL_INLINE_OPT void Vtop___024root___combo__TOP__4(Vtop___024root* vlSelf) {
         = (0x1c0U | ((IData)(((vlSelf->top__DOT__id_data1 
                                + vlSelf->top__DOT__id_imm) 
                               >> 0x20U)) >> 0x1aU));
-    VL_EXTEND_WQ(65,64, __Vtemp1373, vlSelf->top__DOT__id_data1);
-    VL_EXTEND_WQ(65,64, __Vtemp1374, vlSelf->top__DOT__id_data2);
-    VL_SUB_W(3, __Vtemp1375, __Vtemp1373, __Vtemp1374);
+    VL_EXTEND_WQ(65,64, __Vtemp1908, vlSelf->top__DOT__id_data1);
+    VL_EXTEND_WQ(65,64, __Vtemp1909, vlSelf->top__DOT__id_data2);
+    VL_SUB_W(3, __Vtemp1910, __Vtemp1908, __Vtemp1909);
     vlSelf->top__DOT__ysyx_22040931_ID__DOT__ysyx_22040931_Decoder__DOT__ysyx_22040931_Btype__DOT__jumpb 
         = ((4U & ((IData)(((vlSelf->top__DOT__id_data1 
                             - vlSelf->top__DOT__id_data2) 
                            >> 0x3fU)) << 2U)) | ((2U 
-                                                  & (__Vtemp1375[2U] 
+                                                  & (__Vtemp1910[2U] 
                                                      << 1U)) 
                                                  | (vlSelf->top__DOT__id_data1 
                                                     != vlSelf->top__DOT__id_data2)));
