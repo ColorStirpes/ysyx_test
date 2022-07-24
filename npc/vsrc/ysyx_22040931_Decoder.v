@@ -19,7 +19,7 @@ module ysyx_22040931_Decoder(
 
     output wire [2 : 0]    ztype,
     output wire [2 : 0]     exop,
-    output wire [4 : 0]    aluop,    
+    output wire [`ysyx_22040931_ALU_BUS]    aluop,    
     output wire [2 : 0]   memwop,
     output wire [2 : 0]   memrop,
     output wire             jump
@@ -34,7 +34,7 @@ module ysyx_22040931_Decoder(
     wire btype;
 
     wire [2 : 0] r_exop,  i_exop, s_exop, u_exop, j_exop, b_exop;
-    wire [4 : 0] r_aluop,i_aluop,s_aluop,u_aluop,j_aluop, b_aluop;    
+    wire [`ysyx_22040931_ALU_BUS] r_aluop,i_aluop,s_aluop,u_aluop,j_aluop, b_aluop;    
     wire ijump,bjump,jjump;
 
     assign w_addr = instr[11 : 7];
@@ -49,9 +49,9 @@ module ysyx_22040931_Decoder(
     assign ztype[0] = itype | btype | utype;
 
     
-    ysyx_22040931_MuxD #(6, 3, 11) opt_mux ({w_ena, r_ena1, r_ena2, exop, aluop}, 
+    ysyx_22040931_MuxD #(6, 3, 12) opt_mux ({w_ena, r_ena1, r_ena2, exop, aluop}, 
                                         ztype, 
-                             11'b0000_0000_00, 
+                             12'b0000_0000_00, 
     {
 
         `ysyx_22040931_Rt,    {1'b1, 1'b1, 1'b1, r_exop, r_aluop}, 

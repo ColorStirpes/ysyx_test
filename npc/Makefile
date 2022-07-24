@@ -8,6 +8,7 @@ INC_PATH ?=
 VERILATOR = verilator
 VERILATOR_CFLAGS += -MMD --build -cc  \
                                 -O3 --x-assign fast --x-initial fast --noassert
+VERILATOR_WARNING = -Wno-UNOPTFLAT
 
 BUILD_DIR = ./build
 OBJ_DIR = $(BUILD_DIR)/obj_dir
@@ -59,7 +60,7 @@ siming:
 	$(call git_commit, "sim RTL")
 	rm -rf ./obj_dir
 	echo $(IMG)
-	verilator --cc -Ivsrc --trace vsrc/top.v csrc/*.cpp $(DISASMSRC) --build --exe -LDFLAGS $(shell llvm-config --libs) -LDFLAGS -ldl
+	verilator -j 4 --cc -Ivsrc --trace $(VERILATOR_WARNING) vsrc/top.v csrc/*.cpp $(DISASMSRC) --build --exe -LDFLAGS $(shell llvm-config --libs) -LDFLAGS -ldl
 	-./obj_dir/Vtop $(IMG) 
 
 

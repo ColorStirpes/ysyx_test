@@ -48,7 +48,7 @@ module ysyx_22040931_ID(
     output wire mem_wr,
     output wire [`ysyx_22040931_DATA_BUS] imm,
     output wire [2 : 0]     exop,
-    output wire [4 : 0]    aluop,    
+    output wire [`ysyx_22040931_ALU_BUS]    aluop,    
     output wire [2 : 0]   memwop,
     output wire [2 : 0]   memrop
 
@@ -78,7 +78,7 @@ always @(posedge clock) begin
     end
 end
     initial begin
-        $monitor("%d/%d 正确率:%d  \n",r_count, count,  r_count*100 / count );
+        //$monitor("%d/%d 正确率:%d  \n",r_count, count,  r_count*100 / count );
     end
 
     wire [2 : 0]     ztype;

@@ -44,17 +44,14 @@ module ex_mem(
 );
 
 
-    input wire id_valid,
-    input wire mem_ready,
-    output wire ex_ready,
-    output wire ex_valid,
+
 //assign mem_valid = ~stall;
 //assign ex_ready = mem_vaild & mem_ready;
 reg ex_now_valid;
 wire ex_go;
 assign ex_go = ~stall;
 
-assign ex_ready = !ex_now_valid | mem_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
+assign ex_ready = ex_go & mem_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
 assign ex_valid = ex_now_valid;
 
     always@(posedge clock) begin
@@ -94,19 +91,19 @@ assign ex_valid = ex_now_valid;
                 MEM_pc <= EX_pc;
                 MEM_instr <= EX_instr;
             end
-            else if(ex_go) begin
-                MEM_w_ena <= `ysyx_22040931_N_ENA;
-                MEM_w_addr <= `ysyx_22040931_ZERO_REG;
-                MEM_w_data <= `ysyx_22040931_ZERO_NUM;
-                MEM_memwop <= `ysyx_22040931_MNO;
-                MEM_memrop <= `ysyx_22040931_MNO;
-                MEM_mem_ena <= `ysyx_22040931_N_ENA;
-                MEM_mem_wr <= `ysyx_22040931_READ;
-                MEM_mem_addr <= `ysyx_22040931_ZERO_NUM;
-                MEM_mem_stor_data <= `ysyx_22040931_ZERO_NUM;
-                MEM_pc <= `ysyx_22040931_ZERO_PC;
-                MEM_instr <= `ysyx_22040931_NONE_INST;
-            end
+            // else if(ex_go) begin
+            //     MEM_w_ena <= `ysyx_22040931_N_ENA;
+            //     MEM_w_addr <= `ysyx_22040931_ZERO_REG;
+            //     MEM_w_data <= `ysyx_22040931_ZERO_NUM;
+            //     MEM_memwop <= `ysyx_22040931_MNO;
+            //     MEM_memrop <= `ysyx_22040931_MNO;
+            //     MEM_mem_ena <= `ysyx_22040931_N_ENA;
+            //     MEM_mem_wr <= `ysyx_22040931_READ;
+            //     MEM_mem_addr <= `ysyx_22040931_ZERO_NUM;
+            //     MEM_mem_stor_data <= `ysyx_22040931_ZERO_NUM;
+            //     MEM_pc <= `ysyx_22040931_ZERO_PC;
+            //     MEM_instr <= `ysyx_22040931_NONE_INST;
+            // end
         end 
     end
 

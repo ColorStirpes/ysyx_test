@@ -6,14 +6,14 @@ module ysyx_22040931_Rtype(
     input wire [2 : 0] opcode_3,
     input wire [6 : 0] opcode_7,
     
-    output wire [4 : 0]    aluop,
+    output wire [`ysyx_22040931_ALU_BUS]    aluop,
     output wire [2 : 0]     exop,
     output wire            rtype
 );
-    wire [8 : 0] out;
+    wire [9 : 0] out;
     wire [16 : 0] chose = {opcode_7, opcode_3, opcode};
     
-    ysyx_22040931_MuxD #(28, 17, 9) Rtype (out, chose, 9'b0000_0000_00, {
+    ysyx_22040931_MuxD #(28, 17, 10) Rtype (out, chose, 10'b0000_0000_00, {
     `ysyx_22040931_add,    {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_ADD},
     `ysyx_22040931_addw,   {1'b1,`ysyx_22040931_Short,`ysyx_22040931_ADD},
     `ysyx_22040931_and,    {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_AND},
@@ -37,15 +37,15 @@ module ysyx_22040931_Rtype(
     `ysyx_22040931_mulh,   {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_MULH},
     `ysyx_22040931_mulhsu, {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_MULHSU},
     `ysyx_22040931_mulhu,  {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_MULHU},
-    `ysyx_22040931_mulw,   {1'b1,`ysyx_22040931_Short,`ysyx_22040931_MUL},
+    `ysyx_22040931_mulw,   {1'b1,`ysyx_22040931_Short,`ysyx_22040931_MULW},
     `ysyx_22040931_div,    {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_DIV},
     `ysyx_22040931_divu,   {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_DIVU},
     `ysyx_22040931_divuw,  {1'b1,`ysyx_22040931_Arith,`ysyx_22040931_DIVUW},
     `ysyx_22040931_divw,   {1'b1,`ysyx_22040931_Short,`ysyx_22040931_DIVW}
   });
 
-    assign aluop = out[4 : 0];
-    assign exop = out[7 : 5];
-    assign rtype = out[8];
+    assign aluop = out[5 : 0];
+    assign exop = out[8 : 6];
+    assign rtype = out[9];
 
 endmodule

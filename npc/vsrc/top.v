@@ -56,34 +56,6 @@ always @(*) begin
       	mem_write(mem_addr, mem_stor_data, wmask);
 end
 
-// reg [6 : 0] test;
-// always @(posedge clock) begin
-//     if(reset) begin
-//         test <= 0;
-//     end
-//     else begin
-//         test <= test + 1;
-//     end
-// end
-// wire div;
-// assign div = (test <= 65) ? 1'b1 : 1'b0;
-
-// divider divider(
-//     .clock(clock),
-//     .reset(reset),
-//     .w(1),
-//     .div(div),
-//     .div_signed(1),
-//     .dividend(1598),
-//     .divisor(5),
-
-
-//     .quotient(),
-//     .remainder(),
-//     .complete()
-// );
-
-
 
 wire mux_pc;
 wire [`ysyx_22040931_PC_BUS] branch;
@@ -226,7 +198,7 @@ wire id_mem_ena;
 wire id_mem_wr;
 wire [`ysyx_22040931_DATA_BUS] id_imm;
 wire [2 : 0]     id_exop;
-wire [4 : 0]    id_aluop;    
+wire [`ysyx_22040931_ALU_BUS]    id_aluop;    
 wire [2 : 0]   id_memwop;
 wire [2 : 0]   id_memrop;
 
@@ -242,7 +214,7 @@ id_ex id_ex(
     .nop(load_stall),
     //wo shou
     .if_valid(if_valid),
-    .ex_ready(ex_ready),
+    .ex_ready(to_id_ready),
     .id_ready(id_ready),
     .id_valid(id_valid),
     .ID_pc(id_pc),
@@ -289,7 +261,7 @@ wire [`ysyx_22040931_DATA_BUS] EX_data2;
 wire [`ysyx_22040931_DATA_BUS] EX_imm;
 
 wire [2 : 0]     EX_exop;
-wire [4 : 0]    EX_aluop;
+wire [`ysyx_22040931_ALU_BUS]    EX_aluop;
 //mem    
 wire [2 : 0]   EX_memwop;
 wire [2 : 0]   EX_memrop;
@@ -301,6 +273,11 @@ wire [`ysyx_22040931_PC_BUS] EX_pc;
 ysyx_22040931_EX ysyx_22040931_EX(
     .reset(reset),
     .clock(clock),
+    .id_gi_valid(id_valid),
+    .ex_gi_ready(ex_ready),
+    .to_ex_valid(to_ex_valid),
+    .to_id_ready(to_id_ready),
+    
     .w_ena_i(EX_w_ena),
     .w_addr_i(EX_w_addr),
     .pc_i(EX_pc),
@@ -335,6 +312,9 @@ ysyx_22040931_EX ysyx_22040931_EX(
     .pc_o(ex_pc)
 
 );
+//ex woshou
+wire to_ex_valid;
+wire to_id_ready;
 
 
 //regfile
@@ -363,7 +343,7 @@ ex_mem ex_mem(
     .flush(),
     .stall(),
     //wo shou
-    .id_valid(id_valid),
+    .id_valid(to_ex_valid),
     .mem_ready(mem_ready),
     .ex_ready(ex_ready),
     .ex_valid(ex_valid),

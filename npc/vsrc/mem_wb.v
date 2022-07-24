@@ -34,7 +34,7 @@ module mem_wb(
 reg mem_now_valid;
 wire mem_go;
 assign mem_go = ~stall;
-assign mem_ready = !(mem_now_valid & ~flush) | mem_go;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
+assign mem_ready = mem_go;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
 assign mem_valid = mem_now_valid;
 
     always@(posedge clock) begin
@@ -57,7 +57,7 @@ assign mem_valid = mem_now_valid;
         end
         else begin
             if(ex_valid & mem_ready) begin
-                WB_w_ena <= MEM_w_ena & mem_now_valid;
+                WB_w_ena <= MEM_w_ena;
                 WB_w_addr <= MEM_w_addr;
                 WB_w_data <= MEM_w_data;
                 WB_pc <= MEM_pc;

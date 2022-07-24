@@ -6,9 +6,10 @@ module ysyx_22040931_EX(
     input wire reset,
     input wire clock,
     //woshou
-    output wire 
-
-
+    input wire id_gi_valid,
+    input wire ex_gi_ready,
+    output wire to_ex_valid,
+    output wire to_id_ready,
 
     input wire w_ena_i,
     input wire [`ysyx_22040931_REG_BUS] w_addr_i,
@@ -20,7 +21,7 @@ module ysyx_22040931_EX(
     input wire [`ysyx_22040931_DATA_BUS] imm,
 
     input wire [2 : 0]     exop,
-    input wire [4 : 0]    aluop,
+    input wire [`ysyx_22040931_ALU_BUS]    aluop,
     //mem    
     input wire [2 : 0]   memwop_i,
     input wire [2 : 0]   memrop_i,
@@ -44,8 +45,11 @@ module ysyx_22040931_EX(
 
 );
 
+assign to_ex_valid = id_gi_valid & alu_valid;//id_gi_valid & alu_valid;
+assign to_id_ready = ex_gi_ready & alu_ready;//ex_gi_ready & alu_ready;
 assign pc_o = pc_i;
 assign instr_o = instr;
+
 
     assign w_ena = w_ena_i;
     assign w_addr = w_addr_i;
@@ -57,14 +61,14 @@ assign instr_o = instr;
     assign mem_wr = mem_wr_i;
 
     wire [`ysyx_22040931_DATA_BUS]result;
+    wire alu_valid, alu_ready;
     ysyx_22040931_ALU ysyx_22040931_ALU(
     .reset(reset),
     .clock(clock),
-    .alu_valid(),
-    .alu_ready(),
-    .ex_ready(),
-    .id_valid(),
-
+    .alu_valid(alu_valid),
+    .alu_ready(alu_ready),
+    .ex_ready(ex_gi_ready),
+    .id_valid(id_gi_valid),
 
     .num1(data1),
     .num2(data2),

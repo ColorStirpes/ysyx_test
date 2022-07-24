@@ -34,7 +34,7 @@ module ysyx_22040931_IF(
 reg pc_now_valid;
 wire pc_go;
 assign pc_go = ~stall;
-assign pc_ready = !pc_now_valid | pc_go & if_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
+assign pc_ready = pc_go & if_ready;   //当前时钟不是有效数据，或者当前已经处理完这个周期的活
 assign pc_valid = pc_now_valid & pc_go;
 
     always@(posedge clock) begin
