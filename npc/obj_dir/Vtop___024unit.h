@@ -19,7 +19,7 @@ VL_MODULE(Vtop___024unit) {
   public:
 
     // LOCAL VARIABLES
-    CData/*31:0*/ __VmonitorOff;
+    CData/*0:0*/ __VmonitorOff;
 
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;  // Symbol table

@@ -152,7 +152,7 @@ assign num2_sw = num2[31 : 0];
     `ysyx_22040931_MULH  ,  (num1_s * num2_s) >> 64,
     `ysyx_22040931_MULHSU,  (num1_s * num2) >> 64,
     `ysyx_22040931_MULHU ,  (num1 * num2) >> 64,
-    `ysyx_22040931_MULW  ,  num1_sw * num2_sw,
+    `ysyx_22040931_MULW  ,  {32'b0, (num1_sw * num2_sw)},
     `ysyx_22040931_DIV   ,  quotient,
     `ysyx_22040931_DIVU  ,  quotient,
     `ysyx_22040931_DIVUW ,  quotient,     
