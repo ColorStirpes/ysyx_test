@@ -78,7 +78,7 @@ always @(posedge clock) begin
     end
 end
     initial begin
-        //$monitor("%d/%d 正确率:%d  \n",r_count, count,  r_count*100 / count );
+        $monitor("%d/%d 正确率:%d  \n",r_count, count,  r_count*100 / count );
     end
 
     wire [2 : 0]     ztype;

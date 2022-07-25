@@ -15,6 +15,7 @@ class Vtop__Syms;
 class Vtop___024root;
 class VerilatedVcdC;
 class Vtop_VerilatedVcd;
+class Vtop___024unit;
 class Vtop_booth_p;
 class Vtop_csa;
 
@@ -47,6 +48,7 @@ class Vtop VL_NOT_FINAL {
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
+    Vtop___024unit* const __PVT____024unit;
     Vtop_booth_p* const __PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p;
     Vtop_booth_p* const __PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__2__KET____DOT__booth_p;
     Vtop_booth_p* const __PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__4__KET____DOT__booth_p;

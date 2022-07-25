@@ -79,7 +79,7 @@ assign ex_valid = ex_now_valid;
         end
         else begin
             if(id_valid & ex_ready) begin
-                MEM_w_ena <= EX_w_ena;
+                MEM_w_ena <= EX_w_ena; 
                 MEM_w_addr <= EX_w_addr;
                 MEM_w_data <= EX_w_data;
                 MEM_memwop <= EX_memwop;

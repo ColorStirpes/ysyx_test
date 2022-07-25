@@ -1585,15 +1585,15 @@ VL_INLINE_OPT void Vtop___024root___settle__TOP__11(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT____Vcellinp__ALU____pinNumber4[0x3eU] 
         = __Vtemp1143[0x3eU];
     vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT____Vcellinp__ALU____pinNumber4[0x3fU] 
-        = (0x2000U | ((0x3fU & ((IData)(((vlSelf->top__DOT__EX_data1 
-                                          + vlSelf->top__DOT__EX_data2) 
-                                         >> 0x20U)) 
-                                >> 0x18U)) | (0xc0U 
-                                              & ((IData)(
-                                                         ((vlSelf->top__DOT__EX_data1 
-                                                           + vlSelf->top__DOT__EX_data2) 
-                                                          >> 0x20U)) 
-                                                 >> 0x18U))));
+        = (0x100U | ((0x3fU & ((IData)(((vlSelf->top__DOT__EX_data1 
+                                         + vlSelf->top__DOT__EX_data2) 
+                                        >> 0x20U)) 
+                               >> 0x18U)) | (0xc0U 
+                                             & ((IData)(
+                                                        ((vlSelf->top__DOT__EX_data1 
+                                                          + vlSelf->top__DOT__EX_data2) 
+                                                         >> 0x20U)) 
+                                                >> 0x18U))));
     vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__ALU__DOT__i1__DOT__pair_list[0U][0U] 
         = vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT____Vcellinp__ALU____pinNumber4[0U];
     vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__ALU__DOT__i1__DOT__pair_list[0U][1U] 
@@ -5361,6 +5361,13 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__13(Vtop___024root* vlSelf) {
         = __Vdly__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__dividend_reg[2U];
     vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__dividend_reg[3U] 
         = __Vdly__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__dividend_reg[3U];
+    if (VL_UNLIKELY((1U & (~ vlSymsp->TOP____024unit.__VmonitorOff)))) {
+        VL_WRITEF("%10#/%10# \346\255\243\347\241\256\347\216\207:%10#  \n\n",
+                  32,vlSelf->top__DOT__ysyx_22040931_ID__DOT__r_count,
+                  32,vlSelf->top__DOT__ysyx_22040931_ID__DOT__count,
+                  32,VL_DIV_III(32, ((IData)(0x64U) 
+                                     * vlSelf->top__DOT__ysyx_22040931_ID__DOT__r_count), vlSelf->top__DOT__ysyx_22040931_ID__DOT__count));
+    }
     vlSelf->mem_ena = vlSelf->top__DOT__MEM_mem_ena;
     if (vlSelf->reset) {
         vlSelf->top__DOT__EX_mem_ena = 0U;

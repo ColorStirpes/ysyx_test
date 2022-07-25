@@ -17,6 +17,7 @@
 #include "Vtop___024root.h"
 #include "Vtop_booth_p.h"
 #include "Vtop_csa.h"
+#include "Vtop___024unit.h"
 
 // DPI TYPES for DPI Export callbacks (Internal use)
 
@@ -31,6 +32,7 @@ class Vtop__Syms final : public VerilatedSyms {
 
     // MODULE INSTANCE STATE
     Vtop___024root                 TOP;
+    Vtop___024unit                 TOP____024unit;
     Vtop_booth_p                   TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p;
     Vtop_booth_p                   TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__10__KET____DOT__booth_p;
     Vtop_booth_p                   TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__12__KET____DOT__booth_p;
@@ -95,6 +97,9 @@ class Vtop__Syms final : public VerilatedSyms {
     Vtop_csa                       TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa7;
     Vtop_csa                       TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa8;
     Vtop_csa                       TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa9;
+
+    // SCOPE NAMES
+    VerilatedScope __Vscope_top__ysyx_22040931_ID;
 
     // CONSTRUCTORS
     Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* modelp);

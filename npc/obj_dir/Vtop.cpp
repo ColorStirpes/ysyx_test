@@ -24,6 +24,7 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , mem_stor_data{vlSymsp->TOP.mem_stor_data}
     , difftest_instr{vlSymsp->TOP.difftest_instr}
     , difftest_pc{vlSymsp->TOP.difftest_pc}
+    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , __PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p{vlSymsp->TOP.__PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p}
     , __PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__2__KET____DOT__booth_p{vlSymsp->TOP.__PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__2__KET____DOT__booth_p}
     , __PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__4__KET____DOT__booth_p{vlSymsp->TOP.__PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__4__KET____DOT__booth_p}

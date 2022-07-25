@@ -83,8 +83,8 @@ module divider(
                         dividend_reg <= {sub_64, dividend_reg[62 : 0]} << 1;
                     end
                 end
+                
                 if(count == 64) begin
-                    
                     div_valid <= 1'b1;
                     count <= 0;
                 end

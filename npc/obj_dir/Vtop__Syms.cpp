@@ -6,6 +6,7 @@
 #include "Vtop___024root.h"
 #include "Vtop_booth_p.h"
 #include "Vtop_csa.h"
+#include "Vtop___024unit.h"
 
 // FUNCTIONS
 Vtop__Syms::~Vtop__Syms()
@@ -18,6 +19,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep,Vtop* model
     , __Vm_modelp(modelp)
     // Setup module instances
     , TOP(namep)
+    , TOP____024unit(Verilated::catName(namep, "$unit"))
     , TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p(Verilated::catName(namep, "top.ysyx_22040931_EX.ysyx_22040931_ALU.multiplier.booth.genblk1[0].booth_p"))
     , TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__10__KET____DOT__booth_p(Verilated::catName(namep, "top.ysyx_22040931_EX.ysyx_22040931_ALU.multiplier.booth.genblk1[10].booth_p"))
     , TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__12__KET____DOT__booth_p(Verilated::catName(namep, "top.ysyx_22040931_EX.ysyx_22040931_ALU.multiplier.booth.genblk1[12].booth_p"))
@@ -87,6 +89,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep,Vtop* model
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);
     // Setup each module's pointers to their submodules
+    TOP.__PVT____024unit = &TOP____024unit;
     TOP.__PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p = &TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p;
     TOP.__PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__10__KET____DOT__booth_p = &TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__10__KET____DOT__booth_p;
     TOP.__PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__12__KET____DOT__booth_p = &TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__12__KET____DOT__booth_p;
@@ -153,6 +156,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep,Vtop* model
     TOP.__PVT__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa9 = &TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa9;
     // Setup each module's pointer back to symbol table (for public functions)
     TOP.__Vconfigure(this, true);
+    TOP____024unit.__Vconfigure(this, true);
     TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__0__KET____DOT__booth_p.__Vconfigure(this, true);
     TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__10__KET____DOT__booth_p.__Vconfigure(this, false);
     TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__booth__DOT__genblk1__BRA__12__KET____DOT__booth_p.__Vconfigure(this, false);
@@ -217,6 +221,8 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep,Vtop* model
     TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa7.__Vconfigure(this, false);
     TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa8.__Vconfigure(this, false);
     TOP__top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__multiplier__DOT__walloc_33in__DOT__csa9.__Vconfigure(this, false);
+    // Setup scopes
+    __Vscope_top__ysyx_22040931_ID.configure(this, name(), "top.ysyx_22040931_ID", "ysyx_22040931_ID", -9, VerilatedScope::SCOPE_OTHER);
     // Setup export functions
     for (int __Vfinal=0; __Vfinal<2; __Vfinal++) {
     }
