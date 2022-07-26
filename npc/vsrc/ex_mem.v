@@ -46,7 +46,7 @@ module ex_mem(
 
 
 //assign mem_valid = ~stall;
-//assign ex_ready = mem_vaild & mem_ready;
+//assign ex_ready = mem_valid & mem_ready;
 reg ex_now_valid;
 wire ex_go;
 assign ex_go = ~stall;
