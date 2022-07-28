@@ -127,70 +127,35 @@ typedef	__uint128_t fixedptud;
 
 /* Multiplies a fixedpt number with an integer, returns the result. */
 static inline fixedpt fixedpt_muli(fixedpt A, int B) {
-	return (A*B);
+	return 0;
 }
 
 /* Divides a fixedpt number with an integer, returns the result. */
 static inline fixedpt fixedpt_divi(fixedpt A, int B) {
-	return (A/B);
+	return 0;
 }
 
 /* Multiplies two fixedpt numbers, returns the result. */
 static inline fixedpt fixedpt_mul(fixedpt A, fixedpt B) {
-	uint64_t r= (A*B);
-	return (fixedpt)(r>>8);
+	return 0;
 }
 
 
 /* Divides two fixedpt numbers, returns the result. */
 static inline fixedpt fixedpt_div(fixedpt A, fixedpt B) {
-	return (A*FIXEDPT_ONE/B);
+	return 0;
 }
 
 static inline fixedpt fixedpt_abs(fixedpt A) {
-	return (A>>31)?fixedpt_muli(A,-1):A;
+	return 0;
 }
 
 static inline fixedpt fixedpt_floor(fixedpt A) {
-	// fixedpt ret;
-	// if(A > fixedpt_fromint(0)) {
-	// 	ret = fixedpt_fromint(fixedpt_toint(A));
-	// }
-	// else if(A < fixedpt_fromint(0)){
-	// 	ret = fixedpt_fromint(fixedpt_toint(A - FIXEDPT_ONE));
-	// }
-	// else{
-	// 	ret = A;
-	// }
-	// return ret;
-
-	if(fixedpt_fracpart(A) == 0){
-		return A;
-	}
-	else{
-		return A &(~FIXEDPT_FMASK);
-	}
+	return 0;
 }
 
 static inline fixedpt fixedpt_ceil(fixedpt A) {
-	// fixedpt ret;
-	// if(A > fixedpt_fromint(0)) {
-	// 	ret = fixedpt_fromint(fixedpt_toint(A + FIXEDPT_ONE));
-	// }
-	// else if(A < fixedpt_fromint(0)){
-	// 	ret = fixedpt_fromint(fixedpt_toint(A));
-	// }
-	// else{
-	// 	ret = A;
-	// }
-	// return ret;
-
-	if(fixedpt_fracpart(A) == 0){
-		return A;
-	}
-	else{
-		return fixedpt_add(fixedpt_floor(A),fixedpt_fromint(1));
-	}
+	return 0;
 }
 
 /*

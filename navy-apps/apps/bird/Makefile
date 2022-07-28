@@ -16,4 +16,3 @@ install-file:
 	ln -sf -T $(abspath $(REPO_PATH)/res) $(NAVY_HOME)/fsimg/share/games/bird
 
 .PHONY: install-file init
-
