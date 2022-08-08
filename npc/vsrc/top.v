@@ -279,7 +279,7 @@ ysyx_22040931_EX ysyx_22040931_EX(
     .to_ex_valid(to_ex_valid),
     .to_id_ready(to_id_ready),
     
-    .w_ena_i(EX_w_ena&),
+    .w_ena_i(EX_w_ena),
     .w_addr_i(EX_w_addr),
     .pc_i(EX_pc),
     .instr(EX_instr),

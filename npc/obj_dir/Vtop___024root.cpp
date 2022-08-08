@@ -2439,10 +2439,16 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__2(Vtop___024root* vlSelf) {
            | (1U & (IData)((vlSelf->mem_addr >> 2U))));
     vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__abs_dividend 
         = ((1U & (IData)(vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__d_m_ena))
-            ? ((1U & (IData)((vlSelf->top__DOT__EX_data1 
-                              >> 0x3fU))) ? (1ULL + 
-                                             (~ vlSelf->top__DOT__EX_data1))
-                : vlSelf->top__DOT__EX_data1) : vlSelf->top__DOT__EX_data1);
+            ? ((4U & (IData)(vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__d_m_ena))
+                ? ((1U & (IData)((vlSelf->top__DOT__EX_data1 
+                                  >> 0x1fU))) ? (1ULL 
+                                                 + 
+                                                 (~ vlSelf->top__DOT__EX_data1))
+                    : vlSelf->top__DOT__EX_data1) : 
+               ((1U & (IData)((vlSelf->top__DOT__EX_data1 
+                               >> 0x3fU))) ? (1ULL 
+                                              + (~ vlSelf->top__DOT__EX_data1))
+                 : vlSelf->top__DOT__EX_data1)) : vlSelf->top__DOT__EX_data1);
     vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__div 
         = ((((IData)(vlSelf->top__DOT__id_ex__DOT__id_now_valid) 
              & (~ (IData)(vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__div_valid))) 
@@ -2643,10 +2649,16 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__2(Vtop___024root* vlSelf) {
                 : vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__last_remainder_64));
     if ((1U & (IData)(vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__d_m_ena))) {
         vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__abs_divisor 
-            = ((1U & (IData)((vlSelf->top__DOT__EX_data2 
-                              >> 0x3fU))) ? (1ULL + 
-                                             (~ vlSelf->top__DOT__EX_data2))
-                : vlSelf->top__DOT__EX_data2);
+            = ((4U & (IData)(vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__d_m_ena))
+                ? ((1U & (IData)((vlSelf->top__DOT__EX_data2 
+                                  >> 0x1fU))) ? (1ULL 
+                                                 + 
+                                                 (~ vlSelf->top__DOT__EX_data2))
+                    : vlSelf->top__DOT__EX_data2) : 
+               ((1U & (IData)((vlSelf->top__DOT__EX_data2 
+                               >> 0x3fU))) ? (1ULL 
+                                              + (~ vlSelf->top__DOT__EX_data2))
+                 : vlSelf->top__DOT__EX_data2));
         vlSelf->top__DOT__ysyx_22040931_EX__DOT__ysyx_22040931_ALU__DOT__divider__DOT__quotient_64 
             = ((1U & ((IData)((vlSelf->top__DOT__EX_data2 
                                >> 0x3fU)) ^ (IData)(
