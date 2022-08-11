@@ -9,14 +9,20 @@ Context* __am_irq_handle(Context *c) {
     Event ev = {0};
     //printf("c->mcause:%lx\n",c->mcause);
     switch (c->mcause) {
-      case -1: ev.event = EVENT_YIELD; break;
-      default: 
-              if(c->mcause >= 0 || c->mcause <= 19){
-                 ev.event = EVENT_SYSCALL; break;
-              }
-              else{
-                ev.event = EVENT_ERROR; break;
-              }
+      case 11: 
+      	switch(c->GPR1){
+      		case -1: ev.event = EVENT_YIELD; 
+      		 	break;
+      		default: 
+              		if(c->mcause >= 0 || c->mcause <= 19){
+                 		ev.event = EVENT_SYSCALL; break;
+              		}
+              		else{
+                		ev.event = EVENT_ERROR; break;
+              		}
+      	}
+      	c->mepc = c->mepc + 4;
+      break;
     }
 
     c = user_handler(ev, c);  //do_event

@@ -146,8 +146,8 @@ static int decode_exec(Decode *s) {
   INSTPAT("??????? ????? ????? 110 ????? 11100 11", csrrsi , C, word_t t = CSR(src2); CSR(src2) = t | src1 ; R(dest) = t);
   INSTPAT("??????? ????? ????? 001 ????? 11100 11", csrrw  , I, word_t t = CSR(src2); CSR(src2) = src1     ; R(dest) = t);
   INSTPAT("??????? ????? ????? 101 ????? 11100 11", csrrwi , C, word_t t = CSR(src2); CSR(src2) = src1     ; R(dest) = t);
-  INSTPAT("0011000 00010 00000 000 00000 11100 11", mret   , N, s->dnpc = CSR(0x341) + 4; word_t mpie = (CSR(0x300)&0x80) >> 7; 
-                                                                if(mpie) CSR(0X300) |= 0x88;else CSR(0X300) |= 0x80,CSR(0X300) &= ~0x8);
+  INSTPAT("0011000 00010 00000 000 00000 11100 11", mret   , N, s->dnpc = CSR(0x341)); //word_t mpie = (CSR(0x300)&0x80) >> 7; 
+                                                                //if(mpie) CSR(0X300) |= 0x88;else CSR(0X300) |= 0x80,CSR(0X300) &= ~0x8);
 
   //U
   INSTPAT("??????? ????? ????? ??? ????? 00101 11", auipc  , U, R(dest) = src1 + s->pc);
@@ -165,7 +165,7 @@ static int decode_exec(Decode *s) {
   INSTPAT("??????? ????? ????? ??? ????? 11011 11", jal    , J, R(dest) = s->pc + 4; s->dnpc = s->pc + src1);
 
   
-  INSTPAT("0000000 00000 00000 000 00000 11100 11", ecall  , N, s->dnpc = isa_raise_intr(R(17), s->pc););
+  INSTPAT("0000000 00000 00000 000 00000 11100 11", ecall  , N, s->dnpc = isa_raise_intr(11, s->pc););
   INSTPAT("0000000 00001 00000 000 00000 11100 11", ebreak , N, NEMUTRAP(s->pc, R(10))); // R(10) is $a0
   INSTPAT("??????? ????? ????? ??? ????? ????? ??", inv    , N, INV(s->pc));
   INSTPAT_END();
