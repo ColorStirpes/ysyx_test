@@ -160,8 +160,8 @@ end
 
 
     //load hazard
-    assign load_stall = (ex_w_addr == r_addr1) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & !ex_mem_wr & ex_mem_ena)) : 
-                        (ex_w_addr == r_addr2) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & !ex_mem_wr & ex_mem_ena)) : 1'b0;
+    assign load_stall = (ex_w_addr == r_addr1) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 
+                        (ex_w_addr == r_addr2) ? ((ex_w_addr == 5'b00000) ? 1'b0 : (ex_w_ena & ex_mem_wr & ex_mem_ena)) : 1'b0;
 
     //read bypass
     wire need_ex1, need_ex2, need_mem1, need_mem2;
